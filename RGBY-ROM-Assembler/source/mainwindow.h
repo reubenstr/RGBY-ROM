@@ -70,6 +70,7 @@ private slots:
     void on_pushButton_save_as_clicked();
     void undo();
     void on_pushButton_generateSpecialFiles_clicked();
+    void on_pushButton_selectSaveFolder_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -491,6 +491,19 @@
      <string>Program Code</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_selectSaveFolder">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>790</y>
+      <width>171</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Save Folder</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">

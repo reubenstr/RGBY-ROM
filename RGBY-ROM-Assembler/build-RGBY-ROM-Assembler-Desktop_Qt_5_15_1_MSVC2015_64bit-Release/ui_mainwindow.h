@@ -65,6 +65,7 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QLabel *label_10;
+    QPushButton *pushButton_selectSaveFolder;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
 
@@ -194,6 +195,9 @@ public:
         label_10 = new QLabel(centralWidget);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(170, 10, 111, 16));
+        pushButton_selectSaveFolder = new QPushButton(centralWidget);
+        pushButton_selectSaveFolder->setObjectName(QString::fromUtf8("pushButton_selectSaveFolder"));
+        pushButton_selectSaveFolder->setGeometry(QRect(460, 790, 171, 28));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
@@ -240,6 +244,7 @@ public:
         label_8->setText(QCoreApplication::translate("MainWindow", "Intruction No.", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Jump Address", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Program Code", nullptr));
+        pushButton_selectSaveFolder->setText(QCoreApplication::translate("MainWindow", "Select Save Folder", nullptr));
     } // retranslateUi
 
 };

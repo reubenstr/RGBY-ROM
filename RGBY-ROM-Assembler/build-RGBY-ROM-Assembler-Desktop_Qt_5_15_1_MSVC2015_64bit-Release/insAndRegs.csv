@@ -9,10 +9,11 @@ instruction,adds,add to self,register
 instruction,sub,subtraction,register
 instruction,subs,sub to self,register
 instruction,eq,equals,register
+instruction,shift,shift left,register
 instruction,li,load immediate,immediate
 instruction,delay,delay,immediate
-instruction,bos,branch on one,jump
-instruction,bns,branch on not one,jump
+instruction,bos,branch on set,jump
+instruction,bns,branch on not set,jump
 instruction,j,jump,jump
 register,zero,zero,read-only
 register,one,one,read-only
@@ -22,11 +23,11 @@ register,imm,immediate,cpu
 register,red,red PWM,hardware
 register,green,green PWM,hardware
 register,blue,blue PWM,hardware
-register,porta,port a,hardware
-register,inport,port in,hardware
+register,portOut,port out (LEDs),hardware
+register,portIn,port in,hardware
 register,index,index,general
 register,speed,speed,general
-register,timer,timer,general
+register,phase,phase,general
 register,mode,mode,general
-register,genA,general 2,general
-register,genB,general 3,general
+register,genA,general A,general
+register,genB,general B,general
