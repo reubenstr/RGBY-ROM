@@ -17,8 +17,8 @@ module top (
   output PIN_8,
   output PIN_9,
   output PIN_10,
-  output PIN_12,
-  output PIN_13,
+  input PIN_12,
+  input PIN_13,
   output PIN_14,
   output PIN_15,
     output PIN_16,
@@ -35,53 +35,48 @@ module top (
   assign USBPU = 0;
 
 
-  wire clk = clk_out;
 
+  wire clk;
   wire reset;
   wire [1:0] colorSelect;
   wire [1:0] color;
   wire [7:0] freqCount;
+  wire [7:0] portIn;
   wire [7:0] portOut;
+  wire [7:0] random;
 
   wire [11:0] ramData;
-  wire [7:0] ramAddress;``
+  wire [7:0] ramAddress;
   wire [7:0] debug;
 
-  assign {PIN_17, PIN_8, PIN_19, PIN_5, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
-
-
-
-  assign {PIN_10, PIN_9} = colorSelect[1:0];
-  assign signalFromSensor = PIN_11;
-  //assign clk = CLK;
-
+  // Assign external inputs.
   assign reset = 1;
+  assign signalFromSensor = PIN_11;
 
-  clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk_out));
 
-  // on board LED
-  // blink at 1Hz for clock simply visual clock frequency verification
-  reg [50:0] count;
-  reg toggle;
-  always @(posedge clk) begin
-    if (count == 1000000) begin
-      count <= 0;
-      LED <= toggle;
-      toggle <= ~toggle;
-    end else begin
-      count <= count + 1;
-    end
-  end
-  //////////////////////
+  // Assign external outputs.
+  assign {PIN_17, PIN_8, PIN_19, PIN_5, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
+  assign {PIN_10, PIN_9} = colorSelect[1:0];
 
+  // Reduce 8MHz clock down to 1MHz for timing math simplification.
+  clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
+
+  // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
+ ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
+
+  // Debounce and assign input buttons.
+  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
+  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(PIN_12), .buttonOut(portIn[1]));
+
+  random random1(.clk(clk), .reset(reset), .number(random[7:0]));
 
   motionController motionController1(
     .clk(clk),
     .reset(reset),
-    .xLimitMinus(PIN_21),
-    .xLimitPlus(PIN_22),
-    .xDirection(PIN_12),
-    .xStep(PIN_13),
+    .xLimitMinus(),
+    .xLimitPlus(),
+    .xDirection(),
+    .xStep(),
     .centerOfNib(startDetection),
     .opCompleted(opCompleted));
 
@@ -94,7 +89,6 @@ module top (
     .dataReady(dataReady),
     .color(color),
     .freqCount(freqCount));
-
 
   ramController ram1(
     .clk(clk),
@@ -109,6 +103,8 @@ module top (
     .reset(reset),
     .instruction(ramData),
     .programCounter(ramAddress),
+    .portIn(portIn),
+    .random(random),
     .portOut(portOut),
     .debug(debug)
   );
@@ -141,14 +137,16 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
-module cpu(clk, reset, instruction, programCounter, portOut, debug);
-
-  input clk;
-  input reset;
-  input [11:0] instruction;
-  output [7:0] programCounter;
-  output [7:0] portOut;
-  output [7:0] debug;
+module cpu(
+  input clk,
+  input reset,
+  input [11:0] instruction,
+  input [7:0] portIn,
+  input [7:0] random,
+  output [7:0] programCounter,
+  output [7:0] portOut,
+  output [7:0] debug
+  );
 
   ////////////////////
   // debugging
@@ -167,9 +165,6 @@ module cpu(clk, reset, instruction, programCounter, portOut, debug);
   wire [7:0] registerA;
   wire [7:0] registerB;
   wire [7:0] writeData;
-  //wire [7:0] portOut;
-
-
 
   controller controller(
     .clk(clk),
@@ -191,7 +186,8 @@ module cpu(clk, reset, instruction, programCounter, portOut, debug);
     .selectWriteRegister(selectWriteRegister),
     .writeData(writeData),
     .writeEnable(ctrlWriteRegister),
-    .inportIn(),
+    .portIn(portIn),
+    .random(random),
     .registerA(registerA),
     .registerB(registerB),
     .registerPortOut(portOut),
@@ -306,6 +302,11 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
+
+// Contains registers used by the CPU.
+//
+// portIn is a special register that indicates button presses and
+// is cleared upon read.
 module registers(
   input clk,
   input reset,
@@ -314,7 +315,8 @@ module registers(
   input [3:0] selectWriteRegister,
   input [7:0] writeData,
   input writeEnable,
-  input [1:0] inportIn,
+  input [7:0] portIn,
+  input [7:0] random,
   output [7:0] registerA,
   output [7:0] registerB,
   output [7:0] registerPortOut,
@@ -323,34 +325,43 @@ module registers(
   output [7:0] registerPWMBlue);
 
   reg [7:0] registers [15:0];
-  initial registers [0] = 8'h00;
-  initial registers [1] = 8'h01;
 
-  wire [7:0] randomNumber;
-  random random(.clk(clk), .reset(reset), .number(randomNumber[7:0]));
+  initial registers [`REG_ZERO] = 8'h00;
+  initial registers [`REG_ONE] = 8'h01;
 
+  // Assign output registers to selected registers.
   assign registerA = registers[selectRegisterA];
   assign registerB = registers[selectRegisterB];
 
-  // write data to selected register
   always@(posedge clk)
     begin
         if (writeEnable) begin
-          // Make read-only regs read-only.
+          // Make read-only registers read-only.
           if (selectWriteRegister != `REG_ZERO &&
-              selectWriteRegister != `REG_ONE)
+              selectWriteRegister != `REG_ONE &&
+              selectWriteRegister != `REG_PORTIN)
               begin
+                // Write data to selected register.
                 registers[selectWriteRegister] <= writeData;
           end
-
-          registers[`REG_RAND] <= randomNumber;
-
         end
+
+        // Assign hardware ports to registers.
+        registers[`REG_RAND] <= random;
+
+        // Assign portIn data upon new data.
+        if (portIn[0] == 1) registers[`REG_PORTIN] <= 1;
+        if (portIn[1] == 1) registers[`REG_PORTIN] <= 2;
+
+        // Clear portIn on read.
+        if (selectRegisterA == `REG_PORTIN)
+        registers[selectRegisterA] <= 0;
+        if (selectRegisterB == `REG_PORTIN)
+        registers[selectRegisterB] <= 0;
+
     end
 
-
-
-  // continuous assignments for hardware ports
+  // Assign registers to hardware ports.
   assign registerPortOut = registers[`REG_PORTOUT];
   assign registerPWMRed = registers[`REG_RED];
   assign registerPWMGreen = registers[`REG_GREEN];
@@ -360,6 +371,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
+// Arithmetic logic unit; performs arithmetic operations.
 module alu(
   input clk,
   input reset,
@@ -390,7 +402,7 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
-
+// Contains program memory sourced from the RGBY-ROM data cartridge.
 module ramController(
   input clk,
   input reset,
@@ -567,43 +579,6 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////////////
 
-// pulse extender
-// extends step signal by X clock cycles for stepper driver stability
-// 2^4 = 16 clock cycles
-module pulseExtender(
-  input clk,
-  input reset,
-  input signal,
-  output reg extendedSignal);
-
-  reg [3:0] clockCount;
-  reg countFlag;
-
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      clockCount <= 0;
-      countFlag <= 0;
-      extendedSignal <= 0;
-    end
-  else begin
-    if (signal) begin
-      countFlag <= 1;
-      extendedSignal <= 1;
-    end
-    if (countFlag) begin
-      if (clockCount == 4'b1111) begin
-        extendedSignal <= 0;
-        countFlag <=0;
-        clockCount <= 0;
-      end else begin
-        clockCount <= clockCount + 1;
-      end
-    end
-  end
-
-endmodule
-
-//////////////////////////////////////////////////////////////////////////////
 
 module color (
   input clk,
@@ -721,26 +696,6 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////////////
 
-// detect edge of asynchronous signal
-// assert flag for one clock cycle upon edge
-module edgeDetect(clk, reset, signalIn, edgeFlag);
-  input clk, reset, signalIn;
-  output reg edgeFlag;
-  reg [2:0] edge_mem;
-
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      edge_mem <= 3'b0;
-      edgeFlag <= 1'b0;
-    end
-  else begin
-    edge_mem <= {edge_mem[1:0], signalIn};
-    edgeFlag <= edge_mem[1] ^ edge_mem[2];
-  end
-endmodule
-
-//////////////////////////////////////////////////////////////////////////////
-
 // clock divider
 // divide by 2^3 = 8
 module clockDivider(clk, reset, clk_out);
@@ -781,51 +736,3 @@ module pwmClockDivider(clk, reset, clk_out);
     end
   end
 endmodule
-
-//////////////////////////////////////////////////////////////////////////////
-
-module pwm(clk, reset, duty, signal);
-input clk;
-input reset;
-input [7:0] duty;
-output signal;
-
-reg [7:0] count;
-
-always@(posedge clk or negedge reset)
-  if(!reset) begin
-    count <= 0;
-    signal <= 0;
-  end
-  else begin
-    count <= count + 1;
-  end
-
-assign signal = (duty > count) ? 1 : 0;
-
-endmodule
-
-//////////////////////////////////////////////////////////////////////////////
-
-// ram block per Lattice userguide:
-//http://www.latticesemi.com/~/media/LatticeSemi/Documents/UserManuals/EI/iCEcube2_2013-08_userguide.pdf
-module ram (din, addr, write_en, clk, dout);
-  parameter addr_width = 8;
-  parameter data_width = 12;
-  input [addr_width-1:0] addr;
-  input [data_width-1:0] din;
-  input write_en, clk;
-  output [data_width-1:0] dout;
-  reg [data_width-1:0] mem [(1<<addr_width)-1:0];
-  // Define RAM as an indexed memory array.
-
-  always @(posedge clk) // Control with a clock edge.
-    begin
-      if (write_en) // And control with a write enable.
-        mem[(addr)] <= din;
-    end
-  assign dout = mem[addr];
-
-endmodule
-
-//////////////////////////////////////////////////////////////////////////////
