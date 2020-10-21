@@ -2,7 +2,8 @@
 
 L:begin
 
-
+# delay
+delay, 100
 
 #############
 # check mode button
@@ -13,20 +14,13 @@ adds, mode, one
 li, 3
 eq, mode, imm
 bns, L:modeEnd
-mov, speed, zero
+mov, mode, zero
 L:modeEnd
 #############
-
-# delay
-delay, 100
-
-#TEMP
-j,L:modeRand
 
 
 #############
 # route mode
-L:routeMode
 
 # if (mode == 0)
 eq, mode, zero
@@ -40,9 +34,7 @@ bos, L:modeCount
 li, 2
 eq, mode, imm
 bos, L:modeRand
-
 #############
-
 
 
 #############
@@ -93,8 +85,8 @@ j, L:begin
 #############
 # Count up LED pattern
 L:modeCount
-adds, index, one
-mov, portOut, index
+adds, genA, one
+mov, portOut, genA
 j, L:begin
 #############
 

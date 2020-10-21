@@ -34,8 +34,6 @@ module top (
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
 
-
-
   wire clk;
   wire reset;
   wire [1:0] colorSelect;
@@ -227,13 +225,41 @@ module pc(
   input [7:0] instruction,
   output reg [7:0] programCounter);
 
-  wire [7:0] updatedProgramCounter;
+  //wire [7:0] updatedProgramCounter;
+
   wire addImmediate;
   reg [23:0] delayCounter; // TODO: scale this reg down
 
   initial delayCounter = 0;
 
-  // increment program counter, or set to immediate
+  // Increment program counter.
+  always@(posedge clk or negedge reset)
+    if(!reset) begin
+      programCounter <= 0;
+    end else begin
+      // Increment MUX.
+      programCounter <= (ctrlPcSelect == 1) ?  instruction : programCounter + addImmediate;
+    end
+
+  // Increment delay counter.
+  always@(posedge clk) begin
+    if (ctrlPcDelay) begin
+      if (delayCounter != (instruction << 10))
+        delayCounter <= delayCounter + 1;
+      else
+        delayCounter <= 0;
+    end
+  end
+
+  // Increment MUX.
+  assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
+
+  // PC Source MUX
+  //assign updatedProgramCounter[7:0]  = (ctrlPcSelect == 1) ?  instruction[7:0] : programCounter[7:0]  + addImmediate;
+
+
+/*
+  // Increment program counter.
   always@(posedge clk or negedge reset)
     if(!reset) begin
       programCounter <= 0;
@@ -255,7 +281,9 @@ module pc(
   assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
 
   // PC Source MUX
-  assign updatedProgramCounter[7:0]  = (ctrlPcSelect == 0) ? programCounter[7:0]  + addImmediate : instruction[7:0];
+  assign updatedProgramCounter[7:0]  = (ctrlPcSelect == 1) ?
+       instruction[7:0] : programCounter[7:0]  + addImmediate;
+       */
 
 endmodule
 
@@ -284,7 +312,7 @@ module controller(
   assign ctrlPcDelay = (opCode == `OPCODE_DELAY) ? 1 : 0;
 
   // select register write data source
-  assign ctrlWriteSource = (opCode == `OPCODE_LI) ? 1 : 0; // load immediate
+  assign ctrlWriteSource = (opCode == `OPCODE_LI) ? 1 : 0;
 
   // enable register writes for valid opcodes
   assign ctrlWriteRegister =
@@ -297,10 +325,7 @@ module controller(
   assign selectWriteRegister =
     (opCode == `OPCODE_LI) ? `REG_IMM :
     (opCode == `OPCODE_MOV || opCode == `OPCODE_ADDS || opCode == `OPCODE_SUBS) ? instruction[7:4] : `REG_RESULT;
-
 endmodule
-
-/////////////////////////////////////////////////////////////////////////////
 
 
 // Contains registers used by the CPU.
@@ -390,14 +415,14 @@ module alu(
     (aluOpCode == `OPCODE_ADD || aluOpCode == `OPCODE_ADDS) ? dataA + dataB :
     (aluOpCode == `OPCODE_SUB || aluOpCode == `OPCODE_SUBS) ? dataA - dataB : 0;
 
-    always@(posedge clk or negedge reset)
-      if(!reset) begin
-          set = 0;
-      end
-        else begin
-          if (aluOpCode == `OPCODE_SLT) set = dataA < dataB;
-          if (aluOpCode == `OPCODE_EQ) set =  dataA == dataB;
+    always@(posedge clk)
+       begin
+          if (aluOpCode == `OPCODE_SLT)
+            set <= dataA < dataB;
+          else if (aluOpCode == `OPCODE_EQ)
+            set <=  dataA == dataB;
         end
+
 endmodule
 
 /////////////////////////////////////////////////////////////////////////////
