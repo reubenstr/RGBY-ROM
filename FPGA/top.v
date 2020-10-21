@@ -183,7 +183,7 @@ module cpu(
     .selectRegisterB(instruction[3:0]),
     .selectWriteRegister(selectWriteRegister),
     .writeData(writeData),
-    .writeEnable(ctrlWriteRegister),
+    .ctrlWriteRegister(ctrlWriteRegister),
     .portIn(portIn),
     .random(random),
     .registerA(registerA),
@@ -211,7 +211,7 @@ module cpu(
     .programCounter(programCounter));
 
   // Writeback MUX
-  assign writeData = (ctrlWriteSource == 0) ? aluResult : instruction[7:0];
+  assign writeData = (ctrlWriteSource == 1) ?  instruction[7:0] : aluResult;
 
 endmodule
 
@@ -228,7 +228,7 @@ module pc(
   //wire [7:0] updatedProgramCounter;
 
   wire addImmediate;
-  reg [23:0] delayCounter; // TODO: scale this reg down
+  reg [25:0] delayCounter; // TODO: scale this reg down
 
   initial delayCounter = 0;
 
@@ -252,38 +252,8 @@ module pc(
   end
 
   // Increment MUX.
+  //assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
   assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
-
-  // PC Source MUX
-  //assign updatedProgramCounter[7:0]  = (ctrlPcSelect == 1) ?  instruction[7:0] : programCounter[7:0]  + addImmediate;
-
-
-/*
-  // Increment program counter.
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      programCounter <= 0;
-    end else begin
-      programCounter <= updatedProgramCounter;
-    end
-
-  // create delay
-  always@(posedge clk) begin
-    if (ctrlPcDelay) begin
-      if (delayCounter != (instruction << 10))
-        delayCounter <= delayCounter + 1;
-      else
-        delayCounter <= 0;
-    end
-  end
-
-  // Increment MUX
-  assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
-
-  // PC Source MUX
-  assign updatedProgramCounter[7:0]  = (ctrlPcSelect == 1) ?
-       instruction[7:0] : programCounter[7:0]  + addImmediate;
-       */
 
 endmodule
 
@@ -331,7 +301,8 @@ endmodule
 // Contains registers used by the CPU.
 //
 // portIn is a special register that indicates button presses and
-// is cleared upon read.
+// requires machine code for the register to be cleared after reading.
+
 module registers(
   input clk,
   input reset,
@@ -339,7 +310,7 @@ module registers(
   input [3:0] selectRegisterB,
   input [3:0] selectWriteRegister,
   input [7:0] writeData,
-  input writeEnable,
+  input ctrlWriteRegister,
   input [7:0] portIn,
   input [7:0] random,
   output [7:0] registerA,
@@ -360,11 +331,11 @@ module registers(
 
   always@(posedge clk)
     begin
-        if (writeEnable) begin
+        if (ctrlWriteRegister) begin
           // Make read-only registers read-only.
           if (selectWriteRegister != `REG_ZERO &&
               selectWriteRegister != `REG_ONE &&
-              selectWriteRegister != `REG_PORTIN)
+              selectWriteRegister != `REG_RAND)
               begin
                 // Write data to selected register.
                 registers[selectWriteRegister] <= writeData;
@@ -374,16 +345,9 @@ module registers(
         // Assign hardware ports to registers.
         registers[`REG_RAND] <= random;
 
-        // Assign portIn data upon new data.
-        if (portIn[0] == 1) registers[`REG_PORTIN] <= 1;
-        if (portIn[1] == 1) registers[`REG_PORTIN] <= 2;
-
-        // Clear portIn on read.
-        if (selectRegisterA == `REG_PORTIN)
-        registers[selectRegisterA] <= 0;
-        if (selectRegisterB == `REG_PORTIN)
-        registers[selectRegisterB] <= 0;
-
+        // Assign portIn data when register is not being written.
+        if (!ctrlWriteRegister || selectWriteRegister != `REG_PORTIN)
+          registers[`REG_PORTIN] <= registers[`REG_PORTIN]  | portIn;
     end
 
   // Assign registers to hardware ports.

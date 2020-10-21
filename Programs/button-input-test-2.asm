@@ -9,6 +9,8 @@ bns, L:modeEnd
 adds, mode, one
 L:modeEnd
 
+delay, 200
+
 # output mode value
 mov, portOut, mode
 

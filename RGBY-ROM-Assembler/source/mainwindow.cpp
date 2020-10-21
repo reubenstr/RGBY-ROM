@@ -358,7 +358,7 @@ QString MainWindow::parseLine(QString line, int lineNum)
 
         // append instruction
         hexString.append(instructionHex);
-        hexString.append(QString("%1").arg(dec, 2, 16, QChar('0')));
+        hexString.append(QString("%1").arg(dec, 2, 16, QChar('0')).toUpper());
 
     }
     else if (instructionType == "jump")
@@ -386,7 +386,7 @@ QString MainWindow::parseLine(QString line, int lineNum)
 
         // append instruction
         hexString.append(instructionHex);
-        hexString.append(QString("%1").arg(QString::number(offset).toInt(), 2, 16, QChar('0'))); // convert to hex with leading zeros
+        hexString.append(QString("%1").arg(QString::number(offset).toInt(), 2, 16, QChar('0')).toUpper()); // convert to hex with leading zeros
 
     }
     else

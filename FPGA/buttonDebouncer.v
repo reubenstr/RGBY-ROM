@@ -4,44 +4,40 @@
 // Button in is active low
 // Button out is active high
 
+// Code adapted from: https://www.fpga4fun.com/Debouncer2.html
 module buttonController(
-  input clk,
-  input reset,
-  input buttonIn,
-  output reg buttonOut
-  );
+    input clk,
+    input reset,
+    input buttonIn,  // "PB" is the glitchy, asynchronous to clk, active low push-button signal
 
-reg [50:0] count;
+    // from which we make three outputs, all synchronous to the clock
+    output reg PB_state,  // 1 as long as the push-button is active (down)
+    output buttonOut,  // 1 for one clock cycle when the push-button goes down (i.e. just pushed)
+    output PB_up   // 1 for one clock cycle when the push-button goes up (i.e. just released)
+);
 
-parameter pressed = 1'b0;
-parameter released = 1'b1;
-parameter low = 1'b0;
-parameter high = 1'b1;
+// First use two flip-flops to synchronize the PB signal the "clk" clock domain
+reg PB_sync_0;  always @(posedge clk) PB_sync_0 <= ~buttonIn;  // invert PB to make PB_sync_0 active high
+reg PB_sync_1;  always @(posedge clk) PB_sync_1 <= PB_sync_0;
 
-reg state;
+// Next declare a 16-bits counter
+reg [10:0] PB_cnt;
 
-always @(posedge clk) begin
+// When the push-button is pushed or released, we increment the counter
+// The counter has to be maxed out before we decide that the push-button state has changed
 
-  if (buttonOut == high)
-  begin
-    buttonOut <= low;
-    count <= 0;
-  end
-  else begin
+wire PB_idle = (PB_state == PB_sync_1);
+wire PB_cnt_max = &PB_cnt;	// true when all bits of PB_cnt are 1's
 
-    if (buttonIn == pressed)
-    begin
-      if (count == 10000)
-      begin
-          buttonOut <= high;
-      end
-      count <= 0;
-    end
-    else if (buttonIn == released)
-    begin
-      if (count < 10000) count <= count + 1;
-    end
-  end
+always @(posedge clk)
+if(PB_idle)
+    PB_cnt <= 0;  // nothing's going on
+else
+begin
+    PB_cnt <= PB_cnt + 10'd1;  // something's going on, increment the counter
+    if(PB_cnt_max) PB_state <= ~PB_state;  // if the counter is maxed out, PB changed!
 end
 
+assign buttonOut = ~PB_idle & PB_cnt_max & ~PB_state;
+assign PB_up   = ~PB_idle & PB_cnt_max &  PB_state;
 endmodule

@@ -1,25 +1,68 @@
 # RGBY-ROM: LED Patterns
+# 3 patterns
+# 3 speeds
 
 L:begin
 
-# delay
-delay, 100
+####################
+# check input buttons
 
-#############
+# save portIn state
+mov, genB, portIn
+
+# clear portIn per
+# CPU requirements
+mov, portIn, zero
+
 # check mode button
-eq, portIn, one
-bns, L:modeEnd
+eq, genB, one
+bns, L:modeCheckEnd
 adds, mode, one
 # if (mode == 3)mode = 0
 li, 3
 eq, mode, imm
-bns, L:modeEnd
+bns, L:modeCheckEnd
 mov, mode, zero
-L:modeEnd
-#############
+L:modeCheckEnd
+
+# check speed button
+li, 2
+eq, genB, imm
+bns, L:speedCheckEnd
+adds, speed, one
+# if (speed == 3)speed = 0
+li, 3
+eq, speed, imm
+bns, L:speedCheckEnd
+mov, speed, zero
+L:speedCheckEnd
+####################
 
 
-#############
+####################
+# set delay
+
+# if (speed == 0)
+eq, speed, zero
+bos, L:speedZero
+eq, speed, one
+bos, L:speedOne
+# assume speed == 2
+# li, 2
+# eq, speed, imm
+# bos, L:speedTwo
+
+
+L:speedTwo
+delay, 50
+L:speedOne
+delay, 50
+L:speedZero
+delay, 50 
+####################
+
+
+####################
 # route mode
 
 # if (mode == 0)
@@ -30,23 +73,34 @@ bos, L:modeKit
 eq, mode, one
 bos, L:modeCount
 
+# assume mode == 2
 # if (mode == 2)
-li, 2
-eq, mode, imm
-bos, L:modeRand
-#############
+# li, 2
+# eq, mode, imm
+# bos, L:modeSparkle
+####################
+
+####################
+# Sparkle LED pattern
+L:modeSparkle
+li, 7
+and, imm, rand
+shift, one, result
+mov, portOut, result
+j, L:begin
+####################
 
 
-#############
+####################
 # Kit LED pattern
 L:modeKit
 
 # index++
 adds, index, one
 
-# if (index == 8) index = 0
-li, 8
-eq, index, imm
+# if (index > 7) index = 0
+li, 7
+slt, imm, index
 bns, L:endPhaseToggle
 mov, index, zero
 
@@ -58,9 +112,7 @@ mov, phase, zero
 j, L:endPhaseToggle
 L:phaseSetOne
 mov, phase, one
-
 L:endPhaseToggle
-
 
 # Opposite direction
 # if (phase == 1) 
@@ -78,25 +130,16 @@ shift, one, genA
 mov, portOut, result
 
 j, L:begin
-#############
+####################
 
 
-
-#############
+####################
 # Count up LED pattern
 L:modeCount
-adds, genA, one
-mov, portOut, genA
+adds, index, one
+mov, portOut, index
 j, L:begin
-#############
-
-
-#############
-# Random LED pattern
-L:modeRand
-mov, portOut, rand
-j, L:begin
-#############
+####################
 
 
 

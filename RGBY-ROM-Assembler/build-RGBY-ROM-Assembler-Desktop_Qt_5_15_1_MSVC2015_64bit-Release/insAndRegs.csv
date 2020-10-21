@@ -7,8 +7,8 @@ instruction,slt,set less than,register
 instruction,add,addition,register
 instruction,adds,add to self,register
 instruction,sub,subtraction,register
-instruction,subs,sub to self,register
-instruction,eq,equals,register
+instruction,subs,subtract to self,register
+instruction,eq,set on equal,register
 instruction,shift,shift left,register
 instruction,li,load immediate,immediate
 instruction,delay,delay,immediate
