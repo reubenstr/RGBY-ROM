@@ -1,5 +1,5 @@
-# RGBY-ROM:  
-# Button Input Test
+# test button debounce
+# test button masking
 
 L:begin
 
@@ -9,8 +9,6 @@ bns, L:modeEnd
 adds, mode, one
 L:modeEnd
 
-# output mode value
 mov, portOut, mode
 
 j, L:begin
-

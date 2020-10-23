@@ -1,4 +1,3 @@
-
 module ledBlinker(
   input clk,
   input reset,

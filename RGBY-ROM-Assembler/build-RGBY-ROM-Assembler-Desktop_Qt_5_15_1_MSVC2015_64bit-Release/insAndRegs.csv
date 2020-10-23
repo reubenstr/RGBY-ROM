@@ -3,13 +3,13 @@ instruction,mov,move,register
 instruction,and,and,register
 instruction,or,or,register
 instruction,xor,xor,register
-instruction,slt,set less than,register
 instruction,add,addition,register
 instruction,adds,add to self,register
 instruction,sub,subtraction,register
-instruction,subs,subtract to self,register
-instruction,eq,set on equal,register
+instruction,sin,convert to sin,register
 instruction,shift,shift left,register
+instruction,eq,set on equal,register
+instruction,slt,set less than,register
 instruction,li,load immediate,immediate
 instruction,delay,delay,immediate
 instruction,bos,branch on set,jump

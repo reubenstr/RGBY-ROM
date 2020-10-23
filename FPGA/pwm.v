@@ -10,8 +10,7 @@ reg [7:0] count;
 
 always@(posedge clk or negedge reset)
   if(!reset) begin
-    count <= 0;
-    signal <= 0;
+    count <= 0;    
   end
   else begin
     count <= count + 1;

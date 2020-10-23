@@ -1,4 +1,7 @@
 # RGBY-ROM: Revolve / Rotate
+# Program may overflow max instructions.
+# rotate requires more color selection
+# modifications.
 
 L:begin
 
@@ -27,9 +30,8 @@ li, 2
 eq, genB, imm
 bns, L:speedCheckEnd
 adds, speed, one
-# if (speed == 3)speed = 0
-li, 3
-eq, speed, imm
+# if (speed > 1)speed = 0
+slt, one, speed
 bns, L:speedCheckEnd
 mov, speed, zero
 L:speedCheckEnd
@@ -39,22 +41,28 @@ L:speedCheckEnd
 ####################
 # set delay
 
-# if (speed == 0)
-eq, speed, zero
-bos, L:speedZero
-eq, speed, one
-bos, L:speedOne
-# assume speed == 2
-# li, 2
-# eq, speed, imm
-# bos, L:speedTwo
+# if (mode == 0)
+eq, mode, zero
+bos, L:speedRevolve
 
-L:speedTwo
+# if mode is rotate
+L:speedRotate
+delay, 100
+# if (speed == 1)
+eq, speed, one
+bns, L:speedEnd
+delay, 100
+j, L:speedEnd
+
+# if mode is revolve
+L:speedRevolve
 delay, 5
-L:speedOne
+# if (speed == 1)
+eq, speed, one
+bns, L:speedEnd
 delay, 5
-L:speedZero
-delay, 5 
+
+L:speedEnd
 ####################
 
 
@@ -72,11 +80,14 @@ bos, L:modeRevolve
 ####################
 
 
+####################
+# rotate color pattern
 L:modeRotate
 mov, red, rand
 mov, green, rand
 mov, blue, rand
 j,L:begin
+####################
 
 
 ####################
@@ -98,13 +109,17 @@ bns, L:endCheck
 mov, phase, zero
 L:endCheck
 
+# load comparison imm
+# prior to phase jump
+li, 255
+
 ####################
 # Branch to phase
 eq, phase, zero
 bos, L:phaseZero
 eq, phase, one
 bos, L:phaseOne
-# assum (phase == 2)
+# assum phase two
 # li, 2
 # eq, phase, imm
 # bos, L:phaseTwo
@@ -112,28 +127,25 @@ bos, L:phaseOne
 ####################
 # Phases
 
-
 L:phaseTwo
 mov, red, zero
-li, 255
 sub, imm, index
-sin, green, result
-sin, blue, index
+mov, green, result
+mov, blue, index
 j, L:begin
 
 L:phaseOne
-li, 255
 sub, imm, index
-sin, red, result
-sin, green, index
+mov, red, result
+mov, green, index
 mov, blue, zero
 j, L:begin
 
 L:phaseZero
-sin, red, index
+mov, red, index
 mov, green, zero
-li, 255
 sub, imm, index
-sin, blue, result
+mov, blue, result
 j, L:begin
 ####################
+

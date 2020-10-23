@@ -4,12 +4,12 @@
 
 module top (
   input CLK,    // 16MHz clock
-  input PIN_11,
+
   output reg LED,   // User/boot LED next to power LED
   output USBPU,  // USB pull-up resistor
   output PIN_1,
   output PIN_2,
-  output PIN_3,
+  input PIN_3,
   output PIN_4,
   output PIN_5,
   output PIN_6,
@@ -17,11 +17,12 @@ module top (
   output PIN_8,
   output PIN_9,
   output PIN_10,
+  output PIN_11,
   input PIN_12,
   input PIN_13,
   output PIN_14,
   output PIN_15,
-    output PIN_16,
+  output PIN_16,
   output PIN_17,
   output PIN_18,
   output PIN_19,
@@ -45,28 +46,56 @@ module top (
 
   wire [11:0] ramData;
   wire [7:0] ramAddress;
+  wire [7:0] red;
+  wire [7:0] green;
+  wire [7:0] blue;
   wire [7:0] debug;
 
-  // Assign external inputs.
-  assign reset = 1;
-  assign signalFromSensor = PIN_11;
+  wire [3:0] sensorSelect;
 
+
+  // Debounce and assign input buttons.
+  assign reset = 1;
+  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
+  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(PIN_12), .buttonOut(portIn[1]));
 
   // Assign external outputs.
-  assign {PIN_17, PIN_8, PIN_19, PIN_5, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
-  assign {PIN_10, PIN_9} = colorSelect[1:0];
+  // assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
+
+  // Assign sensor bar.
+  assign signalFromSensor = PIN_3;
+  assign {PIN_4, PIN_5, PIN_6, PIN_7} = sensorSelect[3:0];
+  assign {PIN_8, PIN_9} = colorSelect[1:0];
 
   // Reduce 8MHz clock down to 1MHz for timing math simplification.
   clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
 
   // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
- ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
+  ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
 
-  // Debounce and assign input buttons.
-  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
-  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(PIN_12), .buttonOut(portIn[1]));
 
-  random random1(.clk(clk), .reset(reset), .number(random[7:0]));
+
+  // Attach random number generator.
+  random random1(.clk(clk), .reset(reset), .out(random[7:0]));
+
+  // Connect color registers to PWM controllers then output pins.
+  //pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_17));
+  //pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_8));
+  //pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_19));
+
+
+
+  // temp
+
+
+
+
+  // TEMP
+  assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = {4'h0, color[3:0]};
+  //assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = {freqCount};
+  // TEMP
+
+
 
   motionController motionController1(
     .clk(clk),
@@ -75,10 +104,10 @@ module top (
     .xLimitPlus(),
     .xDirection(),
     .xStep(),
-    .centerOfNib(startDetection),
+    .centerOfNib(),
     .opCompleted(opCompleted));
 
-  color colorModule(
+  colorDetector colorDetector(
     .clk(clk),
     .reset(reset),
     .signalFromSensor(signalFromSensor),
@@ -87,6 +116,18 @@ module top (
     .dataReady(dataReady),
     .color(color),
     .freqCount(freqCount));
+
+
+    assign startCycle = 1;
+
+    sensorSelector sensorSelector(
+      .clk(clk),
+      .reset(reset),
+      .startCycle(startCycle),
+      .startDetection(startDetection),
+      .sensorSelect(sensorSelect));
+
+
 
   ramController ram1(
     .clk(clk),
@@ -104,6 +145,9 @@ module top (
     .portIn(portIn),
     .random(random),
     .portOut(portOut),
+    .red(red),
+    .green(green),
+    .blue(blue),
     .debug(debug)
   );
 
@@ -124,326 +168,142 @@ module top (
   */
   //assign ramAddress = addrRead;
 
-  // assign {PIN_1, PIN_2, PIN_3, PIN_4, PIN_5, PIN_6, PIN_7, PIN_8} = { waits[20], state, pulseFromSensor, freqCount[4:0]};
-  // assign {PIN_1, PIN_2, PIN_3, PIN_4, PIN_5, PIN_6, PIN_7, PIN_8} = {freqCount[7:5], dataReady, color[1:0]};
-  // assign {PIN_1, PIN_2, PIN_3, PIN_4, PIN_5, PIN_6, PIN_7, PIN_8} = opCompleted ? 8'b10101010 : freqCount[7:0];
-  // assign {PIN_1, PIN_2, PIN_3, PIN_4, PIN_5, PIN_6, PIN_7, PIN_8} = ramDataOut;
-  // assign {PIN_8, PIN_7, PIN_6, PIN_5, PIN_4, PIN_3, PIN_2, PIN_1} = ramDataOut[7:0];
-  // assign {PIN_8, PIN_7, PIN_6, PIN_5, PIN_4, PIN_3, PIN_2, PIN_1} = opCompleted ? ramDataOut[7:0] : {dout[7:3], dataReady, color[1:0]};
-  // assign {PIN_8, PIN_7, PIN_6, PIN_5, PIN_4, PIN_3, PIN_2, PIN_1} = debug;
 endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
-module cpu(
-  input clk,
-  input reset,
-  input [11:0] instruction,
-  input [7:0] portIn,
-  input [7:0] random,
-  output [7:0] programCounter,
-  output [7:0] portOut,
-  output [7:0] debug
+module sensorSelector(
+   input clk,
+   input reset,
+   input startCycle,
+   output startDetection,
+   output [3:0] sensorSelect
   );
 
-  ////////////////////
-  // debugging
-  // assign debug = {ctrlPcDelay, portA[6:0]};
-  ////////////////////
 
-  wire set;
-  wire [3:0] selectWriteRegister;
-  wire ctrlWriteRegister;
-  wire ctrlPcDelay;
-  wire ctrlPcSelect;
-  wire ctrlLoadImmediate;
-  wire ctrlWriteSource;
+always @(posedge clk) begin
 
-  wire [7:0] aluResult;
-  wire [7:0] registerA;
-  wire [7:0] registerB;
-  wire [7:0] writeData;
+end
 
-  controller controller(
-    .clk(clk),
-    .reset(reset),
-    .instruction(instruction),
-    .set(set),
-    .selectWriteRegister(selectWriteRegister),
-    .ctrlWriteRegister(ctrlWriteRegister),
-    .ctrlPcDelay(ctrlPcDelay),
-    .ctrlPcSelect(ctrlPcSelect),
-    .ctrlLoadImmediate(ctrlLoadImmediate),
-    .ctrlWriteSource(ctrlWriteSource));
-
-  registers registers(
-    .clk(clk),
-    .reset(reset),
-    .selectRegisterA(instruction[7:4]),
-    .selectRegisterB(instruction[3:0]),
-    .selectWriteRegister(selectWriteRegister),
-    .writeData(writeData),
-    .ctrlWriteRegister(ctrlWriteRegister),
-    .portIn(portIn),
-    .random(random),
-    .registerA(registerA),
-    .registerB(registerB),
-    .registerPortOut(portOut),
-    .registerPWMRed(),
-    .registerPWMGreen(),
-    .registerPWMBlue());
-
-  alu alu(
-    .clk(clk),
-    .reset(reset),
-    .aluOpCode(instruction[11:8]),
-    .dataA(registerA),
-    .dataB(registerB),
-    .aluResult(aluResult),
-    .set(set));
-
-  pc pc(
-    .clk(clk),
-    .reset(reset),
-    .ctrlPcDelay(ctrlPcDelay),
-    .ctrlPcSelect(ctrlPcSelect),
-    .instruction(instruction[7:0]),
-    .programCounter(programCounter));
-
-  // Writeback MUX
-  assign writeData = (ctrlWriteSource == 1) ?  instruction[7:0] : aluResult;
 
 endmodule
 
-/////////////////////////////////////////////////////////////////////////////
-
-module pc(
+module colorDetector (
   input clk,
   input reset,
-  input ctrlPcDelay,
-  input ctrlPcSelect,
-  input [7:0] instruction,
-  output reg [7:0] programCounter);
+  input signalFromSensor,
+  input startDetection,
+  output [1:0] colorSelect,
+  output reg dataReady,
+  output reg [1:0] color,
+  output [7:0] freqCount
+);
 
-  //wire [7:0] updatedProgramCounter;
+  edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(signalFromSensor), .edgeFlag(edgeFlag));
 
-  wire addImmediate;
-  reg [25:0] delayCounter; // TODO: scale this reg down
+  // temp for debugging
+  //assign freqCount[7:2] = redFreq;
+  //assign freqCount[1:0] = color;
+  //assign freqCount[7:0] = greenFreq;
+  ///
 
-  initial delayCounter = 0;
+  reg [7:0] freqCount; //temp
 
-  // Increment program counter.
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      programCounter <= 0;
-    end else begin
-      // Increment MUX.
-      programCounter <= (ctrlPcSelect == 1) ?  instruction : programCounter + addImmediate;
-    end
-
-  // Increment delay counter.
-  always@(posedge clk) begin
-    if (ctrlPcDelay) begin
-      if (delayCounter != (instruction << 10))
-        delayCounter <= delayCounter + 1;
-      else
-        delayCounter <= 0;
-    end
-  end
-
-  // Increment MUX.
-  //assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
-  assign addImmediate = (delayCounter != (instruction << 10) && ctrlPcDelay == 1) ? 0 : 1;
-
-endmodule
-
-/////////////////////////////////////////////////////////////////////////////
-
-module controller(
-  input clk,
-  input reset,
-  input [11:0] instruction,
-  input set,
-  output [3:0] selectWriteRegister,
-  output ctrlPcDelay,
-  output ctrlPcSelect,
-  output ctrlWriteRegister,
-  output ctrlLoadImmediate,
-  output ctrlWriteSource);
-
-  wire [3:0] opCode = instruction[11:8];
-
-  // select PC source
-  assign ctrlPcSelect = (opCode == `OPCODE_BOS && set == 1) ? 1 :
-    (opCode == `OPCODE_BNS && set == 0) ? 1 :
-    (opCode == `OPCODE_J) ? 1 : 0;
-
-  // enable PC delay
-  assign ctrlPcDelay = (opCode == `OPCODE_DELAY) ? 1 : 0;
-
-  // select register write data source
-  assign ctrlWriteSource = (opCode == `OPCODE_LI) ? 1 : 0;
-
-  // enable register writes for valid opcodes
-  assign ctrlWriteRegister =
-    (opCode == `OPCODE_MOV || opCode == `OPCODE_AND || opCode == `OPCODE_OR ||
-     opCode == `OPCODE_XOR || opCode == `OPCODE_ADD || opCode == `OPCODE_ADDS ||
-     opCode == `OPCODE_SUB || opCode == `OPCODE_SUBS || opCode == `OPCODE_LI ||
-     opCode == `OPCODE_SHIFT) ? 1 : 0;
-
-  // select which register to write
-  assign selectWriteRegister =
-    (opCode == `OPCODE_LI) ? `REG_IMM :
-    (opCode == `OPCODE_MOV || opCode == `OPCODE_ADDS || opCode == `OPCODE_SUBS) ? instruction[7:4] : `REG_RESULT;
-endmodule
+  reg [23:0] color_count;
+  reg [17:0] color_freq;
+  reg [7:0] redFreq;
+  reg [7:0] greenFreq;
+  reg [7:0] blueFreq;
 
 
-// Contains registers used by the CPU.
-//
-// portIn is a special register that indicates button presses and
-// requires machine code for the register to be cleared after reading.
+  reg [2:0] masterState;
+  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2, PROCESS_COUNT = 3, DECIDE_COLOR = 4;
+  initial masterState = WAIT_FOR_START;
 
-module registers(
-  input clk,
-  input reset,
-  input [3:0] selectRegisterA,
-  input [3:0] selectRegisterB,
-  input [3:0] selectWriteRegister,
-  input [7:0] writeData,
-  input ctrlWriteRegister,
-  input [7:0] portIn,
-  input [7:0] random,
-  output [7:0] registerA,
-  output [7:0] registerB,
-  output [7:0] registerPortOut,
-  output [7:0] registerPWMRed,
-  output [7:0] registerPWMGreen,
-  output [7:0] registerPWMBlue);
+  // the colorState is the color being detected
+  // the state value coincides with the S3 and S2 color select pins of the TCS32000 color sensor
+  // {S3,S2} = {0,0} = red
+  // {S3,S2} = {1,1} = green
+  // {S3,S2} = {1,0} = blue
+  // {S3,S2} = {1,1} = all colors
+  reg [1:0] colorState;
+  parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10;
+  initial colorState = RED;
+  assign colorSelect = colorState;
 
-  reg [7:0] registers [15:0];
+  /////////////////////
 
-  initial registers [`REG_ZERO] = 8'h00;
-  initial registers [`REG_ONE] = 8'h01;
+  always @(posedge clk) begin
 
-  // Assign output registers to selected registers.
-  assign registerA = registers[selectRegisterA];
-  assign registerB = registers[selectRegisterB];
+    case(masterState)
 
-  always@(posedge clk)
-    begin
-        if (ctrlWriteRegister) begin
-          // Make read-only registers read-only.
-          if (selectWriteRegister != `REG_ZERO &&
-              selectWriteRegister != `REG_ONE &&
-              selectWriteRegister != `REG_RAND)
-              begin
-                // Write data to selected register.
-                registers[selectWriteRegister] <= writeData;
-          end
+      WAIT_FOR_START : begin
+
+        freqCount[7:0] <= color; // TEMP
+
+        dataReady <= 0;
+        if (startDetection) begin
+          masterState <= WAIT_FOR_FIRST_EDGE;
         end
-
-        // Assign hardware ports to registers.
-        registers[`REG_RAND] <= random;
-
-        // Assign portIn data when register is not being written.
-        if (!ctrlWriteRegister || selectWriteRegister != `REG_PORTIN)
-          registers[`REG_PORTIN] <= registers[`REG_PORTIN]  | portIn;
-    end
-
-  // Assign registers to hardware ports.
-  assign registerPortOut = registers[`REG_PORTOUT];
-  assign registerPWMRed = registers[`REG_RED];
-  assign registerPWMGreen = registers[`REG_GREEN];
-  assign registerPWMBlue = registers[`REG_RED];
-
-endmodule
-
-/////////////////////////////////////////////////////////////////////////////
-
-// Arithmetic logic unit; performs arithmetic operations.
-module alu(
-  input clk,
-  input reset,
-  input [3:0] aluOpCode,
-  input [7:0] dataA,
-  input [7:0] dataB,
-  output [7:0] aluResult,
-  output reg set);
-
-  assign aluResult =
-    (aluOpCode == `OPCODE_MOV) ? dataB :
-    (aluOpCode == `OPCODE_AND) ? dataA & dataB :
-    (aluOpCode == `OPCODE_OR) ? dataA | dataB :
-    (aluOpCode == `OPCODE_XOR) ? dataA ^ dataB :
-    (aluOpCode == `OPCODE_SHIFT) ? dataA << dataB :
-    (aluOpCode == `OPCODE_ADD || aluOpCode == `OPCODE_ADDS) ? dataA + dataB :
-    (aluOpCode == `OPCODE_SUB || aluOpCode == `OPCODE_SUBS) ? dataA - dataB : 0;
-
-    always@(posedge clk)
-       begin
-          if (aluOpCode == `OPCODE_SLT)
-            set <= dataA < dataB;
-          else if (aluOpCode == `OPCODE_EQ)
-            set <=  dataA == dataB;
-        end
-
-endmodule
-
-/////////////////////////////////////////////////////////////////////////////
-
-// Contains program memory sourced from the RGBY-ROM data cartridge.
-module ramController(
-  input clk,
-  input reset,
-  input colorFlag,
-  input [1:0] color,
-  input [7:0] address,
-  output [11:0] dout);
-
-  reg writeEn;
-
-  reg [7:0] dataWriteAddress;
-  reg [11:0] dataToWrite;
-  reg [4:0] dataSectionCount;
-
-  reg [7:0] ramAddress; // should be a with with mux assignment, but due to compiler issues this is a work around
-
-  //ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
-  ramHardcoded ram1(.din(dataToWrite), .addr(address), .write_en(writeEn), .clk(clk), .dout(dout)); // TEMP
-
-  /*
-  //assign ramAddress = writeEn ? dataWriteAddress : addr;
-
-  // store color into ram, where six 2-bit nibs equal one 12-bit ram address
-  // shift two bits at a time (per color)
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      dataWriteAddress <= 0;
-      dataSectionCount <= 0;
-      writeEn <= 0;
-    end
-  else begin
-
-    if (colorFlag) begin
-      dataToWrite <= (dataToWrite << 2) | color;
-      dataSectionCount <= dataSectionCount + 1;
-    end else begin
-      if (dataSectionCount == 6) begin
-        dataSectionCount <= 0;
-        dataWriteAddress <= dataWriteAddress + 1;
-        writeEn <= 1;
-        ramAddress <= dataWriteAddress;
-      end else begin
-        writeEn <= 0;
-        ramAddress <= address;
       end
-    end
+
+      WAIT_FOR_FIRST_EDGE : begin
+        if (edgeFlag) begin
+          color_count <= 0;
+          masterState <= COUNT_ELASPED_TIME;
+        end
+      end
+
+      COUNT_ELASPED_TIME : begin
+        if (edgeFlag) begin
+          masterState <= PROCESS_COUNT;
+        end else begin
+          color_count <= color_count + 1;
+        end
+      end
+
+      PROCESS_COUNT : begin
+        case(colorState)
+          RED : begin
+            redFreq <= color_count[10:3];
+            freqCount[7:0] <= color_count[10:3]; // TEMP
+            masterState <= WAIT_FOR_FIRST_EDGE;
+            colorState <= GREEN;
+          end
+          GREEN : begin
+            greenFreq <= color_count[10:3];
+            //freqCount[7:0] <= color_count[10:3]; // TEMP
+            masterState <= WAIT_FOR_FIRST_EDGE;
+            colorState <= BLUE;
+          end
+          BLUE : begin
+            blueFreq <= color_count[10:3];
+            //freqCount[7:0] <= color_count[10:3]; // TEMP
+            masterState <= DECIDE_COLOR;
+            colorState <= RED;
+          end
+        endcase
+      end
+
+      DECIDE_COLOR : begin
+        dataReady <= 1;
+        masterState <= WAIT_FOR_START;
+        // detecting yellow is tricky, but luckily due to the acrylic colors,
+        // blue is only the highest value (least light) with the yellow acrylic
+        if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
+        else if (redFreq < greenFreq && redFreq < blueFreq) color <= 2'b00; // red
+        else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
+        else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
+        else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
+      end
+
+    endcase
   end
-*/
+
 endmodule
 
+//////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////
 
 module motionController (
   input clk,
@@ -566,124 +426,62 @@ module motionController (
 
 endmodule
 
-//////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////
 
-module color (
+// Contains program memory sourced from the RGBY-ROM data cartridge.
+module ramController(
   input clk,
   input reset,
-  input signalFromSensor,
-  input startDetection,
-  output [1:0] colorSelect,
-  output reg dataReady,
-  output reg [1:0] color,
-  output [7:0] freqCount
-);
+  input colorFlag,
+  input [1:0] color,
+  input [7:0] address,
+  output [11:0] dout);
 
-  edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(signalFromSensor), .edgeFlag(edgeFlag));
+  reg writeEn;
 
-  // temp for debugging
-  //assign freqCount[7:2] = redFreq;
-  //assign freqCount[1:0] = color;
-  //assign freqCount[7:0] = greenFreq;
-  ///
+  reg [7:0] dataWriteAddress;
+  reg [11:0] dataToWrite;
+  reg [4:0] dataSectionCount;
 
-  reg [7:0] freqCount; //temp
+  reg [7:0] ramAddress; // should be a with with mux assignment, but due to compiler issues this is a work around
 
-  reg [23:0] color_count;
-  reg [17:0] color_freq;
-  reg [7:0] redFreq;
-  reg [7:0] greenFreq;
-  reg [7:0] blueFreq;
+  //ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
+  ramHardcoded ram1(.din(dataToWrite), .addr(address), .write_en(writeEn), .clk(clk), .dout(dout)); // TEMP
 
+  /*
+  //assign ramAddress = writeEn ? dataWriteAddress : addr;
 
-  reg [2:0] masterState;
-  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2, PROCESS_COUNT = 3, DECIDE_COLOR = 4;
-  initial masterState = WAIT_FOR_START;
+  // store color into ram, where six 2-bit nibs equal one 12-bit ram address
+  // shift two bits at a time (per color)
+  always@(posedge clk or negedge reset)
+    if(!reset) begin
+      dataWriteAddress <= 0;
+      dataSectionCount <= 0;
+      writeEn <= 0;
+    end
+  else begin
 
-  // the colorState is the color being detected
-  // the state value coincides with the S3 and S2 color select pins of the TCS32000 color sensor
-  // {S3,S2} = {0,0} = red
-  // {S3,S2} = {1,1} = green
-  // {S3,S2} = {1,0} = blue
-  // {S3,S2} = {1,1} = all colors
-  reg [1:0] colorState;
-  parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10;
-  initial colorState = RED;
-  assign colorSelect = colorState;
-
-  /////////////////////
-
-  always @(posedge clk) begin
-
-    case(masterState)
-
-      WAIT_FOR_START : begin
-
-        freqCount[7:0] <= color; // TEMP
-
-        dataReady <= 0;
-        if (startDetection) begin
-          masterState <= WAIT_FOR_FIRST_EDGE;
-        end
+    if (colorFlag) begin
+      dataToWrite <= (dataToWrite << 2) | color;
+      dataSectionCount <= dataSectionCount + 1;
+    end else begin
+      if (dataSectionCount == 6) begin
+        dataSectionCount <= 0;
+        dataWriteAddress <= dataWriteAddress + 1;
+        writeEn <= 1;
+        ramAddress <= dataWriteAddress;
+      end else begin
+        writeEn <= 0;
+        ramAddress <= address;
       end
-
-      WAIT_FOR_FIRST_EDGE : begin
-        if (edgeFlag) begin
-          color_count <= 0;
-          masterState <= COUNT_ELASPED_TIME;
-        end
-      end
-
-      COUNT_ELASPED_TIME : begin
-        if (edgeFlag) begin
-          masterState <= PROCESS_COUNT;
-        end else begin
-          color_count <= color_count + 1;
-        end
-      end
-
-      PROCESS_COUNT : begin
-        case(colorState)
-          RED : begin
-            redFreq <= color_count[10:3];
-            freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
-            colorState <= GREEN;
-          end
-          GREEN : begin
-            greenFreq <= color_count[10:3];
-            freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
-            colorState <= BLUE;
-          end
-          BLUE : begin
-            blueFreq <= color_count[10:3];
-            freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= DECIDE_COLOR;
-            colorState <= RED;
-          end
-        endcase
-      end
-
-      DECIDE_COLOR : begin
-        dataReady <= 1;
-        masterState <= WAIT_FOR_START;
-        // detecting yellow is tricky, but luckily due to the acrylic colors,
-        // blue is only the highest value (least light) with the yellow acrylic
-        if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
-        else if (redFreq < greenFreq && redFreq < blueFreq) color <= 2'b00; // red
-        else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
-        else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
-        else  color <= 2'b00; // edge case where the two lowest values the equal, should never happen
-      end
-
-    endcase
+    end
   end
-
+*/
 endmodule
 
-//////////////////////////////////////////////////////////////////////////////
+
+
 
 // clock divider
 // divide by 2^3 = 8

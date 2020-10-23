@@ -21,7 +21,7 @@ assign dout =
  (addr == 1) ? 12'h090 :
  (addr == 2) ? 12'h9F1 :
  (addr == 3) ? 12'hE09 :
- (addr == 4) ? 12'h6D1 :
+ (addr == 4) ? 12'h5D1 :
  (addr == 5) ? 12'hB03 :
  (addr == 6) ? 12'h9D4 :
  (addr == 7) ? 12'hE09 :
@@ -29,7 +29,7 @@ assign dout =
  (addr == 9) ? 12'hB02 :
  (addr == 10) ? 12'h9F4 :
  (addr == 11) ? 12'hE11 :
- (addr == 12) ? 12'h6B1 :
+ (addr == 12) ? 12'h5B1 :
  (addr == 13) ? 12'hB03 :
  (addr == 14) ? 12'h9B4 :
  (addr == 15) ? 12'hE11 :
@@ -47,12 +47,12 @@ assign dout =
  (addr == 27) ? 12'hD34 :
  (addr == 28) ? 12'hB07 :
  (addr == 29) ? 12'h142 :
- (addr == 30) ? 12'hA13 :
+ (addr == 30) ? 12'h813 :
  (addr == 31) ? 12'h083 :
  (addr == 32) ? 12'hF00 :
- (addr == 33) ? 12'h6A1 :
+ (addr == 33) ? 12'h5A1 :
  (addr == 34) ? 12'hB07 :
- (addr == 35) ? 12'h44A :
+ (addr == 35) ? 12'hA4A :
  (addr == 36) ? 12'hE2B :
  (addr == 37) ? 12'h0A0 :
  (addr == 38) ? 12'h9C0 :
@@ -64,12 +64,12 @@ assign dout =
  (addr == 44) ? 12'h9C1 :
  (addr == 45) ? 12'hE31 :
  (addr == 46) ? 12'hB07 :
- (addr == 47) ? 12'h74E :
+ (addr == 47) ? 12'h64E :
  (addr == 48) ? 12'h0E3 :
- (addr == 49) ? 12'hA1E :
+ (addr == 49) ? 12'h81E :
  (addr == 50) ? 12'h083 :
  (addr == 51) ? 12'hF00 :
- (addr == 52) ? 12'h6A1 :
+ (addr == 52) ? 12'h5A1 :
  (addr == 53) ? 12'h08A :
  (addr == 54) ? 12'hF00 :
  (addr == 55) ? 12'h000 :
