@@ -56,6 +56,7 @@ module top (
 
   // Debounce and assign input buttons.
   assign reset = 1;
+  assign portIn[7:2] = 6'b000000;
   buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
   buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(PIN_12), .buttonOut(portIn[1]));
 
@@ -85,13 +86,12 @@ module top (
 
 
 
-  // temp
-
-
-
-
   // TEMP
-  assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = {4'h0, color[3:0]};
+
+  assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} =
+  {startSelector,selectorComplete, startDetection, detectionComplete, sensorSelect[1:0], freqCount[1:0]};
+
+
   //assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = {freqCount};
   // TEMP
 
@@ -105,7 +105,9 @@ module top (
     .xDirection(),
     .xStep(),
     .centerOfNib(),
-    .opCompleted(opCompleted));
+    .opCompleted());
+    // startDetection
+    // selectorComplete
 
   colorDetector colorDetector(
     .clk(clk),
@@ -113,26 +115,33 @@ module top (
     .signalFromSensor(signalFromSensor),
     .startDetection(startDetection),
     .colorSelect(colorSelect),
-    .dataReady(dataReady),
+    .detectionComplete(detectionComplete),
     .color(color),
     .freqCount(freqCount));
 
 
-    assign startCycle = 1;
+    wire startSelector, selectorComplete;
+    wire startDetection, detectionComplete;
+
+    assign startSelector = 1;
 
     sensorSelector sensorSelector(
       .clk(clk),
       .reset(reset),
-      .startCycle(startCycle),
+      .startSelector(startSelector),
+      .detectionComplete(detectionComplete),
       .startDetection(startDetection),
-      .sensorSelect(sensorSelect));
+      .sensorSelect(sensorSelect),
+      .selectorComplete(selectorComplete));
+
+
 
 
 
   ramController ram1(
     .clk(clk),
     .reset(reset),
-    .colorFlag(dataReady),
+    .colorFlag(detectionComplete),
     .color(color),
     .address(ramAddress),
     .dout(ramData));
@@ -175,14 +184,44 @@ endmodule
 module sensorSelector(
    input clk,
    input reset,
-   input startCycle,
-   output startDetection,
-   output [3:0] sensorSelect
-  );
+   input startSelector,
+   input detectionComplete,
+   output reg startDetection,
+   output reg [3:0] sensorSelect,
+   output reg selectorComplete);
 
+  reg  [2:0] state;
+  parameter [2:0] WAIT_FOR_START = 0, RESET_SELECT = 1, TRIGGER_DETECTION = 2, WAIT_FOR_COMPLETION = 3, INCREMENT_SELECTOR = 4, COMPLETE = 5;
+  initial state = WAIT_FOR_START;
 
 always @(posedge clk) begin
-
+  case(state)
+    WAIT_FOR_START : begin
+      selectorComplete <= 0;
+      if (startSelector) state <= RESET_SELECT;
+    end
+    RESET_SELECT : begin
+      sensorSelect <= 0;
+      state <= TRIGGER_DETECTION;
+    end
+    TRIGGER_DETECTION : begin
+      startDetection <= 1;
+      state <= WAIT_FOR_COMPLETION;
+    end
+    WAIT_FOR_COMPLETION : begin
+      startDetection <= 0;
+      if (detectionComplete) state <= INCREMENT_SELECTOR;
+    end
+    INCREMENT_SELECTOR : begin
+      sensorSelect <= sensorSelect + 1;
+      if (sensorSelect == 11) state <= COMPLETE;
+      else state <= TRIGGER_DETECTION;
+    end
+    COMPLETE : begin
+      selectorComplete <= 1;
+      state <= WAIT_FOR_START;
+    end
+  endcase
 end
 
 
@@ -194,9 +233,9 @@ module colorDetector (
   input signalFromSensor,
   input startDetection,
   output [1:0] colorSelect,
-  output reg dataReady,
+  output reg detectionComplete,
   output reg [1:0] color,
-  output [7:0] freqCount
+  output reg [7:0] freqCount
 );
 
   edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(signalFromSensor), .edgeFlag(edgeFlag));
@@ -235,13 +274,14 @@ module colorDetector (
 
   always @(posedge clk) begin
 
+  // temp
+  freqCount[2:0]  <= masterState[2:0];
+
     case(masterState)
 
       WAIT_FOR_START : begin
-
         freqCount[7:0] <= color; // TEMP
-
-        dataReady <= 0;
+        detectionComplete <= 0;
         if (startDetection) begin
           masterState <= WAIT_FOR_FIRST_EDGE;
         end
@@ -266,7 +306,7 @@ module colorDetector (
         case(colorState)
           RED : begin
             redFreq <= color_count[10:3];
-            freqCount[7:0] <= color_count[10:3]; // TEMP
+            //freqCount[7:0] <= color_count[10:3]; // TEMP
             masterState <= WAIT_FOR_FIRST_EDGE;
             colorState <= GREEN;
           end
@@ -286,8 +326,6 @@ module colorDetector (
       end
 
       DECIDE_COLOR : begin
-        dataReady <= 1;
-        masterState <= WAIT_FOR_START;
         // detecting yellow is tricky, but luckily due to the acrylic colors,
         // blue is only the highest value (least light) with the yellow acrylic
         if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
@@ -295,6 +333,9 @@ module colorDetector (
         else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
         else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
         else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
+
+        detectionComplete <= 1;
+        masterState <= WAIT_FOR_START;
       end
 
     endcase
@@ -445,6 +486,10 @@ module ramController(
   reg [4:0] dataSectionCount;
 
   reg [7:0] ramAddress; // should be a with with mux assignment, but due to compiler issues this is a work around
+
+  // TEMP TO REDUCE WARNINGS
+  always@(posedge clk)      // TEMP
+   dataToWrite <= 12'h000;  // TEMP
 
   //ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
   ramHardcoded ram1(.din(dataToWrite), .addr(address), .write_en(writeEn), .clk(clk), .dout(dout)); // TEMP
