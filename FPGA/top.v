@@ -4,7 +4,6 @@
 
 module top (
   input CLK,    // 16MHz clock
-
   output reg LED,   // User/boot LED next to power LED
   output USBPU,  // USB pull-up resistor
   output PIN_1,
@@ -30,7 +29,9 @@ module top (
   output PIN_21,
   output PIN_22,
   output PIN_23,
-  output PIN_24);
+  output PIN_24,
+  output PIN_25,
+  output PIN_26);
 
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
@@ -84,15 +85,20 @@ module top (
   //pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_8));
   //pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_19));
 
-
+  // Assign status LEDs
+  assign PIN_10 = !selectorComplete; // Mode: Read ROM
+  assign PIN_27 = selectorComplete; // Mode: Execute
 
   // TEMP
 
-  assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} =
-  {startSelector,selectorComplete, startDetection, detectionComplete, sensorSelect[1:0], freqCount[1:0]};
+
+  assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
 
 
-  //assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = {freqCount};
+  //assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  {startSelector,selectorComplete, startDetection, detectionComplete, sensorSelect[1:0], freqCount[1:0]};
+
+
+
   // TEMP
 
 
@@ -109,21 +115,10 @@ module top (
     // startDetection
     // selectorComplete
 
-  colorDetector colorDetector(
-    .clk(clk),
-    .reset(reset),
-    .signalFromSensor(signalFromSensor),
-    .startDetection(startDetection),
-    .colorSelect(colorSelect),
-    .detectionComplete(detectionComplete),
-    .color(color),
-    .freqCount(freqCount));
-
-
     wire startSelector, selectorComplete;
     wire startDetection, detectionComplete;
 
-    assign startSelector = 1;
+    assign startSelector = 1; // TEMP: signal from motionController, but start manually
 
     sensorSelector sensorSelector(
       .clk(clk),
@@ -134,9 +129,15 @@ module top (
       .sensorSelect(sensorSelect),
       .selectorComplete(selectorComplete));
 
-
-
-
+      colorDetector colorDetector(
+        .clk(clk),
+        .reset(reset),
+        .signalFromSensor(signalFromSensor),
+        .startDetection(startDetection),
+        .colorSelect(colorSelect),
+        .detectionComplete(detectionComplete),
+        .color(color),
+        .freqCount(freqCount));
 
   ramController ram1(
     .clk(clk),
