@@ -8,7 +8,7 @@
 #define EXPECTED_CSV_COLS 4
 
 #define NIBS_PER_ROW 12
-#define LINES_PER_ROM 36
+#define LINES_PER_ROM 32
 #define BITS_PER_NIB 2
 #define BITS_PER_INSTRUCTION 12
 #define NIBS_PER_INSTRUCTION BITS_PER_INSTRUCTION / BITS_PER_NIB
@@ -71,6 +71,8 @@ private slots:
     void undo();
     void on_pushButton_generateSpecialFiles_clicked();
     void on_pushButton_selectSaveFolder_clicked();
+
+    void on_checkBox_clicked();
 
 private:
     Ui::MainWindow *ui;

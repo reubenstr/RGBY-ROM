@@ -20,6 +20,7 @@ public:
     RenderArea(QWidget *parent = 0);
     void setRomData(QString hexSource);
     QColor getColorFromDec(int dec);
+    void setMirror(bool flag);
 
 public slots:
 
@@ -30,6 +31,7 @@ protected:
 private:
 
     QString hexSource;
+    bool mirrorFlag = false;
 
 };
 

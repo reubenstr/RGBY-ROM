@@ -7,934 +7,1115 @@
 .names $true
 1
 .names $undef
-.gate SB_LUT4 I0=$abc$4038$n195_1 I1=$abc$4038$n198 I2=$abc$4038$n203 I3=$abc$4038$n207 O=$abc$4038$n1
+.gate SB_LUT4 I0=$abc$4406$n237_1 I1=$abc$4406$n240 I2=$abc$4406$n245 I3=$abc$4406$n249_1 O=$abc$4406$n1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=$abc$4038$n196 I1=$abc$4038$n197 I2=$false I3=$false O=$abc$4038$n195_1
+.gate SB_LUT4 I0=$abc$4406$n238 I1=$abc$4406$n239 I2=$false I3=$false O=$abc$4406$n237_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=ledBlinker.count[4] I1=ledBlinker.count[5] I2=ledBlinker.count[7] I3=ledBlinker.count[8] O=$abc$4038$n196
+.gate SB_LUT4 I0=ledBlinker.count[4] I1=ledBlinker.count[5] I2=ledBlinker.count[7] I3=ledBlinker.count[8] O=$abc$4406$n238
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[0] I1=ledBlinker.count[1] I2=ledBlinker.count[2] I3=ledBlinker.count[3] O=$abc$4038$n197
+.gate SB_LUT4 I0=ledBlinker.count[0] I1=ledBlinker.count[1] I2=ledBlinker.count[2] I3=ledBlinker.count[3] O=$abc$4406$n239
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$4038$n199_1 I1=$abc$4038$n200 I2=$abc$4038$n201 I3=$abc$4038$n202 O=$abc$4038$n198
+.gate SB_LUT4 I0=$abc$4406$n241_1 I1=$abc$4406$n242 I2=$abc$4406$n243 I3=$abc$4406$n244_1 O=$abc$4406$n240
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=ledBlinker.count[15] I1=ledBlinker.count[20] I2=ledBlinker.count[21] I3=ledBlinker.count[22] O=$abc$4038$n199_1
+.gate SB_LUT4 I0=ledBlinker.count[15] I1=ledBlinker.count[20] I2=ledBlinker.count[21] I3=ledBlinker.count[22] O=$abc$4406$n241_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[10] I1=ledBlinker.count[11] I2=ledBlinker.count[12] I3=ledBlinker.count[13] O=$abc$4038$n200
+.gate SB_LUT4 I0=ledBlinker.count[10] I1=ledBlinker.count[11] I2=ledBlinker.count[12] I3=ledBlinker.count[13] O=$abc$4406$n242
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[27] I1=ledBlinker.count[28] I2=ledBlinker.count[29] I3=ledBlinker.count[30] O=$abc$4038$n201
+.gate SB_LUT4 I0=ledBlinker.count[27] I1=ledBlinker.count[28] I2=ledBlinker.count[29] I3=ledBlinker.count[30] O=$abc$4406$n243
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[23] I1=ledBlinker.count[24] I2=ledBlinker.count[25] I3=ledBlinker.count[26] O=$abc$4038$n202
+.gate SB_LUT4 I0=ledBlinker.count[23] I1=ledBlinker.count[24] I2=ledBlinker.count[25] I3=ledBlinker.count[26] O=$abc$4406$n244_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$4038$n204_1 I1=$abc$4038$n205 I2=$abc$4038$n206 I3=$false O=$abc$4038$n203
+.gate SB_LUT4 I0=$abc$4406$n246_1 I1=$abc$4406$n247 I2=$abc$4406$n248 I3=$false O=$abc$4406$n245
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=ledBlinker.count[17] I1=ledBlinker.count[18] I2=ledBlinker.count[19] I3=$false O=$abc$4038$n204_1
+.gate SB_LUT4 I0=ledBlinker.count[17] I1=ledBlinker.count[18] I2=ledBlinker.count[19] I3=$false O=$abc$4406$n246_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 10000000
-.gate SB_LUT4 I0=ledBlinker.count[6] I1=ledBlinker.count[9] I2=ledBlinker.count[14] I3=ledBlinker.count[16] O=$abc$4038$n205
+.gate SB_LUT4 I0=ledBlinker.count[6] I1=ledBlinker.count[9] I2=ledBlinker.count[14] I3=ledBlinker.count[16] O=$abc$4406$n247
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=ledBlinker.count[47] I1=ledBlinker.count[48] I2=ledBlinker.count[49] I3=ledBlinker.count[50] O=$abc$4038$n206
+.gate SB_LUT4 I0=ledBlinker.count[47] I1=ledBlinker.count[48] I2=ledBlinker.count[49] I3=ledBlinker.count[50] O=$abc$4406$n248
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=$abc$4038$n208 I1=$abc$4038$n209_1 I2=$abc$4038$n210 I3=$abc$4038$n211_1 O=$abc$4038$n207
+.gate SB_LUT4 I0=$abc$4406$n250 I1=$abc$4406$n251 I2=$abc$4406$n252_1 I3=$abc$4406$n253 O=$abc$4406$n249_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1000000000000000
-.gate SB_LUT4 I0=ledBlinker.count[35] I1=ledBlinker.count[36] I2=ledBlinker.count[37] I3=ledBlinker.count[38] O=$abc$4038$n208
+.gate SB_LUT4 I0=ledBlinker.count[35] I1=ledBlinker.count[36] I2=ledBlinker.count[37] I3=ledBlinker.count[38] O=$abc$4406$n250
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[31] I1=ledBlinker.count[32] I2=ledBlinker.count[33] I3=ledBlinker.count[34] O=$abc$4038$n209_1
+.gate SB_LUT4 I0=ledBlinker.count[31] I1=ledBlinker.count[32] I2=ledBlinker.count[33] I3=ledBlinker.count[34] O=$abc$4406$n251
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[43] I1=ledBlinker.count[44] I2=ledBlinker.count[45] I3=ledBlinker.count[46] O=$abc$4038$n210
+.gate SB_LUT4 I0=ledBlinker.count[43] I1=ledBlinker.count[44] I2=ledBlinker.count[45] I3=ledBlinker.count[46] O=$abc$4406$n252_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=ledBlinker.count[39] I1=ledBlinker.count[40] I2=ledBlinker.count[41] I3=ledBlinker.count[42] O=$abc$4038$n211_1
+.gate SB_LUT4 I0=ledBlinker.count[39] I1=ledBlinker.count[40] I2=ledBlinker.count[41] I3=ledBlinker.count[42] O=$abc$4406$n253
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0000000000000001
-.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[2] I2=sensorSelector.state[0] I3=$false O=$abc$4038$n190
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00010100
-.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[2] I2=sensorSelector.state[0] I3=$false O=$abc$4038$n191
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01000000
-.gate SB_LUT4 I0=sensorSelector.state[0] I1=$abc$4038$n195 I2=$false I3=$false O=$abc$4038$n194
+.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[0] I2=$false I3=$false O=$abc$4406$n219
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0100
-.gate SB_LUT4 I0=sensorSelector.state[2] I1=sensorSelector.state[1] I2=$false I3=$false O=$abc$4038$n195
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0100
-.gate SB_LUT4 I0=sensorSelector.state[2] I1=sensorSelector.state[1] I2=$false I3=$false O=$abc$4038$n199
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0111
-.gate SB_LUT4 I0=$abc$4038$n218 I1=$abc$4038$n221_1 I2=$false I3=$false O=$abc$4038$n204
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1011
-.gate SB_LUT4 I0=$abc$4038$n219_1 I1=$abc$4038$n220 I2=$false I3=$false O=$abc$4038$n218
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1000
-.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[0] I2=sensorSelector.state[2] I3=$false O=$abc$4038$n219_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00010000
-.gate SB_LUT4 I0=PIN_5 I1=PIN_6 I2=PIN_7 I3=PIN_4 O=$abc$4038$n220
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0100000000000000
-.gate SB_LUT4 I0=colorDetector.detectionComplete I1=sensorSelector.state[1] I2=sensorSelector.state[0] I3=sensorSelector.state[2] O=$abc$4038$n221_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1111111110110000
-.gate SB_LUT4 I0=$abc$4038$n220 I1=$abc$4038$n219_1 I2=$abc$4038$n223 I3=$false O=$abc$4038$n209
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01001111
-.gate SB_LUT4 I0=colorDetector.detectionComplete I1=sensorSelector.state[2] I2=sensorSelector.state[0] I3=sensorSelector.state[1] O=$abc$4038$n223
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1110110011001111
-.gate SB_LUT4 I0=colorDetector.detectionComplete I1=$abc$4038$n195 I2=sensorSelector.state[0] I3=$abc$4038$n218 O=$abc$4038$n211
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1111111110000000
-.gate SB_LUT4 I0=$abc$4038$n214 I1=colorDetector.masterState[2] I2=$false I3=$false O=$abc$4038$n212
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1000
-.gate SB_LUT4 I0=colorDetector.masterState[1] I1=colorDetector.masterState[0] I2=$false I3=$false O=$abc$4038$n214
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0001
-.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[2] I2=sensorSelector.state[0] I3=$false O=$abc$4038$n215
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01000001
-.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$false I3=$false O=$abc$4038$n219
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0001
-.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$false I3=$false O=$abc$4038$n221
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1001
-.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[1] I2=colorDetector.masterState[0] I3=$false O=$abc$4038$n226
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00010100
-.gate SB_LUT4 I0=$abc$4038$n214 I1=colorDetector.masterState[2] I2=$false I3=$false O=$abc$4038$n228
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1011
-.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=$abc$4038$n237 I2=$abc$4038$n233 I3=$abc$4038$n234 O=$abc$4038$n235
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1111100011111111
-.gate SB_LUT4 I0=colorDetector.masterState[2] I1=$abc$4038$n214 I2=sensorSelector.startDetection I3=$false O=$abc$4038$n233
+.gate SB_LUT4 I0=colorDetector.masterState[1] I1=colorDetector.masterState[0] I2=colorDetector.masterState[2] I3=$false O=$abc$4406$n220
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$abc$4038$n235_1 I3=$abc$4038$n236 O=$abc$4038$n234
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000001001111
-.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[1] I2=colorDetector.masterState[0] I3=$false O=$abc$4038$n235_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01000000
-.gate SB_LUT4 I0=colorDetector.masterState[1] I1=colorDetector.masterState[2] I2=colorDetector.edgeDetect1.edgeFlag I3=colorDetector.masterState[0] O=$abc$4038$n236
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0000000100000000
-.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[0] I2=colorDetector.masterState[1] I3=$false O=$abc$4038$n237
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 00010000
-.gate SB_LUT4 I0=PIN_8 I1=PIN_9 I2=$abc$4038$n235_1 I3=$abc$4038$n239 O=$abc$4038$n242
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 0100000011111111
-.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=colorDetector.masterState[2] I2=colorDetector.masterState[1] I3=colorDetector.masterState[0] O=$abc$4038$n239
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1111110111001111
-.gate SB_LUT4 I0=PIN_9 I1=$abc$4038$n235_1 I2=PIN_8 I3=$false O=$abc$4038$n249
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[0] I2=$abc$4038$n242_1 I3=$false O=$abc$4038$n253
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n353 I1=colorDetector.color_count[0] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n242_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=$abc$4038$n244 I2=$abc$4038$n237 I3=colorDetector.color_count[1] O=$abc$4038$n256
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1011101011000000
-.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=colorDetector.color_count[0] I2=$false I3=$false O=$abc$4038$n244
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0100
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[2] I2=$abc$4038$n246 I3=$false O=$abc$4038$n259
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n357 I1=colorDetector.color_count[2] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n246
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[3] I2=$abc$4038$n248 I3=$false O=$abc$4038$n262
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n359 I1=colorDetector.color_count[3] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n248
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[4] I2=$abc$4038$n250 I3=$false O=$abc$4038$n265
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n361 I1=colorDetector.color_count[4] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n250
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[5] I2=$abc$4038$n252 I3=$false O=$abc$4038$n268
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n363 I1=colorDetector.color_count[5] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n252
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[6] I2=$abc$4038$n254 I3=$false O=$abc$4038$n271
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n365 I1=colorDetector.color_count[6] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n254
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[7] I2=$abc$4038$n256_1 I3=$false O=$abc$4038$n274
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n367 I1=colorDetector.color_count[7] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n256_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[8] I2=$abc$4038$n258 I3=$false O=$abc$4038$n277
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n369 I1=colorDetector.color_count[8] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n258
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[9] I2=$abc$4038$n260 I3=$false O=$abc$4038$n280
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n371 I1=colorDetector.color_count[9] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n260
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=$abc$4038$n236 I1=colorDetector.color_count[10] I2=$abc$4038$n262_1 I3=$false O=$abc$4038$n283
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 11111000
-.gate SB_LUT4 I0=$abc$4038$n373 I1=colorDetector.color_count[10] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4038$n237 O=$abc$4038$n262_1
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
-.param LUT_INIT 1100101000000000
-.gate SB_LUT4 I0=PIN_8 I1=PIN_9 I2=$abc$4038$n235_1 I3=$false O=$abc$4038$n286
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 10110000
-.gate SB_LUT4 I0=$abc$4038$n235_1 I1=PIN_9 I2=PIN_8 I3=$false O=$abc$4038$n291
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 10000000
-.gate SB_LUT4 I0=$abc$4038$n219 I1=$abc$4038$n235_1 I2=$false I3=$false O=$abc$4038$n295
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4038$n1 I1=ledBlinker.count[0] I2=$false I3=$false O=$abc$4038$n297
+.gate SB_LUT4 I0=$abc$4406$n220 I1=$abc$4406$n257 I2=$false I3=$false O=$abc$4406$n222
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1110
-.gate SB_LUT4 I0=$abc$4038$n398 I1=$abc$4038$n400 I2=$false I3=$false O=$abc$4038$n327
+.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[0] I2=colorDetector.masterState[1] I3=$false O=$abc$4406$n257
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00000001
+.gate SB_LUT4 I0=sensorSelector.state[0] I1=sensorSelector.state[1] I2=sensorSelector.state[2] I3=$false O=$abc$4406$n223
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=sensorSelector.state[2] I1=sensorSelector.state[1] I2=sensorSelector.state[0] I3=$false O=$abc$4406$n232
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01111111
+.gate SB_LUT4 I0=sensorSelector.state[0] I1=$abc$4406$n260 I2=$false I3=$false O=$abc$4406$n235
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=sensorSelector.state[2] I1=sensorSelector.state[1] I2=$false I3=$false O=$abc$4406$n260
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=colorDetector.detectionComplete I1=sensorSelector.state[0] I2=sensorSelector.state[2] I3=sensorSelector.state[1] O=$abc$4406$n237
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000011100110011
+.gate SB_LUT4 I0=colorDetector.detectionComplete I1=$abc$4406$n260 I2=sensorSelector.state[0] I3=$abc$4406$n264 O=$abc$4406$n241
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1111111110000000
+.gate SB_LUT4 I0=PIN_5 I1=$abc$4406$n266 I2=sensorSelector.state[0] I3=$abc$4406$n265_1 O=$abc$4406$n264
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0100111100000000
+.gate SB_LUT4 I0=sensorSelector.state[1] I1=sensorSelector.state[2] I2=$false I3=$false O=$abc$4406$n265_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=PIN_6 I1=PIN_7 I2=PIN_4 I3=$false O=$abc$4406$n266
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=colorDetector.detectionComplete I1=sensorSelector.state[2] I2=sensorSelector.state[1] I3=sensorSelector.state[0] O=$abc$4406$n244
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0001111100110000
+.gate SB_LUT4 I0=colorDetector.masterState[0] I1=colorDetector.masterState[1] I2=$false I3=$false O=$abc$4406$n246
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 0001
-.gate SB_LUT4 I0=colorDetector.edgeDetect1.edge_mem[1] I1=colorDetector.edgeDetect1.edge_mem[2] I2=$false I3=$false O=$abc$4038$n444
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
-.param LUT_INIT 0110
-.gate SB_LUT4 I0=$abc$4038$n219_1 I1=$abc$4038$n445 I2=$false I3=$false O=$abc$4038$n446
+.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$abc$4406$n270 I3=$abc$4406$n271 O=$abc$4406$n249
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1111111101110000
+.gate SB_LUT4 I0=$abc$4406$n246 I1=colorDetector.masterState[2] I2=$false I3=$false O=$abc$4406$n270
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=PIN_6 I1=PIN_7 I2=$abc$4038$n219_1 I3=$false O=$abc$4038$n447
+.gate SB_LUT4 I0=sensorSelector.startDetection I1=PIN_9 I2=$abc$4406$n257 I3=$false O=$abc$4406$n271
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=$abc$4406$n273 I1=PIN_9 I2=PIN_8 I3=$abc$4406$n270 O=$abc$4406$n252
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1110101110101010
+.gate SB_LUT4 I0=sensorSelector.startDetection I1=PIN_8 I2=$abc$4406$n257 I3=$false O=$abc$4406$n273
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=sensorSelector.state[0] I1=sensorSelector.state[1] I2=sensorSelector.state[2] I3=$false O=$abc$4406$n261
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000001
+.gate SB_LUT4 I0=$abc$4406$n276 I1=$abc$4406$n277 I2=$false I3=$false O=$abc$4406$n265
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1110
+.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[0] I2=colorDetector.masterState[1] I3=$false O=$abc$4406$n276
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[0] I2=colorDetector.masterState[1] I3=$false O=$abc$4406$n277
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00010000
+.gate SB_LUT4 I0=$abc$4406$n265 I1=colorDetector.masterState[1] I2=$false I3=$false O=$abc$4406$n269
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1011
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n288 I2=$abc$4406$n286 I3=$false O=$abc$4406$n278
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11101111
+.gate SB_LUT4 I0=$abc$4406$n281 I1=$abc$4406$n276 I2=$false I3=$false O=$abc$4406$n280
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=$abc$4406$n282 I1=$abc$4406$n283 I2=$abc$4406$n284 I3=$abc$4406$n285 O=$abc$4406$n281
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=colorDetector.delay[1] I1=colorDetector.delay[0] I2=$false I3=$false O=$abc$4406$n282
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=colorDetector.delay[13] I1=colorDetector.delay[12] I2=colorDetector.delay[11] I3=colorDetector.delay[10] O=$abc$4406$n283
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=colorDetector.delay[5] I1=colorDetector.delay[4] I2=colorDetector.delay[3] I3=colorDetector.delay[2] O=$abc$4406$n284
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=colorDetector.delay[9] I1=colorDetector.delay[8] I2=colorDetector.delay[7] I3=colorDetector.delay[6] O=$abc$4406$n285
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=PIN_8 I1=PIN_9 I2=$abc$4406$n270 I3=$abc$4406$n287_1 O=$abc$4406$n286
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0100111100000000
+.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=$abc$4406$n277 I2=$abc$4406$n257 I3=sensorSelector.startDetection O=$abc$4406$n287_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000011101110111
+.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[1] I2=colorDetector.edgeDetect1.edgeFlag I3=colorDetector.masterState[0] O=$abc$4406$n288
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0000000100000000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n290 I2=$false I3=$false O=$abc$4406$n287
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1011
+.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=colorDetector.masterState[2] I2=colorDetector.masterState[1] I3=colorDetector.masterState[0] O=$abc$4406$n290
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1111110111001111
+.gate SB_LUT4 I0=$abc$4406$n281 I1=$abc$4406$n276 I2=$abc$4406$n292 I3=$false O=$abc$4406$n296
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$abc$4406$n270 I3=$false O=$abc$4406$n292
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01100000
-.gate SB_LUT4 I0=$abc$4038$n219_1 I1=$abc$4038$n448 I2=$false I3=$false O=$abc$4038$n449
+.gate SB_LUT4 I0=colorDetector.masterState[2] I1=colorDetector.masterState[0] I2=colorDetector.masterState[1] I3=$false O=$abc$4406$n298
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00010100
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[0] I2=$abc$4406$n295 I3=$false O=$abc$4406$n301
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n427 I1=colorDetector.color_count[0] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n295
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=$abc$4406$n297 I2=$abc$4406$n277 I3=colorDetector.color_count[1] O=$abc$4406$n304
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1011101011000000
+.gate SB_LUT4 I0=colorDetector.edgeDetect1.edgeFlag I1=colorDetector.color_count[0] I2=$false I3=$false O=$abc$4406$n297
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0100
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[2] I2=$abc$4406$n299 I3=$false O=$abc$4406$n307
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n431 I1=colorDetector.color_count[2] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n299
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[3] I2=$abc$4406$n301_1 I3=$false O=$abc$4406$n310
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n433 I1=colorDetector.color_count[3] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n301_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[4] I2=$abc$4406$n303 I3=$false O=$abc$4406$n313
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n435 I1=colorDetector.color_count[4] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n303
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[5] I2=$abc$4406$n305 I3=$false O=$abc$4406$n316
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n437 I1=colorDetector.color_count[5] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n305
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[6] I2=$abc$4406$n307_1 I3=$false O=$abc$4406$n319
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n439 I1=colorDetector.color_count[6] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n307_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[7] I2=$abc$4406$n309 I3=$false O=$abc$4406$n322
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n441 I1=colorDetector.color_count[7] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n309
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[8] I2=$abc$4406$n311 I3=$false O=$abc$4406$n325
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n443 I1=colorDetector.color_count[8] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n311
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[9] I2=$abc$4406$n313_1 I3=$false O=$abc$4406$n328
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n445 I1=colorDetector.color_count[9] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n313_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=$abc$4406$n288 I1=colorDetector.color_count[10] I2=$abc$4406$n315 I3=$false O=$abc$4406$n331
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 11111000
+.gate SB_LUT4 I0=$abc$4406$n447 I1=colorDetector.color_count[10] I2=colorDetector.edgeDetect1.edgeFlag I3=$abc$4406$n277 O=$abc$4406$n315
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1100101000000000
+.gate SB_LUT4 I0=PIN_9 I1=$abc$4406$n270 I2=PIN_8 I3=$false O=$abc$4406$n335
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01000000
+.gate SB_LUT4 I0=$abc$4406$n270 I1=PIN_9 I2=PIN_8 I3=$false O=$abc$4406$n338
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=PIN_9 I1=PIN_8 I2=$abc$4406$n270 I3=$false O=$abc$4406$n340
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 00010000
+.gate SB_LUT4 I0=$abc$4406$n1 I1=ledBlinker.count[0] I2=$false I3=$false O=$abc$4406$n343
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1110
+.gate SB_LUT4 I0=$abc$4406$n478 I1=$abc$4406$n480 I2=$false I3=$false O=$abc$4406$n367
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0001
+.gate SB_LUT4 I0=colorDetector.greenFreq[2] I1=colorDetector.blueFreq[2] I2=colorDetector.greenFreq[3] I3=colorDetector.blueFreq[3] O=$abc$4406$n338_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1001000000001001
+.gate SB_LUT4 I0=colorDetector.blueFreq[6] I1=colorDetector.redFreq[6] I2=colorDetector.blueFreq[7] I3=colorDetector.redFreq[7] O=$abc$4406$n343_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1001000000001001
+.gate SB_LUT4 I0=colorDetector.blueFreq[0] I1=colorDetector.redFreq[0] I2=colorDetector.blueFreq[2] I3=colorDetector.redFreq[2] O=$abc$4406$n345_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1001000000001001
+.gate SB_LUT4 I0=colorDetector.edgeDetect1.edge_mem[1] I1=colorDetector.edgeDetect1.edge_mem[2] I2=$false I3=$false O=$abc$4406$n526
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 0110
+.gate SB_LUT4 I0=$abc$4406$n265_1 I1=sensorSelector.state[0] I2=$abc$4406$n527 I3=$false O=$abc$4406$n528
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=PIN_6 I1=PIN_7 I2=$abc$4406$n265_1 I3=sensorSelector.state[0] O=$abc$4406$n529
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0110000000000000
+.gate SB_LUT4 I0=$abc$4406$n265_1 I1=sensorSelector.state[0] I2=$abc$4406$n530 I3=$false O=$abc$4406$n531
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=$abc$4406$n265_1 I1=sensorSelector.state[0] I2=$abc$4406$n532 I3=$false O=$abc$4406$n533
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 10000000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n376 I2=$false I3=$false O=$abc$4406$n542
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=$abc$4038$n219_1 I1=$abc$4038$n450 I2=$false I3=$false O=$abc$4038$n451
+.gate SB_LUT4 I0=colorDetector.delay[1] I1=colorDetector.delay[0] I2=$abc$4406$n276 I3=$false O=$abc$4406$n543
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
+.param LUT_INIT 01100000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n380 I2=$false I3=$false O=$abc$4406$n544
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
 .param LUT_INIT 1000
-.gate SB_LUT4 I0=clkDiv1.count[0] I1=clkDiv1.count[1] I2=clkDiv1.count[2] I3=$false O=$abc$4038$n460
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n382 I2=$false I3=$false O=$abc$4406$n545
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n384 I2=$false I3=$false O=$abc$4406$n546
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n386 I2=$false I3=$false O=$abc$4406$n547
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n388 I2=$false I3=$false O=$abc$4406$n548
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n390 I2=$false I3=$false O=$abc$4406$n549
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n392 I2=$false I3=$false O=$abc$4406$n550
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n394 I2=$false I3=$false O=$abc$4406$n551
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n396 I2=$false I3=$false O=$abc$4406$n552
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n398 I2=$false I3=$false O=$abc$4406$n553
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n400 I2=$false I3=$false O=$abc$4406$n554
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=$abc$4406$n280 I1=$abc$4406$n402 I2=$false I3=$false O=$abc$4406$n555
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:44"
+.param LUT_INIT 1000
+.gate SB_LUT4 I0=clkDiv1.count[0] I1=clkDiv1.count[1] I2=clkDiv1.count[2] I3=$false O=$abc$4406$n556
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 00000001
 .gate SB_LUT4 I0=sensorSelector.selectorComplete I1=$false I2=$false I3=$false O=PIN_10
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=ledBlinker.state I1=$false I2=$false I3=$false O=$abc$4038$n310
+.gate SB_LUT4 I0=ledBlinker.state I1=$false I2=$false I3=$false O=$abc$4406$n357
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=clkDiv1.count[1] I1=$false I2=$false I3=$false O=$abc$4038$n386
+.gate SB_LUT4 I0=clkDiv1.count[1] I1=$false I2=$false I3=$false O=$abc$4406$n467
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=ledBlinker.count[1] I1=$false I2=$false I3=$false O=$abc$4038$n388
+.gate SB_LUT4 I0=ledBlinker.count[1] I1=$false I2=$false I3=$false O=$abc$4406$n470
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=clkDiv1.clk_out I1=$false I2=$false I3=$false O=$abc$4038$n394
+.gate SB_LUT4 I0=clkDiv1.clk_out I1=$false I2=$false I3=$false O=$abc$4406$n476
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[0] I1=$false I2=$false I3=$false O=$abc$4038$n402
+.gate SB_LUT4 I0=colorDetector.greenFreq[0] I1=$false I2=$false I3=$false O=$abc$4406$n484
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[2] I1=$false I2=$false I3=$false O=$abc$4038$n404
+.gate SB_LUT4 I0=colorDetector.greenFreq[1] I1=$false I2=$false I3=$false O=$abc$4406$n486
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[4] I1=$false I2=$false I3=$false O=$abc$4038$n406
+.gate SB_LUT4 I0=colorDetector.greenFreq[2] I1=$false I2=$false I3=$false O=$abc$4406$n488
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[1] I1=$false I2=$false I3=$false O=$abc$4038$n408
+.gate SB_LUT4 I0=colorDetector.greenFreq[3] I1=$false I2=$false I3=$false O=$abc$4406$n490
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[3] I1=$false I2=$false I3=$false O=$abc$4038$n410
+.gate SB_LUT4 I0=colorDetector.greenFreq[4] I1=$false I2=$false I3=$false O=$abc$4406$n492
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[5] I1=$false I2=$false I3=$false O=$abc$4038$n412
+.gate SB_LUT4 I0=colorDetector.greenFreq[5] I1=$false I2=$false I3=$false O=$abc$4406$n494
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[6] I1=$false I2=$false I3=$false O=$abc$4038$n414
+.gate SB_LUT4 I0=colorDetector.greenFreq[6] I1=$false I2=$false I3=$false O=$abc$4406$n496
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[7] I1=$false I2=$false I3=$false O=$abc$4038$n416
+.gate SB_LUT4 I0=colorDetector.greenFreq[7] I1=$false I2=$false I3=$false O=$abc$4406$n498
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[0] I1=$false I2=$false I3=$false O=$abc$4038$n418
+.gate SB_LUT4 I0=colorDetector.blueFreq[0] I1=$false I2=$false I3=$false O=$abc$4406$n500
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[1] I1=$false I2=$false I3=$false O=$abc$4038$n420
+.gate SB_LUT4 I0=colorDetector.blueFreq[1] I1=$false I2=$false I3=$false O=$abc$4406$n502
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[2] I1=$false I2=$false I3=$false O=$abc$4038$n422
+.gate SB_LUT4 I0=colorDetector.blueFreq[2] I1=$false I2=$false I3=$false O=$abc$4406$n504
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[3] I1=$false I2=$false I3=$false O=$abc$4038$n424
+.gate SB_LUT4 I0=colorDetector.blueFreq[4] I1=$false I2=$false I3=$false O=$abc$4406$n506
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[4] I1=$false I2=$false I3=$false O=$abc$4038$n426
+.gate SB_LUT4 I0=colorDetector.blueFreq[6] I1=$false I2=$false I3=$false O=$abc$4406$n508
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[5] I1=$false I2=$false I3=$false O=$abc$4038$n428
+.gate SB_LUT4 I0=colorDetector.blueFreq[7] I1=$false I2=$false I3=$false O=$abc$4406$n510
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[6] I1=$false I2=$false I3=$false O=$abc$4038$n430
+.gate SB_LUT4 I0=colorDetector.blueFreq[3] I1=$false I2=$false I3=$false O=$abc$4406$n512
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.blueFreq[7] I1=$false I2=$false I3=$false O=$abc$4038$n432
+.gate SB_LUT4 I0=colorDetector.blueFreq[5] I1=$false I2=$false I3=$false O=$abc$4406$n514
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:40"
 .param LUT_INIT 01
-.gate SB_LUT4 I0=colorDetector.redFreq[2] I1=colorDetector.blueFreq[2] I2=colorDetector.redFreq[3] I3=colorDetector.blueFreq[3] O=$abc$4038$n318
+.gate SB_LUT4 I0=colorDetector.greenFreq[2] I1=colorDetector.redFreq[2] I2=colorDetector.greenFreq[3] I3=colorDetector.redFreq[3] O=$abc$4406$n390_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.redFreq[4] I1=colorDetector.blueFreq[4] I2=colorDetector.blueFreq[1] I3=colorDetector.redFreq[1] O=$abc$4038$n322_1
+.gate SB_LUT4 I0=colorDetector.greenFreq[1] I1=colorDetector.redFreq[1] I2=colorDetector.greenFreq[4] I3=colorDetector.redFreq[4] O=$abc$4406$n394_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.blueFreq[2] I1=colorDetector.greenFreq[2] I2=colorDetector.blueFreq[3] I3=colorDetector.greenFreq[3] O=$abc$4038$n325
+.gate SB_LUT4 I0=colorDetector.greenFreq[0] I1=colorDetector.blueFreq[0] I2=colorDetector.greenFreq[4] I3=colorDetector.blueFreq[4] O=$abc$4406$n397
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.blueFreq[1] I1=colorDetector.greenFreq[1] I2=colorDetector.blueFreq[4] I3=colorDetector.greenFreq[4] O=$abc$4038$n329_1
+.gate SB_LUT4 I0=$abc$4406$n403 I1=$abc$4406$n480 I2=$abc$4406$n410 I3=$abc$4406$n478 O=$abc$4406$n375
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 0100000000000000
+.gate SB_LUT4 I0=colorDetector.blueFreq[1] I1=colorDetector.redFreq[1] I2=colorDetector.blueFreq[4] I3=colorDetector.redFreq[4] O=$abc$4406$n401
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.redFreq[0] I1=colorDetector.blueFreq[0] I2=colorDetector.redFreq[5] I3=colorDetector.blueFreq[5] O=$abc$4038$n332
+.gate SB_LUT4 I0=colorDetector.blueFreq[3] I1=colorDetector.redFreq[3] I2=colorDetector.blueFreq[5] I3=colorDetector.redFreq[5] O=$abc$4406$n402_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.redFreq[6] I1=colorDetector.blueFreq[6] I2=colorDetector.redFreq[7] I3=colorDetector.blueFreq[7] O=$abc$4038$n333_1
+.gate SB_LUT4 I0=$abc$4406$n401 I1=$abc$4406$n402_1 I2=$abc$4406$n343_1 I3=$abc$4406$n345_1 O=$abc$4406$n403
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1000000000000000
+.gate SB_LUT4 I0=colorDetector.greenFreq[0] I1=colorDetector.redFreq[0] I2=colorDetector.greenFreq[5] I3=colorDetector.redFreq[5] O=$abc$4406$n404_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=$abc$4038$n332 I1=$abc$4038$n333_1 I2=$abc$4038$n318 I3=$abc$4038$n322_1 O=$abc$4038$n334
+.gate SB_LUT4 I0=colorDetector.greenFreq[6] I1=colorDetector.redFreq[6] I2=colorDetector.greenFreq[7] I3=colorDetector.redFreq[7] O=$abc$4406$n405_1
+.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
+.param LUT_INIT 1001000000001001
+.gate SB_LUT4 I0=$abc$4406$n404_1 I1=$abc$4406$n405_1 I2=$abc$4406$n390_1 I3=$abc$4406$n394_1 O=$abc$4406$n406
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111111111111
-.gate SB_LUT4 I0=$abc$4038$n398 I1=$abc$4038$n396 I2=$abc$4038$n334 I3=$false O=$abc$4038$n320
+.gate SB_LUT4 I0=$abc$4406$n480 I1=$abc$4406$n482 I2=$abc$4406$n406 I3=$false O=$abc$4406$n373
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
 .param LUT_INIT 01000000
-.gate SB_LUT4 I0=colorDetector.blueFreq[0] I1=colorDetector.greenFreq[0] I2=colorDetector.blueFreq[5] I3=colorDetector.greenFreq[5] O=$abc$4038$n336
+.gate SB_LUT4 I0=colorDetector.greenFreq[1] I1=colorDetector.blueFreq[1] I2=colorDetector.greenFreq[5] I3=colorDetector.blueFreq[5] O=$abc$4406$n408
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=colorDetector.blueFreq[6] I1=colorDetector.greenFreq[6] I2=colorDetector.blueFreq[7] I3=colorDetector.greenFreq[7] O=$abc$4038$n337_1
+.gate SB_LUT4 I0=colorDetector.greenFreq[6] I1=colorDetector.blueFreq[6] I2=colorDetector.greenFreq[7] I3=colorDetector.blueFreq[7] O=$abc$4406$n409_1
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 1001000000001001
-.gate SB_LUT4 I0=$abc$4038$n336 I1=$abc$4038$n337_1 I2=$abc$4038$n325 I3=$abc$4038$n329_1 O=$abc$4038$n338
+.gate SB_LUT4 I0=$abc$4406$n408 I1=$abc$4406$n409_1 I2=$abc$4406$n338_1 I3=$abc$4406$n397 O=$abc$4406$n410
 .attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:52"
 .param LUT_INIT 0111111111111111
-.gate SB_LUT4 I0=$abc$4038$n396 I1=$abc$4038$n398 I2=$abc$4038$n338 I3=$false O=$abc$4038$n329
-.attr src "C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:48"
-.param LUT_INIT 01000000
-.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1591.C[1] I0=colorDetector.greenFreq[0] I1=$abc$4038$n402
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[1] CO=$auto$alumacc.cc:474:replace_alu$1591.C[2] I0=colorDetector.greenFreq[1] I1=$abc$4038$n408
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[2] CO=$auto$alumacc.cc:474:replace_alu$1591.C[3] I0=colorDetector.greenFreq[2] I1=$abc$4038$n404
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[3] CO=$auto$alumacc.cc:474:replace_alu$1591.C[4] I0=colorDetector.greenFreq[3] I1=$abc$4038$n410
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[4] CO=$auto$alumacc.cc:474:replace_alu$1591.C[5] I0=colorDetector.greenFreq[4] I1=$abc$4038$n406
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[5] CO=$auto$alumacc.cc:474:replace_alu$1591.C[6] I0=colorDetector.greenFreq[5] I1=$abc$4038$n412
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[6] CO=$auto$alumacc.cc:474:replace_alu$1591.C[7] I0=colorDetector.greenFreq[6] I1=$abc$4038$n414
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1591.C[7] CO=$abc$4038$n400 I0=colorDetector.greenFreq[7] I1=$abc$4038$n416
-.attr src "top.v:132|top.v:335|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1602.C[1] I0=colorDetector.greenFreq[0] I1=$abc$4038$n418
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[1] CO=$auto$alumacc.cc:474:replace_alu$1602.C[2] I0=colorDetector.greenFreq[1] I1=$abc$4038$n420
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[2] CO=$auto$alumacc.cc:474:replace_alu$1602.C[3] I0=colorDetector.greenFreq[2] I1=$abc$4038$n422
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[3] CO=$auto$alumacc.cc:474:replace_alu$1602.C[4] I0=colorDetector.greenFreq[3] I1=$abc$4038$n424
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[4] CO=$auto$alumacc.cc:474:replace_alu$1602.C[5] I0=colorDetector.greenFreq[4] I1=$abc$4038$n426
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[5] CO=$auto$alumacc.cc:474:replace_alu$1602.C[6] I0=colorDetector.greenFreq[5] I1=$abc$4038$n428
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[6] CO=$auto$alumacc.cc:474:replace_alu$1602.C[7] I0=colorDetector.greenFreq[6] I1=$abc$4038$n430
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1602.C[7] CO=$abc$4038$n398 I0=colorDetector.greenFreq[7] I1=$abc$4038$n432
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1613.C[1] I0=colorDetector.blueFreq[0] I1=$abc$4038$n402
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[1] CO=$auto$alumacc.cc:474:replace_alu$1613.C[2] I0=colorDetector.blueFreq[1] I1=$abc$4038$n408
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[2] CO=$auto$alumacc.cc:474:replace_alu$1613.C[3] I0=colorDetector.blueFreq[2] I1=$abc$4038$n404
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[3] CO=$auto$alumacc.cc:474:replace_alu$1613.C[4] I0=colorDetector.blueFreq[3] I1=$abc$4038$n410
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[4] CO=$auto$alumacc.cc:474:replace_alu$1613.C[5] I0=colorDetector.blueFreq[4] I1=$abc$4038$n406
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[5] CO=$auto$alumacc.cc:474:replace_alu$1613.C[6] I0=colorDetector.blueFreq[5] I1=$abc$4038$n412
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[6] CO=$auto$alumacc.cc:474:replace_alu$1613.C[7] I0=colorDetector.blueFreq[6] I1=$abc$4038$n414
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1613.C[7] CO=$abc$4038$n396 I0=colorDetector.blueFreq[7] I1=$abc$4038$n416
-.attr src "top.v:132|top.v:334|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1623.C[1] I0=colorDetector.redFreq[0] I1=$abc$4406$n484
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[1] CO=$auto$alumacc.cc:474:replace_alu$1623.C[2] I0=colorDetector.redFreq[1] I1=$abc$4406$n486
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[2] CO=$auto$alumacc.cc:474:replace_alu$1623.C[3] I0=colorDetector.redFreq[2] I1=$abc$4406$n488
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[3] CO=$auto$alumacc.cc:474:replace_alu$1623.C[4] I0=colorDetector.redFreq[3] I1=$abc$4406$n490
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[4] CO=$auto$alumacc.cc:474:replace_alu$1623.C[5] I0=colorDetector.redFreq[4] I1=$abc$4406$n492
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[5] CO=$auto$alumacc.cc:474:replace_alu$1623.C[6] I0=colorDetector.redFreq[5] I1=$abc$4406$n494
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[6] CO=$auto$alumacc.cc:474:replace_alu$1623.C[7] I0=colorDetector.redFreq[6] I1=$abc$4406$n496
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1623.C[7] CO=$abc$4406$n482 I0=colorDetector.redFreq[7] I1=$abc$4406$n498
+.attr src "top.v:132|top.v:357|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1634.C[1] I0=colorDetector.greenFreq[0] I1=$abc$4406$n500
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[1] CO=$auto$alumacc.cc:474:replace_alu$1634.C[2] I0=colorDetector.greenFreq[1] I1=$abc$4406$n502
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[2] CO=$auto$alumacc.cc:474:replace_alu$1634.C[3] I0=colorDetector.greenFreq[2] I1=$abc$4406$n504
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[3] CO=$auto$alumacc.cc:474:replace_alu$1634.C[4] I0=colorDetector.greenFreq[3] I1=$abc$4406$n512
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[4] CO=$auto$alumacc.cc:474:replace_alu$1634.C[5] I0=colorDetector.greenFreq[4] I1=$abc$4406$n506
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[5] CO=$auto$alumacc.cc:474:replace_alu$1634.C[6] I0=colorDetector.greenFreq[5] I1=$abc$4406$n514
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[6] CO=$auto$alumacc.cc:474:replace_alu$1634.C[7] I0=colorDetector.greenFreq[6] I1=$abc$4406$n508
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1634.C[7] CO=$abc$4406$n480 I0=colorDetector.greenFreq[7] I1=$abc$4406$n510
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$true CO=$auto$alumacc.cc:474:replace_alu$1645.C[1] I0=colorDetector.redFreq[0] I1=$abc$4406$n500
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[1] CO=$auto$alumacc.cc:474:replace_alu$1645.C[2] I0=colorDetector.redFreq[1] I1=$abc$4406$n502
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[2] CO=$auto$alumacc.cc:474:replace_alu$1645.C[3] I0=colorDetector.redFreq[2] I1=$abc$4406$n504
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[3] CO=$auto$alumacc.cc:474:replace_alu$1645.C[4] I0=colorDetector.redFreq[3] I1=$abc$4406$n512
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[4] CO=$auto$alumacc.cc:474:replace_alu$1645.C[5] I0=colorDetector.redFreq[4] I1=$abc$4406$n506
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[5] CO=$auto$alumacc.cc:474:replace_alu$1645.C[6] I0=colorDetector.redFreq[5] I1=$abc$4406$n514
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[6] CO=$auto$alumacc.cc:474:replace_alu$1645.C[7] I0=colorDetector.redFreq[6] I1=$abc$4406$n508
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1645.C[7] CO=$abc$4406$n478 I0=colorDetector.redFreq[7] I1=$abc$4406$n510
+.attr src "top.v:132|top.v:356|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=$true I2=clkDiv1.count[0] I3=$false O=$techmap\clkDiv1.$0\count[2:0][0]
-.attr src "top.v:73|top.v:546|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.attr src "top.v:73|top.v:567|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=clkDiv1.count[0] CO=$auto$alumacc.cc:474:replace_alu$1627.C[2] I0=$false I1=clkDiv1.count[1]
-.attr src "top.v:73|top.v:546|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=clkDiv1.count[2] I3=$auto$alumacc.cc:474:replace_alu$1627.C[2] O=$techmap\clkDiv1.$0\count[2:0][2]
-.attr src "top.v:73|top.v:546|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=clkDiv1.count[0] CO=$auto$alumacc.cc:474:replace_alu$1659.C[2] I0=$false I1=clkDiv1.count[1]
+.attr src "top.v:73|top.v:567|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=clkDiv1.count[2] I3=$auto$alumacc.cc:474:replace_alu$1659.C[2] O=$techmap\clkDiv1.$0\count[2:0][2]
+.attr src "top.v:73|top.v:567|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$true I2=colorDetector.color_count[0] I3=$false O=$abc$4038$n353
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_LUT4 I0=$false I1=$true I2=colorDetector.color_count[0] I3=$false O=$abc$4406$n427
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[10] I3=$auto$alumacc.cc:474:replace_alu$1630.C[10] O=$abc$4038$n373
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[10] I3=$auto$alumacc.cc:474:replace_alu$1662.C[10] O=$abc$4406$n447
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=colorDetector.color_count[0] CO=$auto$alumacc.cc:474:replace_alu$1630.C[2] I0=$false I1=colorDetector.color_count[1]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[2] I3=$auto$alumacc.cc:474:replace_alu$1630.C[2] O=$abc$4038$n357
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=colorDetector.color_count[0] CO=$auto$alumacc.cc:474:replace_alu$1662.C[2] I0=$false I1=colorDetector.color_count[1]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[2] I3=$auto$alumacc.cc:474:replace_alu$1662.C[2] O=$abc$4406$n431
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[2] CO=$auto$alumacc.cc:474:replace_alu$1630.C[3] I0=$false I1=colorDetector.color_count[2]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[3] I3=$auto$alumacc.cc:474:replace_alu$1630.C[3] O=$abc$4038$n359
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[2] CO=$auto$alumacc.cc:474:replace_alu$1662.C[3] I0=$false I1=colorDetector.color_count[2]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[3] I3=$auto$alumacc.cc:474:replace_alu$1662.C[3] O=$abc$4406$n433
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[3] CO=$auto$alumacc.cc:474:replace_alu$1630.C[4] I0=$false I1=colorDetector.color_count[3]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[4] I3=$auto$alumacc.cc:474:replace_alu$1630.C[4] O=$abc$4038$n361
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[3] CO=$auto$alumacc.cc:474:replace_alu$1662.C[4] I0=$false I1=colorDetector.color_count[3]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[4] I3=$auto$alumacc.cc:474:replace_alu$1662.C[4] O=$abc$4406$n435
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[4] CO=$auto$alumacc.cc:474:replace_alu$1630.C[5] I0=$false I1=colorDetector.color_count[4]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[5] I3=$auto$alumacc.cc:474:replace_alu$1630.C[5] O=$abc$4038$n363
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[4] CO=$auto$alumacc.cc:474:replace_alu$1662.C[5] I0=$false I1=colorDetector.color_count[4]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[5] I3=$auto$alumacc.cc:474:replace_alu$1662.C[5] O=$abc$4406$n437
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[5] CO=$auto$alumacc.cc:474:replace_alu$1630.C[6] I0=$false I1=colorDetector.color_count[5]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[6] I3=$auto$alumacc.cc:474:replace_alu$1630.C[6] O=$abc$4038$n365
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[5] CO=$auto$alumacc.cc:474:replace_alu$1662.C[6] I0=$false I1=colorDetector.color_count[5]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[6] I3=$auto$alumacc.cc:474:replace_alu$1662.C[6] O=$abc$4406$n439
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[6] CO=$auto$alumacc.cc:474:replace_alu$1630.C[7] I0=$false I1=colorDetector.color_count[6]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[7] I3=$auto$alumacc.cc:474:replace_alu$1630.C[7] O=$abc$4038$n367
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[6] CO=$auto$alumacc.cc:474:replace_alu$1662.C[7] I0=$false I1=colorDetector.color_count[6]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[7] I3=$auto$alumacc.cc:474:replace_alu$1662.C[7] O=$abc$4406$n441
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[7] CO=$auto$alumacc.cc:474:replace_alu$1630.C[8] I0=$false I1=colorDetector.color_count[7]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[8] I3=$auto$alumacc.cc:474:replace_alu$1630.C[8] O=$abc$4038$n369
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[7] CO=$auto$alumacc.cc:474:replace_alu$1662.C[8] I0=$false I1=colorDetector.color_count[7]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[8] I3=$auto$alumacc.cc:474:replace_alu$1662.C[8] O=$abc$4406$n443
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[8] CO=$auto$alumacc.cc:474:replace_alu$1630.C[9] I0=$false I1=colorDetector.color_count[8]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[9] I3=$auto$alumacc.cc:474:replace_alu$1630.C[9] O=$abc$4038$n371
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[8] CO=$auto$alumacc.cc:474:replace_alu$1662.C[9] I0=$false I1=colorDetector.color_count[8]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.color_count[9] I3=$auto$alumacc.cc:474:replace_alu$1662.C[9] O=$abc$4406$n445
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1630.C[9] CO=$auto$alumacc.cc:474:replace_alu$1630.C[10] I0=$false I1=colorDetector.color_count[9]
-.attr src "top.v:132|top.v:304|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[9] CO=$auto$alumacc.cc:474:replace_alu$1662.C[10] I0=$false I1=colorDetector.color_count[9]
+.attr src "top.v:132|top.v:318|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$true I2=colorDetector.delay[0] I3=$false O=$abc$4406$n376
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[10] I3=$auto$alumacc.cc:474:replace_alu$1665.C[10] O=$abc$4406$n396
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[10] CO=$auto$alumacc.cc:474:replace_alu$1665.C[11] I0=$false I1=colorDetector.delay[10]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[11] I3=$auto$alumacc.cc:474:replace_alu$1665.C[11] O=$abc$4406$n398
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[11] CO=$auto$alumacc.cc:474:replace_alu$1665.C[12] I0=$false I1=colorDetector.delay[11]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[12] I3=$auto$alumacc.cc:474:replace_alu$1665.C[12] O=$abc$4406$n400
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[12] CO=$auto$alumacc.cc:474:replace_alu$1665.C[13] I0=$false I1=colorDetector.delay[12]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[13] I3=$auto$alumacc.cc:474:replace_alu$1665.C[13] O=$abc$4406$n402
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=colorDetector.delay[0] CO=$auto$alumacc.cc:474:replace_alu$1665.C[2] I0=$false I1=colorDetector.delay[1]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[2] I3=$auto$alumacc.cc:474:replace_alu$1665.C[2] O=$abc$4406$n380
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[2] CO=$auto$alumacc.cc:474:replace_alu$1665.C[3] I0=$false I1=colorDetector.delay[2]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[3] I3=$auto$alumacc.cc:474:replace_alu$1665.C[3] O=$abc$4406$n382
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[3] CO=$auto$alumacc.cc:474:replace_alu$1665.C[4] I0=$false I1=colorDetector.delay[3]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[4] I3=$auto$alumacc.cc:474:replace_alu$1665.C[4] O=$abc$4406$n384
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[4] CO=$auto$alumacc.cc:474:replace_alu$1665.C[5] I0=$false I1=colorDetector.delay[4]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[5] I3=$auto$alumacc.cc:474:replace_alu$1665.C[5] O=$abc$4406$n386
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[5] CO=$auto$alumacc.cc:474:replace_alu$1665.C[6] I0=$false I1=colorDetector.delay[5]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[6] I3=$auto$alumacc.cc:474:replace_alu$1665.C[6] O=$abc$4406$n388
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[6] CO=$auto$alumacc.cc:474:replace_alu$1665.C[7] I0=$false I1=colorDetector.delay[6]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[7] I3=$auto$alumacc.cc:474:replace_alu$1665.C[7] O=$abc$4406$n390
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[7] CO=$auto$alumacc.cc:474:replace_alu$1665.C[8] I0=$false I1=colorDetector.delay[7]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[8] I3=$auto$alumacc.cc:474:replace_alu$1665.C[8] O=$abc$4406$n392
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[8] CO=$auto$alumacc.cc:474:replace_alu$1665.C[9] I0=$false I1=colorDetector.delay[8]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=colorDetector.delay[9] I3=$auto$alumacc.cc:474:replace_alu$1665.C[9] O=$abc$4406$n394
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.param LUT_INIT 0110100110010110
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1665.C[9] CO=$auto$alumacc.cc:474:replace_alu$1665.C[10] I0=$false I1=colorDetector.delay[9]
+.attr src "top.v:132|top.v:323|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
 .gate SB_LUT4 I0=$false I1=$true I2=ledBlinker.count[0] I3=$false O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[0]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[10] I3=$auto$alumacc.cc:474:replace_alu$1659.C[10] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[10]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[10] I3=$auto$alumacc.cc:474:replace_alu$1694.C[10] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[10]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[10] CO=$auto$alumacc.cc:474:replace_alu$1659.C[11] I0=$false I1=ledBlinker.count[10]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[10] CO=$auto$alumacc.cc:474:replace_alu$1694.C[11] I0=$false I1=ledBlinker.count[10]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[11] I3=$auto$alumacc.cc:474:replace_alu$1659.C[11] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[11]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[11] I3=$auto$alumacc.cc:474:replace_alu$1694.C[11] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[11]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[11] CO=$auto$alumacc.cc:474:replace_alu$1659.C[12] I0=$false I1=ledBlinker.count[11]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[11] CO=$auto$alumacc.cc:474:replace_alu$1694.C[12] I0=$false I1=ledBlinker.count[11]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[12] I3=$auto$alumacc.cc:474:replace_alu$1659.C[12] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[12]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[12] I3=$auto$alumacc.cc:474:replace_alu$1694.C[12] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[12]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[12] CO=$auto$alumacc.cc:474:replace_alu$1659.C[13] I0=$false I1=ledBlinker.count[12]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[12] CO=$auto$alumacc.cc:474:replace_alu$1694.C[13] I0=$false I1=ledBlinker.count[12]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[13] I3=$auto$alumacc.cc:474:replace_alu$1659.C[13] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[13]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[13] I3=$auto$alumacc.cc:474:replace_alu$1694.C[13] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[13]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[13] CO=$auto$alumacc.cc:474:replace_alu$1659.C[14] I0=$false I1=ledBlinker.count[13]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[13] CO=$auto$alumacc.cc:474:replace_alu$1694.C[14] I0=$false I1=ledBlinker.count[13]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[14] I3=$auto$alumacc.cc:474:replace_alu$1659.C[14] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[14]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[14] I3=$auto$alumacc.cc:474:replace_alu$1694.C[14] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[14]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[14] CO=$auto$alumacc.cc:474:replace_alu$1659.C[15] I0=$false I1=ledBlinker.count[14]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[14] CO=$auto$alumacc.cc:474:replace_alu$1694.C[15] I0=$false I1=ledBlinker.count[14]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[15] I3=$auto$alumacc.cc:474:replace_alu$1659.C[15] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[15]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[15] I3=$auto$alumacc.cc:474:replace_alu$1694.C[15] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[15]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[15] CO=$auto$alumacc.cc:474:replace_alu$1659.C[16] I0=$false I1=ledBlinker.count[15]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[15] CO=$auto$alumacc.cc:474:replace_alu$1694.C[16] I0=$false I1=ledBlinker.count[15]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[16] I3=$auto$alumacc.cc:474:replace_alu$1659.C[16] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[16]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[16] I3=$auto$alumacc.cc:474:replace_alu$1694.C[16] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[16]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[16] CO=$auto$alumacc.cc:474:replace_alu$1659.C[17] I0=$false I1=ledBlinker.count[16]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[16] CO=$auto$alumacc.cc:474:replace_alu$1694.C[17] I0=$false I1=ledBlinker.count[16]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[17] I3=$auto$alumacc.cc:474:replace_alu$1659.C[17] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[17]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[17] I3=$auto$alumacc.cc:474:replace_alu$1694.C[17] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[17]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[17] CO=$auto$alumacc.cc:474:replace_alu$1659.C[18] I0=$false I1=ledBlinker.count[17]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[17] CO=$auto$alumacc.cc:474:replace_alu$1694.C[18] I0=$false I1=ledBlinker.count[17]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[18] I3=$auto$alumacc.cc:474:replace_alu$1659.C[18] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[18]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[18] I3=$auto$alumacc.cc:474:replace_alu$1694.C[18] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[18]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[18] CO=$auto$alumacc.cc:474:replace_alu$1659.C[19] I0=$false I1=ledBlinker.count[18]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[18] CO=$auto$alumacc.cc:474:replace_alu$1694.C[19] I0=$false I1=ledBlinker.count[18]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[19] I3=$auto$alumacc.cc:474:replace_alu$1659.C[19] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[19]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[19] I3=$auto$alumacc.cc:474:replace_alu$1694.C[19] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[19]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[19] CO=$auto$alumacc.cc:474:replace_alu$1659.C[20] I0=$false I1=ledBlinker.count[19]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[19] CO=$auto$alumacc.cc:474:replace_alu$1694.C[20] I0=$false I1=ledBlinker.count[19]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_CARRY CI=ledBlinker.count[0] CO=$auto$alumacc.cc:474:replace_alu$1659.C[2] I0=$false I1=ledBlinker.count[1]
+.gate SB_CARRY CI=ledBlinker.count[0] CO=$auto$alumacc.cc:474:replace_alu$1694.C[2] I0=$false I1=ledBlinker.count[1]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[20] I3=$auto$alumacc.cc:474:replace_alu$1659.C[20] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[20]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[20] I3=$auto$alumacc.cc:474:replace_alu$1694.C[20] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[20]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[20] CO=$auto$alumacc.cc:474:replace_alu$1659.C[21] I0=$false I1=ledBlinker.count[20]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[20] CO=$auto$alumacc.cc:474:replace_alu$1694.C[21] I0=$false I1=ledBlinker.count[20]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[21] I3=$auto$alumacc.cc:474:replace_alu$1659.C[21] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[21]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[21] I3=$auto$alumacc.cc:474:replace_alu$1694.C[21] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[21]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[21] CO=$auto$alumacc.cc:474:replace_alu$1659.C[22] I0=$false I1=ledBlinker.count[21]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[21] CO=$auto$alumacc.cc:474:replace_alu$1694.C[22] I0=$false I1=ledBlinker.count[21]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[22] I3=$auto$alumacc.cc:474:replace_alu$1659.C[22] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[22]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[22] I3=$auto$alumacc.cc:474:replace_alu$1694.C[22] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[22]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[22] CO=$auto$alumacc.cc:474:replace_alu$1659.C[23] I0=$false I1=ledBlinker.count[22]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[22] CO=$auto$alumacc.cc:474:replace_alu$1694.C[23] I0=$false I1=ledBlinker.count[22]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[23] I3=$auto$alumacc.cc:474:replace_alu$1659.C[23] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[23]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[23] I3=$auto$alumacc.cc:474:replace_alu$1694.C[23] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[23]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[23] CO=$auto$alumacc.cc:474:replace_alu$1659.C[24] I0=$false I1=ledBlinker.count[23]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[23] CO=$auto$alumacc.cc:474:replace_alu$1694.C[24] I0=$false I1=ledBlinker.count[23]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[24] I3=$auto$alumacc.cc:474:replace_alu$1659.C[24] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[24]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[24] I3=$auto$alumacc.cc:474:replace_alu$1694.C[24] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[24]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[24] CO=$auto$alumacc.cc:474:replace_alu$1659.C[25] I0=$false I1=ledBlinker.count[24]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[24] CO=$auto$alumacc.cc:474:replace_alu$1694.C[25] I0=$false I1=ledBlinker.count[24]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[25] I3=$auto$alumacc.cc:474:replace_alu$1659.C[25] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[25]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[25] I3=$auto$alumacc.cc:474:replace_alu$1694.C[25] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[25]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[25] CO=$auto$alumacc.cc:474:replace_alu$1659.C[26] I0=$false I1=ledBlinker.count[25]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[25] CO=$auto$alumacc.cc:474:replace_alu$1694.C[26] I0=$false I1=ledBlinker.count[25]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[26] I3=$auto$alumacc.cc:474:replace_alu$1659.C[26] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[26]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[26] I3=$auto$alumacc.cc:474:replace_alu$1694.C[26] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[26]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[26] CO=$auto$alumacc.cc:474:replace_alu$1659.C[27] I0=$false I1=ledBlinker.count[26]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[26] CO=$auto$alumacc.cc:474:replace_alu$1694.C[27] I0=$false I1=ledBlinker.count[26]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[27] I3=$auto$alumacc.cc:474:replace_alu$1659.C[27] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[27]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[27] I3=$auto$alumacc.cc:474:replace_alu$1694.C[27] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[27]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[27] CO=$auto$alumacc.cc:474:replace_alu$1659.C[28] I0=$false I1=ledBlinker.count[27]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[27] CO=$auto$alumacc.cc:474:replace_alu$1694.C[28] I0=$false I1=ledBlinker.count[27]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[28] I3=$auto$alumacc.cc:474:replace_alu$1659.C[28] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[28]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[28] I3=$auto$alumacc.cc:474:replace_alu$1694.C[28] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[28]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[28] CO=$auto$alumacc.cc:474:replace_alu$1659.C[29] I0=$false I1=ledBlinker.count[28]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[28] CO=$auto$alumacc.cc:474:replace_alu$1694.C[29] I0=$false I1=ledBlinker.count[28]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[29] I3=$auto$alumacc.cc:474:replace_alu$1659.C[29] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[29]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[29] I3=$auto$alumacc.cc:474:replace_alu$1694.C[29] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[29]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[29] CO=$auto$alumacc.cc:474:replace_alu$1659.C[30] I0=$false I1=ledBlinker.count[29]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[29] CO=$auto$alumacc.cc:474:replace_alu$1694.C[30] I0=$false I1=ledBlinker.count[29]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[2] I3=$auto$alumacc.cc:474:replace_alu$1659.C[2] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[2]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[2] I3=$auto$alumacc.cc:474:replace_alu$1694.C[2] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[2]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[2] CO=$auto$alumacc.cc:474:replace_alu$1659.C[3] I0=$false I1=ledBlinker.count[2]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[2] CO=$auto$alumacc.cc:474:replace_alu$1694.C[3] I0=$false I1=ledBlinker.count[2]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[30] I3=$auto$alumacc.cc:474:replace_alu$1659.C[30] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[30]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[30] I3=$auto$alumacc.cc:474:replace_alu$1694.C[30] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[30]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[30] CO=$auto$alumacc.cc:474:replace_alu$1659.C[31] I0=$false I1=ledBlinker.count[30]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[30] CO=$auto$alumacc.cc:474:replace_alu$1694.C[31] I0=$false I1=ledBlinker.count[30]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[31] I3=$auto$alumacc.cc:474:replace_alu$1659.C[31] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[31]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[31] I3=$auto$alumacc.cc:474:replace_alu$1694.C[31] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[31]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[31] CO=$auto$alumacc.cc:474:replace_alu$1659.C[32] I0=$false I1=ledBlinker.count[31]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[31] CO=$auto$alumacc.cc:474:replace_alu$1694.C[32] I0=$false I1=ledBlinker.count[31]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[32] I3=$auto$alumacc.cc:474:replace_alu$1659.C[32] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[32]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[32] I3=$auto$alumacc.cc:474:replace_alu$1694.C[32] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[32]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[32] CO=$auto$alumacc.cc:474:replace_alu$1659.C[33] I0=$false I1=ledBlinker.count[32]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[32] CO=$auto$alumacc.cc:474:replace_alu$1694.C[33] I0=$false I1=ledBlinker.count[32]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[33] I3=$auto$alumacc.cc:474:replace_alu$1659.C[33] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[33]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[33] I3=$auto$alumacc.cc:474:replace_alu$1694.C[33] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[33]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[33] CO=$auto$alumacc.cc:474:replace_alu$1659.C[34] I0=$false I1=ledBlinker.count[33]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[33] CO=$auto$alumacc.cc:474:replace_alu$1694.C[34] I0=$false I1=ledBlinker.count[33]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[34] I3=$auto$alumacc.cc:474:replace_alu$1659.C[34] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[34]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[34] I3=$auto$alumacc.cc:474:replace_alu$1694.C[34] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[34]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[34] CO=$auto$alumacc.cc:474:replace_alu$1659.C[35] I0=$false I1=ledBlinker.count[34]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[34] CO=$auto$alumacc.cc:474:replace_alu$1694.C[35] I0=$false I1=ledBlinker.count[34]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[35] I3=$auto$alumacc.cc:474:replace_alu$1659.C[35] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[35]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[35] I3=$auto$alumacc.cc:474:replace_alu$1694.C[35] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[35]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[35] CO=$auto$alumacc.cc:474:replace_alu$1659.C[36] I0=$false I1=ledBlinker.count[35]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[35] CO=$auto$alumacc.cc:474:replace_alu$1694.C[36] I0=$false I1=ledBlinker.count[35]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[36] I3=$auto$alumacc.cc:474:replace_alu$1659.C[36] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[36]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[36] I3=$auto$alumacc.cc:474:replace_alu$1694.C[36] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[36]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[36] CO=$auto$alumacc.cc:474:replace_alu$1659.C[37] I0=$false I1=ledBlinker.count[36]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[36] CO=$auto$alumacc.cc:474:replace_alu$1694.C[37] I0=$false I1=ledBlinker.count[36]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[37] I3=$auto$alumacc.cc:474:replace_alu$1659.C[37] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[37]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[37] I3=$auto$alumacc.cc:474:replace_alu$1694.C[37] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[37]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[37] CO=$auto$alumacc.cc:474:replace_alu$1659.C[38] I0=$false I1=ledBlinker.count[37]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[37] CO=$auto$alumacc.cc:474:replace_alu$1694.C[38] I0=$false I1=ledBlinker.count[37]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[38] I3=$auto$alumacc.cc:474:replace_alu$1659.C[38] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[38]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[38] I3=$auto$alumacc.cc:474:replace_alu$1694.C[38] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[38]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[38] CO=$auto$alumacc.cc:474:replace_alu$1659.C[39] I0=$false I1=ledBlinker.count[38]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[38] CO=$auto$alumacc.cc:474:replace_alu$1694.C[39] I0=$false I1=ledBlinker.count[38]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[39] I3=$auto$alumacc.cc:474:replace_alu$1659.C[39] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[39]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[39] I3=$auto$alumacc.cc:474:replace_alu$1694.C[39] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[39]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[39] CO=$auto$alumacc.cc:474:replace_alu$1659.C[40] I0=$false I1=ledBlinker.count[39]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[39] CO=$auto$alumacc.cc:474:replace_alu$1694.C[40] I0=$false I1=ledBlinker.count[39]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[3] I3=$auto$alumacc.cc:474:replace_alu$1659.C[3] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[3]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[3] I3=$auto$alumacc.cc:474:replace_alu$1694.C[3] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[3]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[3] CO=$auto$alumacc.cc:474:replace_alu$1659.C[4] I0=$false I1=ledBlinker.count[3]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[3] CO=$auto$alumacc.cc:474:replace_alu$1694.C[4] I0=$false I1=ledBlinker.count[3]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[40] I3=$auto$alumacc.cc:474:replace_alu$1659.C[40] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[40]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[40] I3=$auto$alumacc.cc:474:replace_alu$1694.C[40] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[40]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[40] CO=$auto$alumacc.cc:474:replace_alu$1659.C[41] I0=$false I1=ledBlinker.count[40]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[40] CO=$auto$alumacc.cc:474:replace_alu$1694.C[41] I0=$false I1=ledBlinker.count[40]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[41] I3=$auto$alumacc.cc:474:replace_alu$1659.C[41] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[41]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[41] I3=$auto$alumacc.cc:474:replace_alu$1694.C[41] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[41]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[41] CO=$auto$alumacc.cc:474:replace_alu$1659.C[42] I0=$false I1=ledBlinker.count[41]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[41] CO=$auto$alumacc.cc:474:replace_alu$1694.C[42] I0=$false I1=ledBlinker.count[41]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[42] I3=$auto$alumacc.cc:474:replace_alu$1659.C[42] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[42]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[42] I3=$auto$alumacc.cc:474:replace_alu$1694.C[42] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[42]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[42] CO=$auto$alumacc.cc:474:replace_alu$1659.C[43] I0=$false I1=ledBlinker.count[42]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[42] CO=$auto$alumacc.cc:474:replace_alu$1694.C[43] I0=$false I1=ledBlinker.count[42]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[43] I3=$auto$alumacc.cc:474:replace_alu$1659.C[43] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[43]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[43] I3=$auto$alumacc.cc:474:replace_alu$1694.C[43] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[43]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[43] CO=$auto$alumacc.cc:474:replace_alu$1659.C[44] I0=$false I1=ledBlinker.count[43]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[43] CO=$auto$alumacc.cc:474:replace_alu$1694.C[44] I0=$false I1=ledBlinker.count[43]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[44] I3=$auto$alumacc.cc:474:replace_alu$1659.C[44] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[44]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[44] I3=$auto$alumacc.cc:474:replace_alu$1694.C[44] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[44]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[44] CO=$auto$alumacc.cc:474:replace_alu$1659.C[45] I0=$false I1=ledBlinker.count[44]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[44] CO=$auto$alumacc.cc:474:replace_alu$1694.C[45] I0=$false I1=ledBlinker.count[44]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[45] I3=$auto$alumacc.cc:474:replace_alu$1659.C[45] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[45]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[45] I3=$auto$alumacc.cc:474:replace_alu$1694.C[45] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[45]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[45] CO=$auto$alumacc.cc:474:replace_alu$1659.C[46] I0=$false I1=ledBlinker.count[45]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[45] CO=$auto$alumacc.cc:474:replace_alu$1694.C[46] I0=$false I1=ledBlinker.count[45]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[46] I3=$auto$alumacc.cc:474:replace_alu$1659.C[46] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[46]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[46] I3=$auto$alumacc.cc:474:replace_alu$1694.C[46] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[46]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[46] CO=$auto$alumacc.cc:474:replace_alu$1659.C[47] I0=$false I1=ledBlinker.count[46]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[46] CO=$auto$alumacc.cc:474:replace_alu$1694.C[47] I0=$false I1=ledBlinker.count[46]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[47] I3=$auto$alumacc.cc:474:replace_alu$1659.C[47] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[47]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[47] I3=$auto$alumacc.cc:474:replace_alu$1694.C[47] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[47]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[47] CO=$auto$alumacc.cc:474:replace_alu$1659.C[48] I0=$false I1=ledBlinker.count[47]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[47] CO=$auto$alumacc.cc:474:replace_alu$1694.C[48] I0=$false I1=ledBlinker.count[47]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[48] I3=$auto$alumacc.cc:474:replace_alu$1659.C[48] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[48]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[48] I3=$auto$alumacc.cc:474:replace_alu$1694.C[48] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[48]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[48] CO=$auto$alumacc.cc:474:replace_alu$1659.C[49] I0=$false I1=ledBlinker.count[48]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[48] CO=$auto$alumacc.cc:474:replace_alu$1694.C[49] I0=$false I1=ledBlinker.count[48]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[49] I3=$auto$alumacc.cc:474:replace_alu$1659.C[49] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[49]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[49] I3=$auto$alumacc.cc:474:replace_alu$1694.C[49] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[49]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[49] CO=$auto$alumacc.cc:474:replace_alu$1659.C[50] I0=$false I1=ledBlinker.count[49]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[49] CO=$auto$alumacc.cc:474:replace_alu$1694.C[50] I0=$false I1=ledBlinker.count[49]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[4] I3=$auto$alumacc.cc:474:replace_alu$1659.C[4] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[4]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[4] I3=$auto$alumacc.cc:474:replace_alu$1694.C[4] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[4]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[4] CO=$auto$alumacc.cc:474:replace_alu$1659.C[5] I0=$false I1=ledBlinker.count[4]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[4] CO=$auto$alumacc.cc:474:replace_alu$1694.C[5] I0=$false I1=ledBlinker.count[4]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[50] I3=$auto$alumacc.cc:474:replace_alu$1659.C[50] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[50]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[50] I3=$auto$alumacc.cc:474:replace_alu$1694.C[50] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[50]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[5] I3=$auto$alumacc.cc:474:replace_alu$1659.C[5] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[5]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[5] I3=$auto$alumacc.cc:474:replace_alu$1694.C[5] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[5]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[5] CO=$auto$alumacc.cc:474:replace_alu$1659.C[6] I0=$false I1=ledBlinker.count[5]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[5] CO=$auto$alumacc.cc:474:replace_alu$1694.C[6] I0=$false I1=ledBlinker.count[5]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[6] I3=$auto$alumacc.cc:474:replace_alu$1659.C[6] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[6]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[6] I3=$auto$alumacc.cc:474:replace_alu$1694.C[6] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[6]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[6] CO=$auto$alumacc.cc:474:replace_alu$1659.C[7] I0=$false I1=ledBlinker.count[6]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[6] CO=$auto$alumacc.cc:474:replace_alu$1694.C[7] I0=$false I1=ledBlinker.count[6]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[7] I3=$auto$alumacc.cc:474:replace_alu$1659.C[7] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[7]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[7] I3=$auto$alumacc.cc:474:replace_alu$1694.C[7] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[7]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[7] CO=$auto$alumacc.cc:474:replace_alu$1659.C[8] I0=$false I1=ledBlinker.count[7]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[7] CO=$auto$alumacc.cc:474:replace_alu$1694.C[8] I0=$false I1=ledBlinker.count[7]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[8] I3=$auto$alumacc.cc:474:replace_alu$1659.C[8] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[8]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[8] I3=$auto$alumacc.cc:474:replace_alu$1694.C[8] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[8]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[8] CO=$auto$alumacc.cc:474:replace_alu$1659.C[9] I0=$false I1=ledBlinker.count[8]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[8] CO=$auto$alumacc.cc:474:replace_alu$1694.C[9] I0=$false I1=ledBlinker.count[8]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[9] I3=$auto$alumacc.cc:474:replace_alu$1659.C[9] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[9]
+.gate SB_LUT4 I0=$false I1=$false I2=ledBlinker.count[9] I3=$auto$alumacc.cc:474:replace_alu$1694.C[9] O=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[9]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1659.C[9] CO=$auto$alumacc.cc:474:replace_alu$1659.C[10] I0=$false I1=ledBlinker.count[9]
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1694.C[9] CO=$auto$alumacc.cc:474:replace_alu$1694.C[10] I0=$false I1=ledBlinker.count[9]
 .attr src "top.v:76|ledBlinker.v:14|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$true I2=PIN_7 I3=$false O=$abc$4038$n445
-.attr src "top.v:123|top.v:219|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_LUT4 I0=$false I1=$true I2=PIN_7 I3=$false O=$abc$4406$n527
+.attr src "top.v:123|top.v:227|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=PIN_7 CO=$auto$alumacc.cc:474:replace_alu$1662.C[2] I0=$false I1=PIN_6
-.attr src "top.v:123|top.v:219|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=PIN_5 I3=$auto$alumacc.cc:474:replace_alu$1662.C[2] O=$abc$4038$n448
-.attr src "top.v:123|top.v:219|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=PIN_7 CO=$auto$alumacc.cc:474:replace_alu$1697.C[2] I0=$false I1=PIN_6
+.attr src "top.v:123|top.v:227|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=PIN_5 I3=$auto$alumacc.cc:474:replace_alu$1697.C[2] O=$abc$4406$n530
+.attr src "top.v:123|top.v:227|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
-.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1662.C[2] CO=$auto$alumacc.cc:474:replace_alu$1662.C[3] I0=$false I1=PIN_5
-.attr src "top.v:123|top.v:219|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
-.gate SB_LUT4 I0=$false I1=$false I2=PIN_4 I3=$auto$alumacc.cc:474:replace_alu$1662.C[3] O=$abc$4038$n450
-.attr src "top.v:123|top.v:219|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
+.gate SB_CARRY CI=$auto$alumacc.cc:474:replace_alu$1697.C[2] CO=$auto$alumacc.cc:474:replace_alu$1697.C[3] I0=$false I1=PIN_5
+.attr src "top.v:123|top.v:227|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:47"
+.gate SB_LUT4 I0=$false I1=$false I2=PIN_4 I3=$auto$alumacc.cc:474:replace_alu$1697.C[3] O=$abc$4406$n532
+.attr src "top.v:123|top.v:227|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/arith_map.v:53"
 .param LUT_INIT 0110100110010110
 .gate SB_DFF C=CLK D=$techmap\clkDiv1.$0\count[2:0][0] Q=clkDiv1.count[0]
-.attr src "top.v:73|top.v:540|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFE C=CLK D=$abc$4038$n386 E=clkDiv1.count[0] Q=clkDiv1.count[1]
-.attr src "top.v:73|top.v:540|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.attr src "top.v:73|top.v:561|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.gate SB_DFFE C=CLK D=$abc$4406$n467 E=clkDiv1.count[0] Q=clkDiv1.count[1]
+.attr src "top.v:73|top.v:561|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
 .gate SB_DFF C=CLK D=$techmap\clkDiv1.$0\count[2:0][2] Q=clkDiv1.count[2]
-.attr src "top.v:73|top.v:540|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFE C=CLK D=$abc$4038$n394 E=$abc$4038$n460 Q=clkDiv1.clk_out
-.attr src "top.v:73|top.v:540|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n191 E=$abc$4038$n215 Q=sensorSelector.selectorComplete
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n194 E=$abc$4038$n195 Q=sensorSelector.startDetection
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n446 E=$abc$4038$n190 Q=PIN_7
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n447 E=$abc$4038$n190 Q=PIN_6
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n449 E=$abc$4038$n190 Q=PIN_5
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n451 E=$abc$4038$n190 Q=PIN_4
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n204 E=$abc$4038$n199 Q=sensorSelector.state[0]
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n209 E=$abc$4038$n199 Q=sensorSelector.state[1]
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n211 E=$abc$4038$n199 Q=sensorSelector.state[2]
-.attr src "top.v:123|top.v:200|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n235 E=$abc$4038$n228 Q=colorDetector.masterState[0]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n242 E=$abc$4038$n228 Q=colorDetector.masterState[1]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n249 E=$abc$4038$n228 Q=colorDetector.masterState[2]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n219 E=$abc$4038$n286 Q=PIN_9
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n221 E=$abc$4038$n286 Q=PIN_8
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4038$n249 Q=colorDetector.blueFreq[0]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4038$n249 Q=colorDetector.blueFreq[1]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4038$n249 Q=colorDetector.blueFreq[2]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4038$n249 Q=colorDetector.blueFreq[3]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4038$n249 Q=colorDetector.blueFreq[4]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4038$n249 Q=colorDetector.blueFreq[5]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4038$n249 Q=colorDetector.blueFreq[6]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4038$n249 Q=colorDetector.blueFreq[7]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4038$n291 Q=colorDetector.greenFreq[0]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4038$n291 Q=colorDetector.greenFreq[1]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4038$n291 Q=colorDetector.greenFreq[2]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4038$n291 Q=colorDetector.greenFreq[3]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4038$n291 Q=colorDetector.greenFreq[4]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4038$n291 Q=colorDetector.greenFreq[5]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4038$n291 Q=colorDetector.greenFreq[6]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4038$n291 Q=colorDetector.greenFreq[7]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4038$n295 Q=colorDetector.redFreq[0]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4038$n295 Q=colorDetector.redFreq[1]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4038$n295 Q=colorDetector.redFreq[2]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4038$n295 Q=colorDetector.redFreq[3]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4038$n295 Q=colorDetector.redFreq[4]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4038$n295 Q=colorDetector.redFreq[5]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4038$n295 Q=colorDetector.redFreq[6]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4038$n295 Q=colorDetector.redFreq[7]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n253 E=$abc$4038$n226 Q=colorDetector.color_count[0]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n256 E=$abc$4038$n226 Q=colorDetector.color_count[1]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n259 E=$abc$4038$n226 Q=colorDetector.color_count[2]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n262 E=$abc$4038$n226 Q=colorDetector.color_count[3]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n265 E=$abc$4038$n226 Q=colorDetector.color_count[4]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n268 E=$abc$4038$n226 Q=colorDetector.color_count[5]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n271 E=$abc$4038$n226 Q=colorDetector.color_count[6]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n274 E=$abc$4038$n226 Q=colorDetector.color_count[7]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n277 E=$abc$4038$n226 Q=colorDetector.color_count[8]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n280 E=$abc$4038$n226 Q=colorDetector.color_count[9]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n283 E=$abc$4038$n226 Q=colorDetector.color_count[10]
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n212 E=$abc$4038$n214 Q=colorDetector.detectionComplete
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFESS C=clkDiv1.clk_out D=$abc$4038$n327 E=$abc$4038$n212 Q=PIN_24 S=$abc$4038$n320
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFESS C=clkDiv1.clk_out D=$abc$4038$n329 E=$abc$4038$n212 Q=PIN_23 S=$abc$4038$n320
-.attr src "top.v:132|top.v:278|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4038$n310 E=$abc$4038$n1 Q=ledBlinker.state
+.attr src "top.v:73|top.v:561|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.gate SB_DFFE C=CLK D=$abc$4406$n476 E=$abc$4406$n556 Q=clkDiv1.clk_out
+.attr src "top.v:73|top.v:561|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n235 E=$abc$4406$n260 Q=sensorSelector.startDetection
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n223 E=$abc$4406$n261 Q=sensorSelector.selectorComplete
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n528 E=$abc$4406$n219 Q=PIN_7
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n529 E=$abc$4406$n219 Q=PIN_6
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n531 E=$abc$4406$n219 Q=PIN_5
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n533 E=$abc$4406$n219 Q=PIN_4
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n237 E=$abc$4406$n232 Q=sensorSelector.state[0]
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n244 E=$abc$4406$n232 Q=sensorSelector.state[1]
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n241 E=$abc$4406$n232 Q=sensorSelector.state[2]
+.attr src "top.v:123|top.v:202|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n278 E=$abc$4406$n269 Q=colorDetector.masterState[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n287 E=$abc$4406$n269 Q=colorDetector.masterState[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n296 E=$abc$4406$n269 Q=colorDetector.masterState[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n249 E=$abc$4406$n246 Q=PIN_9
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n252 E=$abc$4406$n246 Q=PIN_8
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4406$n335 Q=colorDetector.blueFreq[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4406$n335 Q=colorDetector.blueFreq[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4406$n335 Q=colorDetector.blueFreq[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4406$n335 Q=colorDetector.blueFreq[3]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4406$n335 Q=colorDetector.blueFreq[4]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4406$n335 Q=colorDetector.blueFreq[5]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4406$n335 Q=colorDetector.blueFreq[6]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4406$n335 Q=colorDetector.blueFreq[7]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4406$n338 Q=colorDetector.greenFreq[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4406$n338 Q=colorDetector.greenFreq[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4406$n338 Q=colorDetector.greenFreq[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4406$n338 Q=colorDetector.greenFreq[3]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4406$n338 Q=colorDetector.greenFreq[4]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4406$n338 Q=colorDetector.greenFreq[5]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4406$n338 Q=colorDetector.greenFreq[6]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4406$n338 Q=colorDetector.greenFreq[7]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[3] E=$abc$4406$n340 Q=colorDetector.redFreq[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[4] E=$abc$4406$n340 Q=colorDetector.redFreq[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[5] E=$abc$4406$n340 Q=colorDetector.redFreq[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[6] E=$abc$4406$n340 Q=colorDetector.redFreq[3]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[7] E=$abc$4406$n340 Q=colorDetector.redFreq[4]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[8] E=$abc$4406$n340 Q=colorDetector.redFreq[5]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[9] E=$abc$4406$n340 Q=colorDetector.redFreq[6]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=colorDetector.color_count[10] E=$abc$4406$n340 Q=colorDetector.redFreq[7]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n301 E=$abc$4406$n298 Q=colorDetector.color_count[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n304 E=$abc$4406$n298 Q=colorDetector.color_count[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n307 E=$abc$4406$n298 Q=colorDetector.color_count[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n310 E=$abc$4406$n298 Q=colorDetector.color_count[3]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n313 E=$abc$4406$n298 Q=colorDetector.color_count[4]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n316 E=$abc$4406$n298 Q=colorDetector.color_count[5]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n319 E=$abc$4406$n298 Q=colorDetector.color_count[6]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n322 E=$abc$4406$n298 Q=colorDetector.color_count[7]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n325 E=$abc$4406$n298 Q=colorDetector.color_count[8]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n328 E=$abc$4406$n298 Q=colorDetector.color_count[9]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n331 E=$abc$4406$n298 Q=colorDetector.color_count[10]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n542 E=$abc$4406$n265 Q=colorDetector.delay[0]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n543 E=$abc$4406$n265 Q=colorDetector.delay[1]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n544 E=$abc$4406$n265 Q=colorDetector.delay[2]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n545 E=$abc$4406$n265 Q=colorDetector.delay[3]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n546 E=$abc$4406$n265 Q=colorDetector.delay[4]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n547 E=$abc$4406$n265 Q=colorDetector.delay[5]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n548 E=$abc$4406$n265 Q=colorDetector.delay[6]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n549 E=$abc$4406$n265 Q=colorDetector.delay[7]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n550 E=$abc$4406$n265 Q=colorDetector.delay[8]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n551 E=$abc$4406$n265 Q=colorDetector.delay[9]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n552 E=$abc$4406$n265 Q=colorDetector.delay[10]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n553 E=$abc$4406$n265 Q=colorDetector.delay[11]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n554 E=$abc$4406$n265 Q=colorDetector.delay[12]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n555 E=$abc$4406$n265 Q=colorDetector.delay[13]
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n220 E=$abc$4406$n222 Q=colorDetector.detectionComplete
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFESS C=clkDiv1.clk_out D=$abc$4406$n373 E=$abc$4406$n220 Q=PIN_24 S=$abc$4406$n367
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFESS C=clkDiv1.clk_out D=$abc$4406$n375 E=$abc$4406$n220 Q=PIN_23 S=$abc$4406$n367
+.attr src "top.v:132|top.v:290|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
+.gate SB_DFFE C=clkDiv1.clk_out D=$abc$4406$n357 E=$abc$4406$n1 Q=ledBlinker.state
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[0] Q=ledBlinker.count[0] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[0] Q=ledBlinker.count[0] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFESR C=clkDiv1.clk_out D=$abc$4038$n388 E=$abc$4038$n297 Q=ledBlinker.count[1] R=$abc$4038$n1
+.gate SB_DFFESR C=clkDiv1.clk_out D=$abc$4406$n470 E=$abc$4406$n343 Q=ledBlinker.count[1] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:8"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[2] Q=ledBlinker.count[2] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[2] Q=ledBlinker.count[2] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[3] Q=ledBlinker.count[3] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[3] Q=ledBlinker.count[3] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[4] Q=ledBlinker.count[4] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[4] Q=ledBlinker.count[4] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[5] Q=ledBlinker.count[5] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[5] Q=ledBlinker.count[5] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[6] Q=ledBlinker.count[6] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[6] Q=ledBlinker.count[6] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[7] Q=ledBlinker.count[7] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[7] Q=ledBlinker.count[7] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[8] Q=ledBlinker.count[8] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[8] Q=ledBlinker.count[8] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[9] Q=ledBlinker.count[9] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[9] Q=ledBlinker.count[9] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[10] Q=ledBlinker.count[10] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[10] Q=ledBlinker.count[10] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[11] Q=ledBlinker.count[11] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[11] Q=ledBlinker.count[11] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[12] Q=ledBlinker.count[12] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[12] Q=ledBlinker.count[12] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[13] Q=ledBlinker.count[13] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[13] Q=ledBlinker.count[13] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[14] Q=ledBlinker.count[14] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[14] Q=ledBlinker.count[14] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[15] Q=ledBlinker.count[15] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[15] Q=ledBlinker.count[15] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[16] Q=ledBlinker.count[16] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[16] Q=ledBlinker.count[16] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[17] Q=ledBlinker.count[17] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[17] Q=ledBlinker.count[17] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[18] Q=ledBlinker.count[18] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[18] Q=ledBlinker.count[18] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[19] Q=ledBlinker.count[19] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[19] Q=ledBlinker.count[19] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[20] Q=ledBlinker.count[20] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[20] Q=ledBlinker.count[20] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[21] Q=ledBlinker.count[21] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[21] Q=ledBlinker.count[21] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[22] Q=ledBlinker.count[22] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[22] Q=ledBlinker.count[22] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[23] Q=ledBlinker.count[23] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[23] Q=ledBlinker.count[23] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[24] Q=ledBlinker.count[24] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[24] Q=ledBlinker.count[24] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[25] Q=ledBlinker.count[25] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[25] Q=ledBlinker.count[25] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[26] Q=ledBlinker.count[26] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[26] Q=ledBlinker.count[26] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[27] Q=ledBlinker.count[27] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[27] Q=ledBlinker.count[27] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[28] Q=ledBlinker.count[28] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[28] Q=ledBlinker.count[28] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[29] Q=ledBlinker.count[29] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[29] Q=ledBlinker.count[29] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[30] Q=ledBlinker.count[30] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[30] Q=ledBlinker.count[30] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[31] Q=ledBlinker.count[31] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[31] Q=ledBlinker.count[31] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[32] Q=ledBlinker.count[32] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[32] Q=ledBlinker.count[32] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[33] Q=ledBlinker.count[33] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[33] Q=ledBlinker.count[33] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[34] Q=ledBlinker.count[34] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[34] Q=ledBlinker.count[34] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[35] Q=ledBlinker.count[35] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[35] Q=ledBlinker.count[35] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[36] Q=ledBlinker.count[36] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[36] Q=ledBlinker.count[36] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[37] Q=ledBlinker.count[37] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[37] Q=ledBlinker.count[37] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[38] Q=ledBlinker.count[38] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[38] Q=ledBlinker.count[38] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[39] Q=ledBlinker.count[39] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[39] Q=ledBlinker.count[39] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[40] Q=ledBlinker.count[40] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[40] Q=ledBlinker.count[40] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[41] Q=ledBlinker.count[41] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[41] Q=ledBlinker.count[41] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[42] Q=ledBlinker.count[42] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[42] Q=ledBlinker.count[42] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[43] Q=ledBlinker.count[43] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[43] Q=ledBlinker.count[43] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[44] Q=ledBlinker.count[44] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[44] Q=ledBlinker.count[44] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[45] Q=ledBlinker.count[45] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[45] Q=ledBlinker.count[45] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[46] Q=ledBlinker.count[46] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[46] Q=ledBlinker.count[46] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[47] Q=ledBlinker.count[47] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[47] Q=ledBlinker.count[47] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[48] Q=ledBlinker.count[48] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[48] Q=ledBlinker.count[48] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[49] Q=ledBlinker.count[49] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[49] Q=ledBlinker.count[49] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[50] Q=ledBlinker.count[50] R=$abc$4038$n1
+.gate SB_DFFSR C=clkDiv1.clk_out D=$techmap\ledBlinker.$add$ledBlinker.v:14$154_Y[50] Q=ledBlinker.count[50] R=$abc$4406$n1
 .attr src "top.v:76|ledBlinker.v:9|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
-.gate SB_DFF C=clkDiv1.clk_out D=$abc$4038$n444 Q=colorDetector.edgeDetect1.edgeFlag
-.attr src "top.v:132|top.v:244|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.gate SB_DFF C=clkDiv1.clk_out D=$abc$4406$n526 Q=colorDetector.edgeDetect1.edgeFlag
+.attr src "top.v:132|top.v:253|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=clkDiv1.clk_out D=PIN_3 Q=colorDetector.edgeDetect1.edge_mem[0]
-.attr src "top.v:132|top.v:244|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:132|top.v:253|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=clkDiv1.clk_out D=colorDetector.edgeDetect1.edge_mem[0] Q=colorDetector.edgeDetect1.edge_mem[1]
-.attr src "top.v:132|top.v:244|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:132|top.v:253|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
 .gate SB_DFF C=clkDiv1.clk_out D=colorDetector.edgeDetect1.edge_mem[1] Q=colorDetector.edgeDetect1.edge_mem[2]
-.attr src "top.v:132|top.v:244|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
+.attr src "top.v:132|top.v:253|edgeDetect.v:8|C:\\Users\\DR349E~1.ZOI\\APIO~1\\packages\\TOOLCH~1\\bin\\../share/yosys/ice40/cells_map.v:2"
 .names ledBlinker.state LED
 1 1
 .names $undef PIN_1

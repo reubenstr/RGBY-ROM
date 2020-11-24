@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -66,6 +67,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *pushButton_selectSaveFolder;
+    QCheckBox *checkBox;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
 
@@ -73,7 +75,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1591, 1013);
+        MainWindow->resize(1593, 1115);
         QIcon icon;
         icon.addFile(QString::fromUtf8("../build-RGB-Assembler-Desktop_Qt_5_12_1_MinGW_64_bit-Release/release/appicon.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -94,17 +96,17 @@ public:
         label_3->setGeometry(QRect(640, 489, 111, 16));
         pushButton_save = new QPushButton(centralWidget);
         pushButton_save->setObjectName(QString::fromUtf8("pushButton_save"));
-        pushButton_save->setGeometry(QRect(30, 929, 93, 28));
+        pushButton_save->setGeometry(QRect(50, 1030, 93, 28));
         pushButton_load = new QPushButton(centralWidget);
         pushButton_load->setObjectName(QString::fromUtf8("pushButton_load"));
-        pushButton_load->setGeometry(QRect(270, 929, 93, 28));
+        pushButton_load->setGeometry(QRect(290, 1030, 93, 28));
         plainTextEdit_program = new CodeEditor(centralWidget);
         plainTextEdit_program->setObjectName(QString::fromUtf8("plainTextEdit_program"));
-        plainTextEdit_program->setGeometry(QRect(10, 29, 441, 891));
+        plainTextEdit_program->setGeometry(QRect(10, 29, 441, 991));
         plainTextEdit_program->setLineWrapMode(QPlainTextEdit::NoWrap);
         pushButton_save_as = new QPushButton(centralWidget);
         pushButton_save_as->setObjectName(QString::fromUtf8("pushButton_save_as"));
-        pushButton_save_as->setGeometry(QRect(150, 929, 93, 28));
+        pushButton_save_as->setGeometry(QRect(170, 1030, 93, 28));
         plainTextEdit_assembled = new QPlainTextEdit(centralWidget);
         plainTextEdit_assembled->setObjectName(QString::fromUtf8("plainTextEdit_assembled"));
         plainTextEdit_assembled->setGeometry(QRect(460, 280, 171, 201));
@@ -113,7 +115,13 @@ public:
         label_4->setGeometry(QRect(460, 260, 191, 16));
         widget = new RenderArea(centralWidget);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(1180, 39, 401, 921));
+        widget->setEnabled(true);
+        widget->setGeometry(QRect(1180, 39, 401, 1041));
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy);
         label_434 = new QLabel(centralWidget);
         label_434->setObjectName(QString::fromUtf8("label_434"));
         label_434->setGeometry(QRect(470, 39, 121, 16));
@@ -198,13 +206,16 @@ public:
         pushButton_selectSaveFolder = new QPushButton(centralWidget);
         pushButton_selectSaveFolder->setObjectName(QString::fromUtf8("pushButton_selectSaveFolder"));
         pushButton_selectSaveFolder->setGeometry(QRect(460, 790, 171, 28));
+        checkBox = new QCheckBox(centralWidget);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(1040, 990, 131, 20));
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1591, 26));
+        menuBar->setGeometry(QRect(0, 0, 1593, 26));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
@@ -221,7 +232,7 @@ public:
         pushButton_load->setText(QCoreApplication::translate("MainWindow", "Load", nullptr));
         pushButton_save_as->setText(QCoreApplication::translate("MainWindow", "Save As", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Assembled Program as Hex", nullptr));
-        label_434->setText(QCoreApplication::translate("MainWindow", "Max Nibs Per Row:", nullptr));
+        label_434->setText(QCoreApplication::translate("MainWindow", "Max Nits Per Row:", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Max Lines per ROM:", nullptr));
         label_maxPerRows->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
         label_maxPerRom->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
@@ -231,13 +242,13 @@ public:
         label_totalIntructions->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
         label_43->setText(QCoreApplication::translate("MainWindow", "Max Instructions :", nullptr));
         label_maxIntructions->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
-        label_54->setText(QCoreApplication::translate("MainWindow", "Max Nibs:", nullptr));
+        label_54->setText(QCoreApplication::translate("MainWindow", "Max Nits:", nullptr));
         label_maxNibs->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
-        label_19->setText(QCoreApplication::translate("MainWindow", "Nibs:", nullptr));
+        label_19->setText(QCoreApplication::translate("MainWindow", "Nits:", nullptr));
         label_totalNibs->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
         label_perInstruction->setText(QCoreApplication::translate("MainWindow", "000", nullptr));
-        label_20->setText(QCoreApplication::translate("MainWindow", "Nibs Per Instruction:", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "RGBROM", nullptr));
+        label_20->setText(QCoreApplication::translate("MainWindow", "Nits Per Instruction:", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "RGBYROM", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Highlighted Errors Legend", nullptr));
         pushButton_generateSpecialFiles->setText(QCoreApplication::translate("MainWindow", "Generate Special Files", nullptr));
         label_codeStatus->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
@@ -245,6 +256,7 @@ public:
         label_9->setText(QCoreApplication::translate("MainWindow", "Jump Address", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Program Code", nullptr));
         pushButton_selectSaveFolder->setText(QCoreApplication::translate("MainWindow", "Select Save Folder", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "Mirror RGBYROM", nullptr));
     } // retranslateUi
 
 };

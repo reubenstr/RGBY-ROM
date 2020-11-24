@@ -22,6 +22,12 @@ void RenderArea::setRomData(QString binaryHex)
     this->hexSource = binaryHex;
 }
 
+void RenderArea::setMirror(bool flag)
+{
+    this->mirrorFlag = flag;
+}
+
+
 
 QColor RenderArea::getColorFromDec(int dec)
 {
@@ -84,7 +90,17 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
                 }
 
                 painter.save(); // saves original position
-                painter.translate(x * (w + widthPadding), y * (h + heightPadding));
+
+                if (mirrorFlag)
+                {
+                    painter.translate((NIBS_PER_ROW - x - 1) * (w + widthPadding), y * (h + heightPadding));
+                }
+                else
+                {
+                    painter.translate(x * (w + widthPadding), y * (h + heightPadding));
+                }
+
+
                 painter.setRenderHint(QPainter::Antialiasing);
                 QPainterPath path;
                 path.addRect(rect);

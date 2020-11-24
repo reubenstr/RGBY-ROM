@@ -84,6 +84,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableView_instructions->verticalHeader()->setDefaultSectionSize(10);
     ui->tableView_instructions->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+
     for(int row = 0; row < instructions.length(); row++)
     {
         QList<QStandardItem*> rowData;
@@ -686,4 +687,9 @@ void MainWindow::on_pushButton_generateSpecialFiles_clicked()
 
         ramOutFile.close();
     }
+}
+
+void MainWindow::on_checkBox_clicked()
+{
+    ui->widget->setMirror(ui->checkBox->isChecked());
 }

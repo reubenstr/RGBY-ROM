@@ -45,12 +45,13 @@ L:speedCheckEnd
 # if (speed == 0)
 eq, speed, zero
 bos, L:speedZero
+# if (speed == 1)
 eq, speed, one
 bos, L:speedOne
-# assume speed == 2
-# li, 2
-# eq, speed, imm
-# bos, L:speedTwo
+# if speed == 2
+li, 2
+eq, speed, imm
+bos, L:speedTwo
 
 
 L:speedTwo
@@ -73,12 +74,12 @@ bos, L:modeKit
 eq, mode, one
 bos, L:modeCount
 
-# assume mode == 2
 # if (mode == 2)
-# li, 2
-# eq, mode, imm
-# bos, L:modeSparkle
+li, 2
+eq, mode, imm
+bos, L:modeSparkle
 ####################
+
 
 ####################
 # Sparkle LED pattern

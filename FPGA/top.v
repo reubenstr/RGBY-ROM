@@ -3,9 +3,9 @@
 // look in pins.pcf for all the pin names on the TinyFPGA BX board
 
 module top (
-  input CLK,    // 16MHz clock
-  output reg LED,   // User/boot LED next to power LED
-  output USBPU,  // USB pull-up resistor
+  input CLK,          // 16MHz clock
+  output reg LED,     // User/boot LED next to power LED
+  output USBPU,       // USB pull-up resistor
   output PIN_1,
   output PIN_2,
   input PIN_3,
@@ -54,8 +54,14 @@ module top (
 
   wire [3:0] sensorSelect;
 
+  // Reduce 8MHz clock down to 1MHz (consider changing the PLL).
+  clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
 
-  // Debounce and assign input buttons.
+  // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
+  ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
+
+
+  // Assign input buttons after routing signal through the debouncer
   assign reset = 1;
   assign portIn[7:2] = 6'b000000;
   buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
@@ -65,100 +71,84 @@ module top (
   // assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
 
   // Assign sensor bar.
-  assign signalFromSensor = PIN_3;
+  assign frequencyFromColorSensor = PIN_3;
   assign {PIN_4, PIN_5, PIN_6, PIN_7} = sensorSelect[3:0];
   assign {PIN_8, PIN_9} = colorSelect[1:0];
 
-  // Reduce 8MHz clock down to 1MHz for timing math simplification.
-  clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
-
-  // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
-  ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
-
-
-
-  // Attach random number generator.
-  random random1(.clk(clk), .reset(reset), .out(random[7:0]));
-
-  // Connect color registers to PWM controllers then output pins.
-  //pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_17));
-  //pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_8));
-  //pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_19));
+  // Assign red, green, blue LEDs after routing color registers through PWM hardware.
+  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_16));
+  pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_15));
+  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_14));
 
   // Assign status LEDs
   assign PIN_10 = !selectorComplete; // Mode: Read ROM
   assign PIN_27 = selectorComplete; // Mode: Execute
 
+  // Attach random number generator.
+  random random1(.clk(clk), .reset(reset), .out(random[7:0]));
+
   // TEMP
-
-
   assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
-
-
-  //assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  {startSelector,selectorComplete, startDetection, detectionComplete, sensorSelect[1:0], freqCount[1:0]};
-
-
-
   // TEMP
 
 
 
-  motionController motionController1(
-    .clk(clk),
-    .reset(reset),
-    .xLimitMinus(),
-    .xLimitPlus(),
-    .xDirection(),
-    .xStep(),
-    .centerOfNib(),
-    .opCompleted());
-    // startDetection
-    // selectorComplete
+motionController motionController1(
+  .clk(clk),
+  .reset(reset),
+  .xLimitMinus(),
+  .xLimitPlus(),
+  .xDirection(),
+  .xStep(),
+  .centerOfNib(),
+  .opCompleted());
+  // startDetection
+  // selectorComplete
 
-    wire startSelector, selectorComplete;
-    wire startDetection, detectionComplete;
+wire startSelector, selectorComplete;
+wire startDetection, detectionComplete;
 
-    assign startSelector = 1; // TEMP: signal from motionController, but start manually
+assign startSelector = 1; // TEMP: signal from motionController, but start manually
 
-    sensorSelector sensorSelector(
-      .clk(clk),
-      .reset(reset),
-      .startSelector(startSelector),
-      .detectionComplete(detectionComplete),
-      .startDetection(startDetection),
-      .sensorSelect(sensorSelect),
-      .selectorComplete(selectorComplete));
+sensorSelector sensorSelector(
+  .clk(clk),
+  .reset(reset),
+  .startSelector(startSelector),
+  .detectionComplete(detectionComplete),
+  .startDetection(startDetection),
+  .sensorSelect(sensorSelect),
+  .selectorComplete(selectorComplete));
 
-      colorDetector colorDetector(
-        .clk(clk),
-        .reset(reset),
-        .signalFromSensor(signalFromSensor),
-        .startDetection(startDetection),
-        .colorSelect(colorSelect),
-        .detectionComplete(detectionComplete),
-        .color(color),
-        .freqCount(freqCount));
+colorDetector colorDetector(
+  .clk(clk),
+  .reset(reset),
+  .frequencyFromColorSensor(frequencyFromColorSensor),
+  .startDetection(startDetection),
+  .colorSelect(colorSelect),
+  .detectionComplete(detectionComplete),
+  .color(color),
+  .freqCount(freqCount));
 
-  ramController ram1(
-    .clk(clk),
-    .reset(reset),
-    .colorFlag(detectionComplete),
-    .color(color),
-    .address(ramAddress),
-    .dout(ramData));
+ramController ram1(
+  .clk(clk),
+  .reset(reset),
+  .colorFlag(detectionComplete),
+  .color(color),
+  .address(ramAddress),
+  .dout(ramData));
 
-  cpu cpu(
-    .clk(clk),
-    .reset(reset),
-    .instruction(ramData),
-    .programCounter(ramAddress),
-    .portIn(portIn),
-    .random(random),
-    .portOut(portOut),
-    .red(red),
-    .green(green),
-    .blue(blue),
-    .debug(debug)
+cpu cpu(
+  .clk(clk),
+  .reset(reset),
+  .instruction(ramData),
+  .programCounter(ramAddress),
+  .portIn(portIn),
+  .random(random),
+  .portOut(portOut),
+  .red(red),
+  .green(green),
+  .blue(blue),
+  .debug(debug)
   );
 
 
@@ -182,6 +172,8 @@ endmodule
 
 /////////////////////////////////////////////////////////////////////////////
 
+// Increments sensor selection upon color detection completion.
+// Delay between sensor selection for aesthetic effect.
 module sensorSelector(
    input clk,
    input reset,
@@ -192,8 +184,10 @@ module sensorSelector(
    output reg selectorComplete);
 
   reg  [2:0] state;
-  parameter [2:0] WAIT_FOR_START = 0, RESET_SELECT = 1, TRIGGER_DETECTION = 2, WAIT_FOR_COMPLETION = 3, INCREMENT_SELECTOR = 4, COMPLETE = 5;
+  parameter [2:0] WAIT_FOR_START = 0, RESET_SELECT = 1, TRIGGER_DETECTION = 2, WAIT_FOR_COMPLETION = 3, DELAY = 4, INCREMENT_SELECTOR = 5, COMPLETE = 6;
   initial state = WAIT_FOR_START;
+
+  reg [13:0] delay;
 
 always @(posedge clk) begin
   case(state)
@@ -211,10 +205,17 @@ always @(posedge clk) begin
     end
     WAIT_FOR_COMPLETION : begin
       startDetection <= 0;
-      if (detectionComplete) state <= INCREMENT_SELECTOR;
+      delay <= 0;
+      if (detectionComplete) state <= DELAY;
+    end
+    DELAY : begin
+      //delay <= delay + 1;
+      //if (&delay) state <= INCREMENT_SELECTOR;
+      state <= INCREMENT_SELECTOR;
     end
     INCREMENT_SELECTOR : begin
       sensorSelect <= sensorSelect + 1;
+      delay <= 0;
       if (sensorSelect == 11) state <= COMPLETE;
       else state <= TRIGGER_DETECTION;
     end
@@ -231,7 +232,7 @@ endmodule
 module colorDetector (
   input clk,
   input reset,
-  input signalFromSensor,
+  input frequencyFromColorSensor,
   input startDetection,
   output [1:0] colorSelect,
   output reg detectionComplete,
@@ -239,7 +240,7 @@ module colorDetector (
   output reg [7:0] freqCount
 );
 
-  edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(signalFromSensor), .edgeFlag(edgeFlag));
+  edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(frequencyFromColorSensor), .edgeFlag(edgeFlag));
 
   // temp for debugging
   //assign freqCount[7:2] = redFreq;
@@ -257,19 +258,22 @@ module colorDetector (
 
 
   reg [2:0] masterState;
-  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2, PROCESS_COUNT = 3, DECIDE_COLOR = 4;
+  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2,  DELAY_FOR_EFFECT = 3, PROCESS_COUNT = 4, DECIDE_COLOR = 5;
   initial masterState = WAIT_FOR_START;
 
-  // the colorState is the color being detected
+  // the colorState is the color being detected (with exception to NO_SELECTION)
   // the state value coincides with the S3 and S2 color select pins of the TCS32000 color sensor
   // {S3,S2} = {0,0} = red
   // {S3,S2} = {1,1} = green
   // {S3,S2} = {1,0} = blue
   // {S3,S2} = {1,1} = all colors
   reg [1:0] colorState;
-  parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10;
+  parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10, NO_SELECTION = 2'b01;
   initial colorState = RED;
   assign colorSelect = colorState;
+
+  reg [1:0] saveColorState;
+  reg [13:0] delay;
 
   /////////////////////
 
@@ -284,6 +288,7 @@ module colorDetector (
         freqCount[7:0] <= color; // TEMP
         detectionComplete <= 0;
         if (startDetection) begin
+          colorState <= RED;
           masterState <= WAIT_FOR_FIRST_EDGE;
         end
       end
@@ -296,10 +301,19 @@ module colorDetector (
       end
 
       COUNT_ELASPED_TIME : begin
+        delay <= 0;
         if (edgeFlag) begin
-          masterState <= PROCESS_COUNT;
+          masterState <= DELAY_FOR_EFFECT;
         end else begin
           color_count <= color_count + 1;
+        end
+      end
+
+      DELAY_FOR_EFFECT : begin
+        delay <= delay + 1;
+        if (&delay) begin
+          delay <= 0;
+          masterState <= PROCESS_COUNT;
         end
       end
 
@@ -321,7 +335,7 @@ module colorDetector (
             blueFreq <= color_count[10:3];
             //freqCount[7:0] <= color_count[10:3]; // TEMP
             masterState <= DECIDE_COLOR;
-            colorState <= RED;
+            colorState <= NO_SELECTION;
           end
         endcase
       end
@@ -334,7 +348,6 @@ module colorDetector (
         else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
         else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
         else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
-
         detectionComplete <= 1;
         masterState <= WAIT_FOR_START;
       end
