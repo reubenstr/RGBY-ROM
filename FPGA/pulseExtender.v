@@ -1,5 +1,4 @@
-// pulse extender
-// extends step signal by X clock cycles for stepper driver stability
+// Extends signal by X clock cycles.
 // 2^4 = 16 clock cycles
 module pulseExtender(
   input clk,

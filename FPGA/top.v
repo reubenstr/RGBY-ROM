@@ -31,7 +31,9 @@ module top (
   output PIN_23,
   output PIN_24,
   output PIN_25,
-  output PIN_26);
+  output PIN_26,
+  output PIN_27,
+  output PIN_28);
 
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
@@ -61,7 +63,8 @@ module top (
   ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
 
 
-  // Assign input buttons after routing signal through the debouncer
+  // Assign input buttons (route some buttons through a  debouncer)
+  wire limitSwitch = PIN_12;
   assign reset = 1;
   assign portIn[7:2] = 6'b000000;
   buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
@@ -69,6 +72,8 @@ module top (
 
   // Assign external outputs.
   // assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
+  // TEMP
+  assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
 
   // Assign sensor bar.
   assign frequencyFromColorSensor = PIN_3;
@@ -76,97 +81,99 @@ module top (
   assign {PIN_8, PIN_9} = colorSelect[1:0];
 
   // Assign red, green, blue LEDs after routing color registers through PWM hardware.
-  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_16));
-  pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_15));
-  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_14));
+  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(~PIN_16));
+  pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(~PIN_15));
+  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(~PIN_14));
 
   // Assign status LEDs
-  assign PIN_10 = !selectorComplete; // Mode: Read ROM
-  assign PIN_27 = selectorComplete; // Mode: Execute
+  assign PIN_10 = !motionControllerCompleted; // Mode: Read ROM
+  assign PIN_27 = motionControllerCompleted; // Mode: Execute
 
   // Attach random number generator.
   random random1(.clk(clk), .reset(reset), .out(random[7:0]));
 
-  // TEMP
-  assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
-  // TEMP
+  // Assign stepper motor driver pins.
+  wire step;
+  wire direction;
+  wire enable;
+  assign direction = PIN_1;
+  assign step = PIN_2;
+  assign PIN_28 = motionControllerCompleted; // Stepper driver enable pin, active low.
 
 
+  wire motionControllerCompleted;
+  wire startSelector, selectorComplete;
+  wire startDetection, detectionComplete;
+  //assign startSelector = 1; // TEMP: signal from motionController, but temp start manually
 
-motionController motionController1(
-  .clk(clk),
-  .reset(reset),
-  .xLimitMinus(),
-  .xLimitPlus(),
-  .xDirection(),
-  .xStep(),
-  .centerOfNib(),
-  .opCompleted());
-  // startDetection
-  // selectorComplete
+  motionController motionController1(
+    .clk(clk),
+    .reset(reset),
+    .limitSwitch(limitSwitch),
+    .selectorComplete(selectorComplete),
+    .startSelector(startSelector),
+    .direction(direction),
+    .step(step),
+    .motionControllerCompleted(motionControllerCompleted));
 
-wire startSelector, selectorComplete;
-wire startDetection, detectionComplete;
+  sensorSelector sensorSelector(
+    .clk(clk),
+    .reset(reset),
+    .startSelector(startSelector),
+    .detectionComplete(detectionComplete),
+    .startDetection(startDetection),
+    .sensorSelect(sensorSelect),
+    .selectorComplete(selectorComplete));
 
-assign startSelector = 1; // TEMP: signal from motionController, but start manually
+  colorDetector colorDetector(
+    .clk(clk),
+    .reset(reset),
+    .frequencyFromColorSensor(frequencyFromColorSensor),
+    .startDetection(startDetection),
+    .colorSelect(colorSelect),
+    .detectionComplete(detectionComplete),
+    .color(color),
+    .freqCount(freqCount));
 
-sensorSelector sensorSelector(
-  .clk(clk),
-  .reset(reset),
-  .startSelector(startSelector),
-  .detectionComplete(detectionComplete),
-  .startDetection(startDetection),
-  .sensorSelect(sensorSelect),
-  .selectorComplete(selectorComplete));
+  ramController ram1(
+    .clk(clk),
+    .reset(reset),
+    .colorFlag(detectionComplete),
+    .color(color),
+    .address(ramAddress),
+    .dout(ramData));
 
-colorDetector colorDetector(
-  .clk(clk),
-  .reset(reset),
-  .frequencyFromColorSensor(frequencyFromColorSensor),
-  .startDetection(startDetection),
-  .colorSelect(colorSelect),
-  .detectionComplete(detectionComplete),
-  .color(color),
-  .freqCount(freqCount));
-
-ramController ram1(
-  .clk(clk),
-  .reset(reset),
-  .colorFlag(detectionComplete),
-  .color(color),
-  .address(ramAddress),
-  .dout(ramData));
-
-cpu cpu(
-  .clk(clk),
-  .reset(reset),
-  .instruction(ramData),
-  .programCounter(ramAddress),
-  .portIn(portIn),
-  .random(random),
-  .portOut(portOut),
-  .red(red),
-  .green(green),
-  .blue(blue),
-  .debug(debug)
-  );
+  cpu cpu(
+    .clk(clk),
+    .reset(reset),
+    .halt(~motionControllerCompleted),
+    .instruction(ramData),
+    .programCounter(ramAddress),
+    .portIn(portIn),
+    .random(random),
+    .portOut(portOut),
+    .red(red),
+    .green(green),
+    .blue(blue),
+    .debug(debug)
+    );
 
 
-  // extract ram data
-  // TEMP test
-  /*
-  reg [7:0] addrRead;
-  always @(posedge clk or negedge reset) begin
-    if(!reset) begin
-      addrRead <= 0;
-    end else begin
-      if (opCompleted) begin
-        if (addrRead != 60) addrRead <= addrRead + 1;
+    // extract ram data
+    // TEMP test
+    /*
+    reg [7:0] addrRead;
+    always @(posedge clk or negedge reset) begin
+      if(!reset) begin
+        addrRead <= 0;
+      end else begin
+        if (opCompleted) begin
+          if (addrRead != 60) addrRead <= addrRead + 1;
+        end
       end
     end
-  end
-  */
-  //assign ramAddress = addrRead;
+    */
+    //assign ramAddress = addrRead;
 
 endmodule
 
@@ -239,6 +246,8 @@ module colorDetector (
   output reg [1:0] color,
   output reg [7:0] freqCount
 );
+
+  wire edgeFlag;
 
   edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(frequencyFromColorSensor), .edgeFlag(edgeFlag));
 
@@ -353,130 +362,6 @@ module colorDetector (
       end
 
     endcase
-  end
-
-endmodule
-
-//////////////////////////////////////////////////////////////////////////////
-
-
-module motionController (
-  input clk,
-  input reset,
-  input xLimitMinus,
-  input xLimitPlus,
-  output reg xDirection,
-  output xStep,
-  output reg centerOfNib,
-  output reg opCompleted);
-
-  // http://buildlog.net/cnc_laser/belt_calcs.htm
-  // 200 steps per revolution
-  // 18 teeth per head
-  // 8 microsteps
-  // 747 per nib center
-  // 2259 steps per inch
-  parameter [15:0] PULSE_PER_NIB = 836; // origil : 747
-  parameter [15:0] PULSE_PER_ROW = 14218; // 8364 = 10 nibs ((PULSE_PER_NIB * NIBS) - 1)
-
-  reg [3:0] state;
-  parameter [3:0] GO_TO_INDEX = 0, TRAVERSE_X = 1, HALT = 2, OP_COMPLETED = 3;
-  initial state = GO_TO_INDEX;
-
-  reg xStepTrigger;
-  reg yStepTrigger;
-  reg xTraverseFlag;
-  reg yTraverseFlag;
-  reg [15:0] pulseCount;
-  reg [15:0] nibPulseCount;
-
-  pulseExtender xStepper(.clk(clk), .reset(reset), .signal(xStepTrigger), .extendedSignal(xStep));
-  pulseExtender yStepper(.clk(clk), .reset(reset), .signal(yStepTrigger), .extendedSignal(yStep));
-
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      state = GO_TO_INDEX;
-      xTraverseFlag <= 0;
-      opCompleted <= 0;
-    end
-  else begin
-
-    case(state)
-
-      GO_TO_INDEX : begin
-
-        xDirection <= 0;
-        xTraverseFlag <= 1;
-
-        if (xLimitMinus == 0) begin
-          xTraverseFlag <= 0; // required to some reset counters
-          nibPulseCount = 0;
-          state <= TRAVERSE_X;
-        end
-
-      end
-
-      TRAVERSE_X : begin
-
-        xDirection <= 1;
-        xTraverseFlag <= 1;
-
-        // check for center of nib
-        if (pulseCount == nibPulseCount) begin
-          nibPulseCount <= nibPulseCount + PULSE_PER_NIB;
-          centerOfNib <= 1;
-        end else begin
-          centerOfNib <= 0;
-        end
-
-        // check for end of row
-        if (pulseCount == PULSE_PER_ROW) begin
-          xTraverseFlag <= 0;
-          state <= OP_COMPLETED;
-        end
-
-        // check for physical end of row limit
-        if (xLimitPlus == 0) state <= HALT;
-
-      end
-
-      HALT : begin
-        xTraverseFlag <= 0;
-      end
-
-      OP_COMPLETED : begin
-
-        opCompleted <= 1;
-
-      end
-
-
-    endcase
-  end
-
-
-  // traverse X or Y
-  // generate step pulse interval, count pulses
-  reg [23:0] pulseFreqCount;
-  always@(posedge clk or  negedge reset)
-    if(!reset) begin
-      xStepTrigger <= 0;
-      yStepTrigger <= 0;
-    end
-  else begin
-    if (xTraverseFlag) begin
-      if (pulseFreqCount == 128) begin
-        pulseFreqCount <= 0;
-        xStepTrigger <= 1;
-        pulseCount <= pulseCount + 1;
-      end else begin
-        pulseFreqCount <= pulseFreqCount + 1;
-        xStepTrigger <= 0;
-      end
-    end else begin
-      pulseFreqCount <= 0;
-      pulseCount <= 0;
-    end
   end
 
 endmodule

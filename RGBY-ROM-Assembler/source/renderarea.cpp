@@ -70,12 +70,17 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
             for (int x = 0; x < NIBS_PER_ROW; x++) {
 
                 // prevent overflow
-                if (i > hexSource.length() - 1) break;
-
-                // convert hex string to dec
-                QString sValue = hexSource.at(i);
-                bool ok = false;
-                dec = sValue.toInt(&ok,16);
+                if (i > hexSource.length() - 1)
+                {
+                    dec = 0;
+                }
+                else
+                {
+                    // convert hex string to dec
+                    QString sValue = hexSource.at(i);
+                    bool ok = false;
+                    dec = sValue.toInt(&ok,16);
+                }
 
                 // split hex value into two 2-bit values, toggle between large/small ends
                 if (toggle)

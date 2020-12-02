@@ -75,7 +75,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1593, 1115);
+        MainWindow->resize(1597, 1156);
         QIcon icon;
         icon.addFile(QString::fromUtf8("../build-RGB-Assembler-Desktop_Qt_5_12_1_MinGW_64_bit-Release/release/appicon.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -116,7 +116,7 @@ public:
         widget = new RenderArea(centralWidget);
         widget->setObjectName(QString::fromUtf8("widget"));
         widget->setEnabled(true);
-        widget->setGeometry(QRect(1180, 39, 401, 1041));
+        widget->setGeometry(QRect(1180, 39, 401, 1061));
         QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -215,7 +215,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1593, 26));
+        menuBar->setGeometry(QRect(0, 0, 1597, 26));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);

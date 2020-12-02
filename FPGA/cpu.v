@@ -41,6 +41,7 @@
 module cpu(
   input clk,
   input reset,
+  input halt,
   input [11:0] instruction,
   input [7:0] portIn,
   input [7:0] random,
@@ -111,6 +112,7 @@ module cpu(
   pcControler pcControler(
     .clk(clk),
     .reset(reset),
+    .halt(halt),
     .ctrlPcDelay(ctrlPcDelay),
     .ctrlPcSelect(ctrlPcSelect),
     .instruction(instruction[7:0]),
@@ -126,6 +128,7 @@ endmodule
 module pcControler(
   input clk,
   input reset,
+  input halt,
   input ctrlPcDelay,
   input ctrlPcSelect,
   input [7:0] instruction,
