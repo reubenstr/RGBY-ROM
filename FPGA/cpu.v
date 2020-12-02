@@ -144,8 +144,11 @@ module pcControler(
     if(!reset) begin
       programCounter <= 0;
     end else begin
-      // Increment MUX.
+      if (halt == 0)
+      begin
+        // Increment MUX.
       programCounter <= (ctrlPcSelect == 1) ?  instruction : programCounter + addImmediate;
+      end
     end
 
   // Increment delay counter.

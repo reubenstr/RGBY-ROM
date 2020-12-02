@@ -33,7 +33,9 @@ module top (
   output PIN_25,
   output PIN_26,
   output PIN_27,
-  output PIN_28);
+  output PIN_28,
+  input PIN_29,
+  input PIN_30);
 
   // drive USB pull-up resistor to '0' to disable USB
   assign USBPU = 0;
@@ -62,18 +64,18 @@ module top (
   // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
   ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
 
-
   // Assign input buttons (route some buttons through a  debouncer)
   wire limitSwitch = PIN_12;
   assign reset = 1;
   assign portIn[7:2] = 6'b000000;
-  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(PIN_13), .buttonOut(portIn[0]));
-  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(PIN_12), .buttonOut(portIn[1]));
+  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(~PIN_29), .buttonOut(portIn[0]));
+  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_30), .buttonOut(portIn[1]));
+  //buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_13), .buttonOut(reset));
 
   // Assign external outputs.
-  // assign {PIN_17, PIN_11, PIN_19, PIN_10, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
-  // TEMP
-  assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
+  assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
+  // TEMP DEBUG BELOW
+  // assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
 
   // Assign sensor bar.
   assign frequencyFromColorSensor = PIN_3;
@@ -81,9 +83,9 @@ module top (
   assign {PIN_8, PIN_9} = colorSelect[1:0];
 
   // Assign red, green, blue LEDs after routing color registers through PWM hardware.
-  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(~PIN_16));
-  pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(~PIN_15));
-  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(~PIN_14));
+  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_16));
+  pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_15));
+  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_14));
 
   // Assign status LEDs
   assign PIN_10 = !motionControllerCompleted; // Mode: Read ROM
@@ -93,18 +95,16 @@ module top (
   random random1(.clk(clk), .reset(reset), .out(random[7:0]));
 
   // Assign stepper motor driver pins.
-  wire step;
-  wire direction;
-  wire enable;
-  assign direction = PIN_1;
-  assign step = PIN_2;
-  assign PIN_28 = motionControllerCompleted; // Stepper driver enable pin, active low.
+  wire direction = PIN_1;
+  wire step = PIN_2;
+  wire PIN_28 = motionControllerCompleted; // Stepper driver enable pin, active low.
 
 
+  // Create wires.
   wire motionControllerCompleted;
   wire startSelector, selectorComplete;
   wire startDetection, detectionComplete;
-  //assign startSelector = 1; // TEMP: signal from motionController, but temp start manually
+
 
   motionController motionController1(
     .clk(clk),
@@ -216,8 +216,6 @@ always @(posedge clk) begin
       if (detectionComplete) state <= DELAY;
     end
     DELAY : begin
-      //delay <= delay + 1;
-      //if (&delay) state <= INCREMENT_SELECTOR;
       state <= INCREMENT_SELECTOR;
     end
     INCREMENT_SELECTOR : begin
@@ -282,7 +280,7 @@ module colorDetector (
   assign colorSelect = colorState;
 
   reg [1:0] saveColorState;
-  reg [13:0] delay;
+  reg [11:0] delay;
 
   /////////////////////
 
