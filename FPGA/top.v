@@ -1,10 +1,18 @@
 
-
-// look in pins.pcf for all the pin names on the TinyFPGA BX board
+// RGBY-ROM
+//
+// FPGA implemented motion controller, ram controller, and RGBY-ROM CPU
+//
+// Reuben Strangelove
+// Winter 2019 - Winter 2020
+//
+// FPGA Hardware: TinyFpga BX
+// Color dection sensors: TCS32000
+// Stepper driver: Pololu A4988
 
 module top (
   input CLK,          // 16MHz clock
-  output reg LED,     // User/boot LED next to power LED
+  output LED,     // User/boot LED next to power LED
   output USBPU,       // USB pull-up resistor
   output PIN_1,
   output PIN_2,
@@ -37,26 +45,30 @@ module top (
   input PIN_29,
   input PIN_30);
 
-  // drive USB pull-up resistor to '0' to disable USB
-  assign USBPU = 0;
-
+  // Create wires.
   wire clk;
   wire reset;
   wire [1:0] colorSelect;
   wire [1:0] color;
   wire [7:0] freqCount;
+  wire frequencyFromColorSensor;
   wire [7:0] portIn;
   wire [7:0] portOut;
   wire [7:0] random;
 
   wire [11:0] ramData;
   wire [7:0] ramAddress;
-  wire [7:0] red;
-  wire [7:0] green;
-  wire [7:0] blue;
+  wire [7:0] red, green, blue;
   wire [7:0] debug;
 
   wire [3:0] sensorSelect;
+
+  wire motionControllerCompleted;
+  wire startSelector, selectorComplete;
+  wire startDetection, detectionComplete;
+
+  // Drive USB pull-up resistor to '0' to disable USB.
+  assign USBPU = 0;
 
   // Reduce 8MHz clock down to 1MHz (consider changing the PLL).
   clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
@@ -64,7 +76,7 @@ module top (
   // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
   ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
 
-  // Assign input buttons (route some buttons through a  debouncer)
+  // Assign input buttons (route some buttons through a debouncer)
   wire limitSwitch = PIN_12;
   assign reset = 1;
   assign portIn[7:2] = 6'b000000;
@@ -83,9 +95,9 @@ module top (
   assign {PIN_8, PIN_9} = colorSelect[1:0];
 
   // Assign red, green, blue LEDs after routing color registers through PWM hardware.
-  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_16));
+  pwm pwm1(.clk(clk), .reset(reset), .duty(red), .signal(PIN_14));
   pwm pwm2(.clk(clk), .reset(reset), .duty(green), .signal(PIN_15));
-  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_14));
+  pwm pwm3(.clk(clk), .reset(reset), .duty(blue), .signal(PIN_16));
 
   // Assign status LEDs
   assign PIN_10 = !motionControllerCompleted; // Mode: Read ROM
@@ -99,13 +111,7 @@ module top (
   wire step = PIN_2;
   wire PIN_28 = motionControllerCompleted; // Stepper driver enable pin, active low.
 
-
-  // Create wires.
-  wire motionControllerCompleted;
-  wire startSelector, selectorComplete;
-  wire startDetection, detectionComplete;
-
-
+  // Instantiate and connect main modules.
   motionController motionController1(
     .clk(clk),
     .reset(reset),
@@ -138,7 +144,7 @@ module top (
   ramController ram1(
     .clk(clk),
     .reset(reset),
-    .colorFlag(detectionComplete),
+    .colorReady(detectionComplete),
     .color(color),
     .address(ramAddress),
     .dout(ramData));
@@ -148,219 +154,45 @@ module top (
     .reset(reset),
     .halt(~motionControllerCompleted),
     .instruction(ramData),
-    .programCounter(ramAddress),
+    //.programCounter(ramAddress),
     .portIn(portIn),
     .random(random),
-    .portOut(portOut),
-    .red(red),
-    .green(green),
-    .blue(blue),
+    //.portOut(portOut),
+    //.red(red),
+    //.green(green),
+    //.blue(blue),
     .debug(debug)
     );
 
 
-    // extract ram data
-    // TEMP test
+// TEMP Debug
+assign red = (color == 0 || color == 3) ? 255 : 0;
+assign green = (color == 1 || color == 3) ? 255 : 0;
+assign blue = (color == 2) ? 255 : 0;
+
+
+    // Extract ram data.
+
     /*
     reg [7:0] addrRead;
+
     always @(posedge clk or negedge reset) begin
       if(!reset) begin
-        addrRead <= 0;
+        //addrRead <= 0;
       end else begin
-        if (opCompleted) begin
-          if (addrRead != 60) addrRead <= addrRead + 1;
+        if (motionControllerCompleted) begin
+          if (addrRead != 0) addrRead <= addrRead + 1;
         end
       end
     end
+
+    assign ramAddress = addrRead;
+    assign portOut =  ramData[7:0];
     */
-    //assign ramAddress = addrRead;
 
-endmodule
+    assign ramAddress = 0;
+    assign portOut =  ramData[7:0];
 
-/////////////////////////////////////////////////////////////////////////////
-
-// Increments sensor selection upon color detection completion.
-// Delay between sensor selection for aesthetic effect.
-module sensorSelector(
-   input clk,
-   input reset,
-   input startSelector,
-   input detectionComplete,
-   output reg startDetection,
-   output reg [3:0] sensorSelect,
-   output reg selectorComplete);
-
-  reg  [2:0] state;
-  parameter [2:0] WAIT_FOR_START = 0, RESET_SELECT = 1, TRIGGER_DETECTION = 2, WAIT_FOR_COMPLETION = 3, DELAY = 4, INCREMENT_SELECTOR = 5, COMPLETE = 6;
-  initial state = WAIT_FOR_START;
-
-  reg [13:0] delay;
-
-always @(posedge clk) begin
-  case(state)
-    WAIT_FOR_START : begin
-      selectorComplete <= 0;
-      if (startSelector) state <= RESET_SELECT;
-    end
-    RESET_SELECT : begin
-      sensorSelect <= 0;
-      state <= TRIGGER_DETECTION;
-    end
-    TRIGGER_DETECTION : begin
-      startDetection <= 1;
-      state <= WAIT_FOR_COMPLETION;
-    end
-    WAIT_FOR_COMPLETION : begin
-      startDetection <= 0;
-      delay <= 0;
-      if (detectionComplete) state <= DELAY;
-    end
-    DELAY : begin
-      state <= INCREMENT_SELECTOR;
-    end
-    INCREMENT_SELECTOR : begin
-      sensorSelect <= sensorSelect + 1;
-      delay <= 0;
-      if (sensorSelect == 11) state <= COMPLETE;
-      else state <= TRIGGER_DETECTION;
-    end
-    COMPLETE : begin
-      selectorComplete <= 1;
-      state <= WAIT_FOR_START;
-    end
-  endcase
-end
-
-
-endmodule
-
-module colorDetector (
-  input clk,
-  input reset,
-  input frequencyFromColorSensor,
-  input startDetection,
-  output [1:0] colorSelect,
-  output reg detectionComplete,
-  output reg [1:0] color,
-  output reg [7:0] freqCount
-);
-
-  wire edgeFlag;
-
-  edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(frequencyFromColorSensor), .edgeFlag(edgeFlag));
-
-  // temp for debugging
-  //assign freqCount[7:2] = redFreq;
-  //assign freqCount[1:0] = color;
-  //assign freqCount[7:0] = greenFreq;
-  ///
-
-  reg [7:0] freqCount; //temp
-
-  reg [23:0] color_count;
-  reg [17:0] color_freq;
-  reg [7:0] redFreq;
-  reg [7:0] greenFreq;
-  reg [7:0] blueFreq;
-
-
-  reg [2:0] masterState;
-  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2,  DELAY_FOR_EFFECT = 3, PROCESS_COUNT = 4, DECIDE_COLOR = 5;
-  initial masterState = WAIT_FOR_START;
-
-  // the colorState is the color being detected (with exception to NO_SELECTION)
-  // the state value coincides with the S3 and S2 color select pins of the TCS32000 color sensor
-  // {S3,S2} = {0,0} = red
-  // {S3,S2} = {1,1} = green
-  // {S3,S2} = {1,0} = blue
-  // {S3,S2} = {1,1} = all colors
-  reg [1:0] colorState;
-  parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10, NO_SELECTION = 2'b01;
-  initial colorState = RED;
-  assign colorSelect = colorState;
-
-  reg [1:0] saveColorState;
-  reg [11:0] delay;
-
-  /////////////////////
-
-  always @(posedge clk) begin
-
-  // temp
-  freqCount[2:0]  <= masterState[2:0];
-
-    case(masterState)
-
-      WAIT_FOR_START : begin
-        freqCount[7:0] <= color; // TEMP
-        detectionComplete <= 0;
-        if (startDetection) begin
-          colorState <= RED;
-          masterState <= WAIT_FOR_FIRST_EDGE;
-        end
-      end
-
-      WAIT_FOR_FIRST_EDGE : begin
-        if (edgeFlag) begin
-          color_count <= 0;
-          masterState <= COUNT_ELASPED_TIME;
-        end
-      end
-
-      COUNT_ELASPED_TIME : begin
-        delay <= 0;
-        if (edgeFlag) begin
-          masterState <= DELAY_FOR_EFFECT;
-        end else begin
-          color_count <= color_count + 1;
-        end
-      end
-
-      DELAY_FOR_EFFECT : begin
-        delay <= delay + 1;
-        if (&delay) begin
-          delay <= 0;
-          masterState <= PROCESS_COUNT;
-        end
-      end
-
-      PROCESS_COUNT : begin
-        case(colorState)
-          RED : begin
-            redFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
-            colorState <= GREEN;
-          end
-          GREEN : begin
-            greenFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
-            colorState <= BLUE;
-          end
-          BLUE : begin
-            blueFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= DECIDE_COLOR;
-            colorState <= NO_SELECTION;
-          end
-        endcase
-      end
-
-      DECIDE_COLOR : begin
-        // detecting yellow is tricky, but luckily due to the acrylic colors,
-        // blue is only the highest value (least light) with the yellow acrylic
-        if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
-        else if (redFreq < greenFreq && redFreq < blueFreq) color <= 2'b00; // red
-        else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
-        else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
-        else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
-        detectionComplete <= 1;
-        masterState <= WAIT_FOR_START;
-      end
-
-    endcase
-  end
 
 endmodule
 
@@ -368,10 +200,12 @@ endmodule
 /////////////////////////////////////////////////////////////////////////////
 
 // Contains program memory sourced from the RGBY-ROM data cartridge.
+// Contains logic to fill RAM two bits at a time as data is retreived from
+// the RGBY-ROM data cartridge.
 module ramController(
   input clk,
   input reset,
-  input colorFlag,
+  input colorReady,
   input [1:0] color,
   input [7:0] address,
   output [11:0] dout);
@@ -381,87 +215,45 @@ module ramController(
   reg [7:0] dataWriteAddress;
   reg [11:0] dataToWrite;
   reg [4:0] dataSectionCount;
-
   reg [7:0] ramAddress; // should be a with with mux assignment, but due to compiler issues this is a work around
 
-  // TEMP TO REDUCE WARNINGS
-  always@(posedge clk)      // TEMP
-   dataToWrite <= 12'h000;  // TEMP
 
-  //ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
-  ramHardcoded ram1(.din(dataToWrite), .addr(address), .write_en(writeEn), .clk(clk), .dout(dout)); // TEMP
+  ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
 
-  /*
-  //assign ramAddress = writeEn ? dataWriteAddress : addr;
+  // Hard-coded ram for development purposes.
+  // ramHardcoded ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
 
-  // store color into ram, where six 2-bit nibs equal one 12-bit ram address
+  /**/
+//  assign ramAddress = (writeEn == 1) ? dataWriteAddress : address;
+
+  // store color into ram, where six 2-bit nits equal one 12-bit ram address
   // shift two bits at a time (per color)
   always@(posedge clk or negedge reset)
     if(!reset) begin
-      dataWriteAddress <= 0;
-      dataSectionCount <= 0;
-      writeEn <= 0;
+      //dataWriteAddress <= 0;
+      //dataSectionCount <= 0;
+      //writeEn <= 0;
     end
   else begin
 
-    if (colorFlag) begin
+    if (colorReady) begin
       dataToWrite <= (dataToWrite << 2) | color;
       dataSectionCount <= dataSectionCount + 1;
     end else begin
+
       if (dataSectionCount == 6) begin
         dataSectionCount <= 0;
+        ramAddress <= dataWriteAddress;
         dataWriteAddress <= dataWriteAddress + 1;
         writeEn <= 1;
-        ramAddress <= dataWriteAddress;
       end else begin
         writeEn <= 0;
         ramAddress <= address;
       end
+
     end
   end
-*/
-endmodule
 
-
-
-
-// clock divider
-// divide by 2^3 = 8
-module clockDivider(clk, reset, clk_out);
-  input clk, reset;
-  output reg clk_out;
-  reg [2:0] count;
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      count <= 2'b00;
-      clk_out <= 0;
-    end
-  else begin
-    count <= count + 1;
-    if (count == 2'b00) begin
-      clk_out <= ~clk_out;
-    end
-  end
 endmodule
 
 //////////////////////////////////////////////////////////////////////////////
-
-// clock divider for pwm signal
-//
-// divide by 2^3 = 8
-module pwmClockDivider(clk, reset, clk_out);
-  input clk, reset;
-  output reg clk_out;
-  reg [2:0] count;
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      count <= 2'b00;
-      clk_out <= 0;
-    end
-  else begin
-    count <= count + 1;
-    if (count == 2'b00) begin
-      clk_out <= ~clk_out;
-    end
-  end
-endmodule

@@ -6,7 +6,7 @@ module motionController (
   input limitSwitch,
   input selectorComplete,
   output reg startSelector,
-  output direction,
+  output reg direction,
   output step,
   output motionControllerCompleted);
 
@@ -17,8 +17,8 @@ module motionController (
   // 0.080" belt pitch
   // 555.556 steps per inch
   // 0.325" nit center to center, 180.5557 steps nit center to center.
-  parameter [10:0] STEPS_BETWEEN_ROWS = 181;
-  parameter [10:0] FIRST_ROW_STEPS_AFTER_HOME = 550;
+  parameter [10:0] STEPS_BETWEEN_ROWS = 183;
+  parameter [10:0] FIRST_ROW_STEPS_AFTER_HOME = 610;
 
   // Set the speed of the stepper.
   parameter [15:0] CYCLES_BETWEEN_STEPS = 512;
@@ -87,7 +87,7 @@ module motionController (
           rowCount <= rowCount + 1;
           if (rowCount == 31)
           begin
-            state <= PARK;
+            state <= FINISHED;
           end else begin
               state <= TRAVERSE;
           end

@@ -1,4 +1,4 @@
-// Hard coded RAM containing program for development purposes
+// Hard-coded RAM containing program for development purposes.
    module ramHardcoded (din, addr, write_en, clk, dout);
    parameter addr_width = 8;
    parameter data_width = 12;
@@ -16,7 +16,7 @@
      end
      end
 
-assign dout = 
+assign dout =
  (addr == 0) ? 12'h0F9 :
  (addr == 1) ? 12'h090 :
  (addr == 2) ? 12'h9F1 :
