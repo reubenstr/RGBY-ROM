@@ -13,12 +13,6 @@ module colorDetector (
 
   edgeDetect edgeDetect1(.clk(clk), .reset(reset), .signalIn(frequencyFromColorSensor), .edgeFlag(edgeFlag));
 
-  // temp for debugging
-  //assign freqCount[7:2] = redFreq;
-  //assign freqCount[1:0] = color;
-  //assign freqCount[7:0] = greenFreq;
-  ///
-
   reg [23:0] color_count;
   reg [17:0] color_freq;
   reg [7:0] redFreq;
@@ -26,7 +20,7 @@ module colorDetector (
   reg [7:0] blueFreq;
 
   reg [2:0] masterState;
-  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2,  DELAY_FOR_EFFECT = 3, PROCESS_COUNT = 4, DECIDE_COLOR = 5;
+  parameter [2:0] WAIT_FOR_START = 0, WAIT_FOR_FIRST_EDGE = 1, COUNT_ELASPED_TIME = 2,  DELAY = 3, PROCESS_COUNT = 4, DECIDE_COLOR = 5;
   initial masterState = WAIT_FOR_START;
 
   // the colorState is the color being detected (with exception to NO_SELECTION)
@@ -47,11 +41,21 @@ module colorDetector (
     case(masterState)
 
       WAIT_FOR_START : begin
-        freqCount[7:0] <= color; // TEMP
+        // freqCount[7:0] <= color; // TEMP
         detectionComplete <= 0;
         if (startDetection) begin
           colorState <= RED;
+          masterState <= DELAY;
+        end
+      end
+
+      // Allow sensor to stablize after change in color selection.
+      DELAY : begin
+        if (&delay) begin
+          delay <= 0;
           masterState <= WAIT_FOR_FIRST_EDGE;
+        end else begin
+          delay <= delay + 1;
         end
       end
 
@@ -65,17 +69,9 @@ module colorDetector (
       COUNT_ELASPED_TIME : begin
         delay <= 0;
         if (edgeFlag) begin
-          masterState <= DELAY_FOR_EFFECT;
+          masterState <= PROCESS_COUNT;
         end else begin
           color_count <= color_count + 1;
-        end
-      end
-
-      DELAY_FOR_EFFECT : begin
-        delay <= delay + 1;
-        if (&delay) begin
-          delay <= 0;
-          masterState <= PROCESS_COUNT;
         end
       end
 
@@ -83,19 +79,16 @@ module colorDetector (
         case(colorState)
           RED : begin
             redFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
+            masterState <= DELAY;
             colorState <= GREEN;
           end
           GREEN : begin
             greenFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
-            masterState <= WAIT_FOR_FIRST_EDGE;
+            masterState <= DELAY;
             colorState <= BLUE;
           end
           BLUE : begin
             blueFreq <= color_count[10:3];
-            //freqCount[7:0] <= color_count[10:3]; // TEMP
             masterState <= DECIDE_COLOR;
             colorState <= NO_SELECTION;
           end

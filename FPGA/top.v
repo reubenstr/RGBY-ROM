@@ -24,16 +24,16 @@ module top (
   output PIN_8,
   output PIN_9,
   output PIN_10,
-  output PIN_11,
+  // output PIN_11,
   input PIN_12,
   input PIN_13,
   output PIN_14,
   output PIN_15,
   output PIN_16,
   output PIN_17,
-  output PIN_18,
+  // output PIN_18,
   output PIN_19,
-  output PIN_20,
+  // output PIN_20,
   output PIN_21,
   output PIN_22,
   output PIN_23,
@@ -56,8 +56,8 @@ module top (
   wire [7:0] portOut;
   wire [7:0] random;
 
-  wire [11:0] ramData;
-  wire [7:0] ramAddress;
+  wire [11:0] readData;
+  wire [7:0] programCounter;
   wire [7:0] red, green, blue;
   wire [7:0] debug;
 
@@ -80,14 +80,14 @@ module top (
   wire limitSwitch = PIN_12;
   assign reset = 1;
   assign portIn[7:2] = 6'b000000;
-  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(~PIN_29), .buttonOut(portIn[0]));
-  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_30), .buttonOut(portIn[1]));
+  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(~PIN_30), .buttonOut(portIn[0]));
+  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_29), .buttonOut(portIn[1]));
   //buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_13), .buttonOut(reset));
+
 
   // Assign external outputs.
   assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];
-  // TEMP DEBUG BELOW
-  // assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  color;
+  //assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} =  blue; // Debug
 
   // Assign sensor bar.
   assign frequencyFromColorSensor = PIN_3;
@@ -146,29 +146,33 @@ module top (
     .reset(reset),
     .colorReady(detectionComplete),
     .color(color),
-    .address(ramAddress),
-    .dout(ramData));
+    .readAddress(programCounter),
+    .readData(readData));
 
   cpu cpu(
     .clk(clk),
     .reset(reset),
     .halt(~motionControllerCompleted),
-    .instruction(ramData),
-    //.programCounter(ramAddress),
+    .instruction(readData),
+    .programCounter(programCounter),
     .portIn(portIn),
     .random(random),
-    //.portOut(portOut),
-    //.red(red),
-    //.green(green),
-    //.blue(blue),
-    .debug(debug)
-    );
+    .portOut(portOut),
+    .red(redReg),
+    .green(greenReg),
+    .blue(blueReg),
+    .debug(debug));
+
+    //assign readAddress = 1;
+    //assign portOut =  programCounter;
+
+wire [7:0] redReg, greenReg, blueReg;
 
 
-// TEMP Debug
-assign red = (color == 0 || color == 3) ? 255 : 0;
-assign green = (color == 1 || color == 3) ? 255 : 0;
-assign blue = (color == 2) ? 255 : 0;
+assign red = motionControllerCompleted ? redReg : (color == 0 || color == 3) ? 255 : 0;
+assign green = motionControllerCompleted ? redReg : (color == 1 || color == 3) ? 255 : 0;
+assign blue = motionControllerCompleted ? redReg : (color == 2) ? 255 : 0;
+
 
 
     // Extract ram data.
@@ -190,8 +194,7 @@ assign blue = (color == 2) ? 255 : 0;
     assign portOut =  ramData[7:0];
     */
 
-    assign ramAddress = 0;
-    assign portOut =  ramData[7:0];
+
 
 
 endmodule
@@ -207,52 +210,56 @@ module ramController(
   input reset,
   input colorReady,
   input [1:0] color,
-  input [7:0] address,
-  output [11:0] dout);
+  input [7:0] readAddress,
+  output [11:0] readData);
 
-  reg writeEn;
+  reg writeEnable;
 
-  reg [7:0] dataWriteAddress;
-  reg [11:0] dataToWrite;
+  reg [7:0] writeAddress;// = 8'b11111111;
+  reg [11:0] writeData = 12'h081;
   reg [4:0] dataSectionCount;
-  reg [7:0] ramAddress; // should be a with with mux assignment, but due to compiler issues this is a work around
 
-
-  ram ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
+ //module ram (din, write_en, waddr, wclk, raddr, rclk, dout);
+  ram ram1(.din(writeData), .write_en(1), .waddr(writeAddress), .wclk(clk), .raddr(readAddress), .rclk(clk), .dout(readData));
 
   // Hard-coded ram for development purposes.
-  // ramHardcoded ram1(.din(dataToWrite), .addr(ramAddress), .write_en(writeEn), .clk(clk), .dout(dout));
+  /*
+   ramHardcoded ram1(.din(writeData), .addr(readAddress), .write_en(writeEnable), .clk(clk), .dout(readData));
+   always@(posedge clk) begin
+      writeEn <= 0;
+  end
+*/
+  /*
+  always@(posedge clk)
+  begin
 
-  /**/
-//  assign ramAddress = (writeEn == 1) ? dataWriteAddress : address;
+    writeEnable <= 1;
+    writeData <= 12'h081;
+    writeAddress <= writeAddress + 1;
+  end
+  */
 
   // store color into ram, where six 2-bit nits equal one 12-bit ram address
   // shift two bits at a time (per color)
-  always@(posedge clk or negedge reset)
+
+  always@(posedge clk)
     if(!reset) begin
-      //dataWriteAddress <= 0;
-      //dataSectionCount <= 0;
-      //writeEn <= 0;
     end
   else begin
-
     if (colorReady) begin
-      dataToWrite <= (dataToWrite << 2) | color;
+      writeData <= (writeData << 2) | color;
       dataSectionCount <= dataSectionCount + 1;
     end else begin
-
       if (dataSectionCount == 6) begin
         dataSectionCount <= 0;
-        ramAddress <= dataWriteAddress;
-        dataWriteAddress <= dataWriteAddress + 1;
-        writeEn <= 1;
+        writeAddress <= writeAddress + 1;
+        writeEnable <= 1;
       end else begin
-        writeEn <= 0;
-        ramAddress <= address;
+        writeEnable <= 0;
       end
-
     end
   end
+
 
 endmodule
 

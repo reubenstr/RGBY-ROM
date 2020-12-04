@@ -15,6 +15,7 @@ mov, genB, portIn
 mov, portIn, zero
 
 # check mode button
+# if (mode pressed) mode++
 eq, genB, one
 bns, L:modeCheckEnd
 adds, mode, one
@@ -26,6 +27,7 @@ mov, mode, zero
 L:modeCheckEnd
 
 # check speed button
+# if (speed pressed) speed++
 li, 2
 eq, genB, imm
 bns, L:speedCheckEnd
@@ -141,6 +143,7 @@ adds, index, one
 mov, portOut, index
 j, L:begin
 ####################
+
 
 
 
