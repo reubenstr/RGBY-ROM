@@ -170,7 +170,7 @@ public:
         label_19->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label_totalNibs = new QLabel(centralWidget);
         label_totalNibs->setObjectName(QString::fromUtf8("label_totalNibs"));
-        label_totalNibs->setGeometry(QRect(600, 199, 51, 16));
+        label_totalNibs->setGeometry(QRect(600, 199, 31, 16));
         label_perInstruction = new QLabel(centralWidget);
         label_perInstruction->setObjectName(QString::fromUtf8("label_perInstruction"));
         label_perInstruction->setGeometry(QRect(600, 99, 51, 16));

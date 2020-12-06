@@ -3,58 +3,52 @@
 L:begin
 
 ####################
+# both modes cycle phases
+# share code to save instructions
+
+# if (mode == 1) goto: phaseIncrement
+eq, mode, one
+bos, L:phaseIncrement
+
+# index++
+adds, index, one
+# if (index == 0) phase++
+eq, index, zero
+bns, L:endCheck
+
+L:phaseIncrement
+# phase++
+adds, phase, one
+# if (phase == 3) phase = 0
+li, 3
+eq, phase, imm
+bns, L:endCheck
+mov, phase, zero
+L:endCheck
+####################
+
+
+####################
 # check input buttons
 
-# save portIn state
-mov, genB, portIn
-
-# clear portIn per
-# CPU requirements
-mov, portIn, zero
-
 # check mode button
-eq, genB, one
+eq, portIn, one
 bns, L:modeCheckEnd
-adds, mode, one
-# if (mode > 1)mode = 0
-slt, one, mode
-bns, L:modeCheckEnd
-mov, mode, zero
+xor, mode, one
+mov, mode, result
 L:modeCheckEnd
 
 # check speed button
 li, 2
-eq, genB, imm
+eq, portIn, imm
 bns, L:speedCheckEnd
-adds, speed, one
-# if (speed == 3)speed = 0
-li, 3
-eq, speed, imm
-bns, L:speedCheckEnd
-mov, speed, zero
+xor, speed, one
+mov, speed, result
 L:speedCheckEnd
-####################
 
-
-####################
-# set delay
-
-# if (speed == 0)
-eq, speed, zero
-bos, L:speedZero
-eq, speed, one
-bos, L:speedOne
-# assume speed == 2
-# li, 2
-# eq, speed, imm
-# bos, L:speedTwo
-
-L:speedTwo
-delay, 5
-L:speedOne
-delay, 5
-L:speedZero
-delay, 5 
+# clear portIn per
+# CPU requirements
+mov, portIn, zero
 ####################
 
 
@@ -64,76 +58,88 @@ delay, 5
 # if (mode == 0)
 eq, mode, zero
 bos, L:modeRevolve
-
-# assume mode == 1
-# if (mode == 1)
-# eq, mode, one
-# bos, L:modeRotate
+# else: j, L:modeRotate
 ####################
 
 
+####################
+# rotate color pattern
 L:modeRotate
+
+# set delay
+eq, speed, zero
+bos, L:speedRotateZero
+L:speedRotateOne
+delay, 255
+delay, 255
+L:speedRotateZero
+delay, 255
+
+# branch to phases
+eq, phase, zero
+bos, L:rotateSet0
+eq, phase, one
+bos, L:rotateSet1
+
+# phases
+L:rotateSet2
 mov, red, rand
 mov, green, rand
+mov, blue, zero
+j, L:begin
+
+L:rotateSet1
+mov, red, rand
+mov, green, zero
 mov, blue, rand
-j,L:begin
+j, L:begin
+
+L:rotateSet0
+mov, red, zero
+mov, green, rand
+mov, blue, rand
+j, L:begin
+####################
 
 
 ####################
 # revolve color pattern
-# index++
 L:modeRevolve
-adds, index, one
 
-# if (index == 0) phase++
-eq, index, zero
-bns, L:endCheck
-# phase++
-adds, phase, one
+# set delay
+# if (speed == 0)
+eq, speed, zero
+bos, L:speedZero
+L:speedOne
+delay, 8
+L:speedZero
+delay, 4 
 
-# if (phase == 3) phase = 0
-li, 3
-eq, phase, imm
-bns, L:endCheck
-mov, phase, zero
-L:endCheck
+# perform shared math
+# used in all phases.
+li, 255
+sub, imm, index
+mov, genA, result
 
-####################
-# Branch to phase
+# branch to phases
 eq, phase, zero
 bos, L:phaseZero
 eq, phase, one
 bos, L:phaseOne
-# assum (phase == 2)
-# li, 2
-# eq, phase, imm
-# bos, L:phaseTwo
 
-####################
 # Phases
-
-
 L:phaseTwo
-mov, red, zero
-li, 255
-sub, imm, index
-sin, green, result
+sin, green, genA
 sin, blue, index
 j, L:begin
 
 L:phaseOne
-li, 255
-sub, imm, index
-sin, red, result
+sin, red, genA
 sin, green, index
-mov, blue, zero
 j, L:begin
 
 L:phaseZero
 sin, red, index
-mov, green, zero
-li, 255
-sub, imm, index
-sin, blue, result
+sin, blue, genA
 j, L:begin
 ####################

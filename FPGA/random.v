@@ -1,6 +1,4 @@
-
-// Generate suedo random number using a linear feedbad shift register
-// Example code provided by
+// Generate suedo random number using a linear feedbad shift register.
 
 module random(
   input  clk,

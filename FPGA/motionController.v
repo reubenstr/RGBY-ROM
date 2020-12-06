@@ -1,5 +1,5 @@
 
-// Controllers stepper motor during RGBYROM read operation.
+// Controller for the stepper motor during data cartridge read operation.
 module motionController (
   input clk,
   input reset,

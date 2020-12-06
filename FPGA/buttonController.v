@@ -3,7 +3,6 @@
 // Allows only one assertion every X seconds.
 // Button in is active low
 // Button out is active high
-
 // Code adapted from: https://www.fpga4fun.com/Debouncer2.html
 module buttonController(
     input clk,
