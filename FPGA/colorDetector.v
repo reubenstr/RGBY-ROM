@@ -34,8 +34,8 @@ module colorDetector (
   initial colorState = RED;
   assign colorSelect = colorState;
 
-  reg [2:0] edgeCount;
-  reg [12:0] delay;
+  reg [3:0] edgeCount;
+  reg [11:0] delay;
 
   always @(posedge clk) begin
 

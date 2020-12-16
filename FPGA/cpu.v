@@ -150,7 +150,7 @@ module pcControler(
       if (halt == 0)
       begin
         // Increment MUX.
-      programCounter <= (ctrlPcSelect == 1) ?  instruction : programCounter + addImmediate;
+        programCounter <= (ctrlPcSelect == 1) ?  instruction : programCounter + addImmediate;
       end
     end
 

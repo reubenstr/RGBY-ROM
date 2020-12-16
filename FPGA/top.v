@@ -150,7 +150,6 @@ module top (
     .clk(clk),
     .reset(reset),
     .halt(~motionControllerCompleted),
-    .halt(0), // TEMP
     .instruction(readData),
     .programCounter(programCounter),
     .portIn(portIn),

@@ -14,11 +14,10 @@ module ramController(
   reg [11:0] writeData;
   reg [4:0] dataSectionCount;
 
-
-  // ram ram1(.din(writeData), .write_en(writeEnable), .waddr(writeAddress), .wclk(clk), .raddr(readAddress), .rclk(clk), .dout(readData));
+  ram ram1(.din(writeData), .write_en(writeEnable), .waddr(writeAddress), .wclk(clk), .raddr(readAddress), .rclk(clk), .dout(readData));
 
   // Hard-coded ram with test program for development purposes.
-  ramHardcoded ram1(.din(writeData), .addr(readAddress), .write_en(0), .clk(clk), .dout(readData));
+  // ramHardcoded ram1(.din(writeData), .addr(readAddress), .write_en(0), .clk(clk), .dout(readData));
 
   // store color into ram, where six 2-bit nits equal one 12-bit ram address
   // shift two bits at a time (per color)
