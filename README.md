@@ -4,6 +4,10 @@ RGBY-ROM reads data cartridges using red, green, blue, and yellow acrylic square
 
 ***
 
+![alt text](https://github.com/reubenstr/RGBY-ROM/blob/main/Diagrams/block-diagram.png)
+
+
+
 RGBY-ROM uses the TinyFPGA Bx as the FPGA board.
 
 The TinyFPGA uses the ATOM IDE with the APIO extension.
