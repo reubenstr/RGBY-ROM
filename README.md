@@ -1,6 +1,6 @@
 # RGBY-ROM
 
-RGBY-ROM reads data cartridges using red, green, blue, and yellow acrylic squares as bit encoding.
+RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic squares each acting as 2 bits of program data.
 
 ***
 
