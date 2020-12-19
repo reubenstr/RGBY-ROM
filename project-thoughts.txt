@@ -5,6 +5,7 @@ Fixes/Additions:
 	Sensor bar motion system and data cartrigde mount should be a tighter unit for 
 		better sensor to acrylic nit tolerance control.
 	Add brightness control to the data cartridge white LED strip backlight.
+	Breakout TinyFPGA USB connector (add an extension cable) for later software updates.
 
 HDL/Software:
 	UART or JTAG data debug port should be added to read out the RAM post data cartridge read
