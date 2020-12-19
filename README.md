@@ -1,6 +1,6 @@
 # RGBY-ROM
 
-RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic squares each acting as 2 bits of program data.
+RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic squares where each square acts as 2 bits of program data. The the program is then excuted on a custom simple CPU architecture instantiated on a FPGA to control a RGB LED and 8 LED indicators.
 
 ***
 <div align="center">  
