@@ -4,11 +4,13 @@ RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic
 
 ***
 <div align="center">
+  
 ![alt text](https://github.com/reubenstr/RGBY-ROM/blob/main/Diagrams/block-diagram.png)
 RGBY-ROM Block Diagram & Data Path
 
 ![alt text](https://github.com/reubenstr/RGBY-ROM/blob/main/RGBY-ROM-Assembler/screenshot.PNG)
 RGBY-ROM Assembler Application Screenshot
+
 </div>
 
 ***
