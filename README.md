@@ -3,14 +3,9 @@
 RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic squares each acting as 2 bits of program data.
 
 ***
-<div align="center">
-  
-![alt text](https://github.com/reubenstr/RGBY-ROM/blob/main/Diagrams/block-diagram.png)
-RGBY-ROM Block Diagram & Data Path
-
-![alt text](https://github.com/reubenstr/RGBY-ROM/blob/main/RGBY-ROM-Assembler/screenshot.PNG)
-RGBY-ROM Assembler Application Screenshot
-
+<div align="center">  
+<img src="https://github.com/reubenstr/RGBY-ROM/blob/main/Diagrams/block-diagram.png" alt="" width="800">
+<img src="https://github.com/reubenstr/RGBY-ROM/blob/main/RGBY-ROM-Assembler/screenshot.PNG" alt="" width="800"> 
 </div>
 
 ***
