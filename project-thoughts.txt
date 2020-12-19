@@ -1,0 +1,16 @@
+RGBY-ROM Post Completion Thoughts.
+
+Fixes/Additions:
+	Add a dedicated debug port to the PCB. JTAG or otherwise.
+	Sensor bar motion system and data cartrigde mount should be a tighter unit for 
+		better sensor to acrylic nit tolerance control.
+	Add brightness control to the data cartridge white LED strip backlight.
+
+HDL/Software:
+	UART or JTAG data debug port should be added to read out the RAM post data cartridge read
+		and compared to assembler provided HEX to ensure data integrity over many read cycles of 
+		the data cartridge.
+	Assembler requires a more robust text editor for simple undo/redo opperations.
+
+Aesthetics:
+	Adjust the motion system cutout to match the data cartridge (align bottoms).
