@@ -143,8 +143,8 @@ module pcControler(
   initial delayCounter = 0;
 
   // Increment program counter.
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
+  always@(posedge clk or posedge reset)
+    if(reset) begin
       // programCounter <= 0;
     end else begin
       if (halt == 0)

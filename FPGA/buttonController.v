@@ -6,7 +6,6 @@
 // Code adapted from: https://www.fpga4fun.com/Debouncer2.html
 module buttonController(
     input clk,
-    input reset,
     input buttonIn,  // "PB" is the glitchy, asynchronous to clk, active low push-button signal
 
     // from which we make three outputs, all synchronous to the clock

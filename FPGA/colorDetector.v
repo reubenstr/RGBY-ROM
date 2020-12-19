@@ -31,91 +31,95 @@ module colorDetector (
   // color sensor {S3,S2} = {0,1} = all colors
   reg [1:0] colorState;
   parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10, NO_SELECTION = 2'b01;
-  initial colorState = RED;
   assign colorSelect = colorState;
 
   reg [3:0] edgeCount;
   reg [11:0] delay;
 
-  always @(posedge clk) begin
+  always @(posedge clk or posedge reset) begin
+    if(reset) begin
+      masterState <= WAIT_FOR_START;
+    end else begin
 
-    case(masterState)
+      case(masterState)
 
-      WAIT_FOR_START : begin
-        // freqCount[7:0] <= color; // TEMP
-        detectionComplete <= 0;
-        if (startDetection) begin
-          colorState <= RED;
-          masterState <= DELAY;
-        end
-      end
-
-      // Allow sensor to stablize after change in color selection.
-      // Delay also serves as visual effect.
-      DELAY : begin
-        if (&delay) begin
-          delay <= 0;
-          masterState <= WAIT_FOR_FIRST_EDGE;
-        end else begin
-          delay <= delay + 1;
-        end
-      end
-
-      WAIT_FOR_FIRST_EDGE : begin
-        if (edgeFlag) begin
-          elapsedTickCount <= 0;
-          masterState <= COUNT_ELASPED_TIME;
-        end
-      end
-
-      // Count elapsed ticks between x edge counts.
-      // Counting multiple edges is required for a deterministic signal.
-      COUNT_ELASPED_TIME : begin
-        if (edgeFlag) begin
-          if (&edgeCount) begin
-              edgeCount <=0;
-              masterState <= PROCESS_COUNT;
-            end else begin
-              edgeCount <= edgeCount + 1;
-            end
-          end
-          elapsedTickCount <= elapsedTickCount + 1;
-      end
-
-      PROCESS_COUNT : begin
-        case(colorState)
-          RED : begin
-            redFreq <= elapsedTickCount;
+        WAIT_FOR_START : begin
+          detectionComplete <= 0;
+          if (startDetection) begin
+            colorState <= RED;
             masterState <= DELAY;
-            colorState <= GREEN;
-          end
-          GREEN : begin
-            greenFreq <= elapsedTickCount;
-            masterState <= DELAY;
-            colorState <= BLUE;
-          end
-          BLUE : begin
-            blueFreq <= elapsedTickCount;
-            masterState <= DECIDE_COLOR;
+          end else begin
             colorState <= NO_SELECTION;
           end
-        endcase
-      end
+        end
 
-      DECIDE_COLOR : begin
-        // Decide color by comparing color frequency (elasped ticks).
-        // Detecting yellow is tricky, but luckily due to the acrylic colors,
-        // blue is only the highest value (least light) with the yellow acrylic.
-        if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
-        else if (redFreq < greenFreq && redFreq < blueFreq) color <= 2'b00; // red
-        else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
-        else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
-        else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
-        detectionComplete <= 1;
-        masterState <= WAIT_FOR_START;
-      end
+        // Allow sensor to stablize after change in color selection.
+        // Delay also serves as visual effect.
+        DELAY : begin
+          if (&delay) begin
+            delay <= 0;
+            masterState <= WAIT_FOR_FIRST_EDGE;
+          end else begin
+            delay <= delay + 1;
+          end
+        end
 
-    endcase
+        WAIT_FOR_FIRST_EDGE : begin
+          if (edgeFlag) begin
+            elapsedTickCount <= 0;
+            masterState <= COUNT_ELASPED_TIME;
+          end
+        end
+
+        // Count elapsed ticks between x edge counts.
+        // Counting multiple edges is required for a deterministic signal.
+        COUNT_ELASPED_TIME : begin
+          if (edgeFlag) begin
+            if (&edgeCount) begin
+                edgeCount <=0;
+                masterState <= PROCESS_COUNT;
+              end else begin
+                edgeCount <= edgeCount + 1;
+              end
+            end
+            elapsedTickCount <= elapsedTickCount + 1;
+        end
+
+        PROCESS_COUNT : begin
+          case(colorState)
+            RED : begin
+              redFreq <= elapsedTickCount;
+              masterState <= DELAY;
+              colorState <= GREEN;
+            end
+            GREEN : begin
+              greenFreq <= elapsedTickCount;
+              masterState <= DELAY;
+              colorState <= BLUE;
+            end
+            BLUE : begin
+              blueFreq <= elapsedTickCount;
+              masterState <= DECIDE_COLOR;
+              colorState <= NO_SELECTION;
+            end
+          endcase
+        end
+
+        DECIDE_COLOR : begin
+          // Decide color by comparing color frequency (elasped ticks).
+          // Detecting yellow is tricky, but luckily due to the acrylic colors,
+          // blue is only the highest value (least light) with the yellow acrylic.
+          if (blueFreq > redFreq && blueFreq > greenFreq) color <= 2'b11; // yellow
+          else if (redFreq < greenFreq && redFreq < blueFreq) color <= 2'b00; // red
+          else if (greenFreq < redFreq && greenFreq < blueFreq) color <= 2'b01; // green
+          else if (blueFreq < redFreq && blueFreq < greenFreq) color <= 2'b10; // blue
+          else  color <= 2'b00; // edge case where the two lowest values are equal, should never happen
+          detectionComplete <= 1;
+          masterState <= WAIT_FOR_START;
+        end
+
+      endcase
+    end
   end
 
 endmodule

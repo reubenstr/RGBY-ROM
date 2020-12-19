@@ -38,12 +38,11 @@ module motionController (
   pulseExtender pulseExtender1(.clk(clk), .reset(reset), .signal(stepSignal), .extendedSignal(step));
 
   // State machine.
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      //state <= HOME;
-      //rowCount <= 0;
-    end
-  else begin
+  always@(posedge clk or posedge reset)
+    if(reset) begin
+      state <= HOME;
+      rowCount <= 0;
+    end else begin
 
     case(state)
 
@@ -87,7 +86,7 @@ module motionController (
           rowCount <= rowCount + 1;
           if (rowCount == 31)
           begin
-            state <= FINISHED;
+            state <= PARK;
           end else begin
               state <= TRAVERSE;
           end
@@ -114,9 +113,11 @@ module motionController (
   // Step every X clock signals on set flag.
   // Count steps.
   reg [23:0] delayCounter;
-  always@(posedge clk or  negedge reset)
-    if(!reset) begin
-      stepSignal <= 0;
+  always@(posedge clk or  posedge reset)
+    if(reset) begin
+       stepSignal <= 0;
+       stepCount <= 0;
+       delayCounter <= 0;
     end
   else begin
     if (moveFlag) begin

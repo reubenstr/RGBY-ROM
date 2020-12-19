@@ -11,8 +11,8 @@ initial number = 8'hff;
 
 wire feedback = number[8] ^ number[1];
 
-always@(posedge clk or negedge reset)
-  if(!reset)
+always@(posedge clk or posedge reset)
+  if(reset)
     number <= 8'hff;
 else
     number <= {number[7:0], feedback};

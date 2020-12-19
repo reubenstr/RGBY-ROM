@@ -1,6 +1,5 @@
 module ledBlinker(
   input clk,
-  input reset,
   output reg state
   );
 

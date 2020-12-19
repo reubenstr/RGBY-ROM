@@ -9,11 +9,11 @@ module pulseExtender(
   reg [3:0] clockCount;
   reg countFlag;
 
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      clockCount <= 0;
-      countFlag <= 0;
-      extendedSignal <= 0;
+  always@(posedge clk or posedge reset)
+    if(reset) begin
+      // clockCount <= 0;
+      // countFlag <= 0;
+      // extendedSignal <= 0;
     end
   else begin
     if (signal) begin

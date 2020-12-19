@@ -69,18 +69,18 @@ module top (
   assign USBPU = 0;
 
   // Reduce 8MHz clock down to 1MHz (consider changing the PLL).
-  clockDivider clkDiv1(.clk(CLK), .reset(reset), .clk_out(clk));
+  clockDivider clkDiv1(.clk(CLK), .clk_out(clk));
 
   // Toggle onboard LED's state every 1Hz for clock simply visual clock frequency verification.
-  ledBlinker ledBlinker(.clk(clk), .reset(reset), .state(LED));
+  ledBlinker ledBlinker(.clk(clk), .state(LED));
 
   // Assign input buttons (route some buttons through a debouncer)
   wire limitSwitch = PIN_12;
-  assign reset = 1;
   assign portIn[7:2] = 6'b000000;
-  buttonController buttonController1(.clk(clk), .reset(reset), .buttonIn(~PIN_30), .buttonOut(portIn[0]));
-  buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_29), .buttonOut(portIn[1]));
-  //buttonController buttonController2(.clk(clk), .reset(reset), .buttonIn(~PIN_13), .buttonOut(reset));
+  buttonController buttonController1(.clk(clk), .buttonIn(~PIN_30), .buttonOut(portIn[0]));
+  buttonController buttonController2(.clk(clk), .buttonIn(~PIN_29), .buttonOut(portIn[1]));
+  buttonController buttonController3(.clk(clk), .buttonIn(~PIN_13), .buttonOut(reset));
+
 
   // Assign external outputs.
   assign {PIN_17, PIN_26, PIN_19, PIN_25, PIN_21, PIN_22, PIN_23, PIN_24} = portOut[7:0];

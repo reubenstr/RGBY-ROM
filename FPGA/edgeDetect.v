@@ -5,10 +5,10 @@ module edgeDetect(clk, reset, signalIn, edgeFlag);
   output reg edgeFlag;
   reg [2:0] edge_mem;
 
-  always@(posedge clk or negedge reset)
-    if(!reset) begin
-      edge_mem <= 3'b0;
-      edgeFlag <= 1'b0;
+  always@(posedge clk or posedge reset)
+    if(reset) begin
+      // edge_mem <= 3'b0;
+      // edgeFlag <= 1'b0;
     end
   else begin
     edge_mem <= {edge_mem[1:0], signalIn};

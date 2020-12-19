@@ -22,7 +22,8 @@ module ramController(
   // store color into ram, where six 2-bit nits equal one 12-bit ram address
   // shift two bits at a time (per color)
   always@(posedge clk)
-    if(!reset) begin
+    if(reset) begin
+    
     end
   else begin
     if (colorReady) begin
