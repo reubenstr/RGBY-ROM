@@ -1,4 +1,3 @@
-
 // Controller for the stepper motor during data cartridge read operation.
 module motionController (
   input clk,

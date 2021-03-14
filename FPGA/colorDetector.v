@@ -33,7 +33,7 @@ module colorDetector (
   parameter [1:0] RED = 2'b00, GREEN = 2'b11, BLUE = 2'b10, NO_SELECTION = 2'b01;
   assign colorSelect = colorState;
 
-  reg [3:0] edgeCount;
+  reg [4:0] edgeCount;
   reg [11:0] delay;
 
   always @(posedge clk or posedge reset) begin
