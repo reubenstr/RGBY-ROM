@@ -1,14 +1,20 @@
+/*
+	RGBY-ROM
+	Reuben Strangelove
+	03/2019 - 12/2020
+	
+	RGBY-ROM logic fabric creating the RGBY-ROM's CPU,
+	motion controller, and hardware ports.
 
-// RGBY-ROM
-//
-// FPGA implemented motion controller, ram controller, and RGBY-ROM CPU
-//
-// Reuben Strangelove
-// Winter 2019 - Winter 2020
-//
-// FPGA Hardware: TinyFpga BX
-// Color dection sensors: TCS32000
-// Stepper driver: Pololu A4988
+	FPGA: 
+		TinyFpga BX
+		
+	Color dection sensors: 
+		TCS32000
+		
+	Stepper driver: 
+		Pololu A4988
+*/
 
 module top (
   input CLK,      // 16MHz clock
