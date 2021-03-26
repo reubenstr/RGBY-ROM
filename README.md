@@ -1,6 +1,6 @@
 # RGBY-ROM
 
-<img src="https://github.com/reubenstr/RGBY-ROM/blob/main/images/RGBY-ROM-collage.png" alt="" width="640">
+<img src="https://github.com/reubenstr/RGBY-ROM/blob/main/images/RGBY-ROM-collage-set.jpg" alt="" width="640">
 
 RGBY-ROM reads data cartridges comprised of red, green, blue, and yellow acrylic squares where each square acts as 2 bits of program data. 
 
