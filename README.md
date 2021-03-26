@@ -12,14 +12,8 @@ The the program is then excuted on a custom simple CPU architecture instantiated
 
 The executed program is assembled using a custom assembler to create the data cartridge's color pattern.
 
+RGBY-ROM uses the TinyFPGA Bx as the FPGA board the Verilog is developed useing the ATOM IDE with the APIO extension.
 
-
-RGBY-ROM uses the TinyFPGA Bx as the FPGA board.
-
-The TinyFPGA uses the ATOM IDE with the APIO extension.
-
-The HDL is Verilog.
-
-The creator of TinyFPGA provide the following get started user guild: https://tinyfpga.com/bx/guide.html
+<br>
 
 Blog post: https://metaphasiclabs.com/rgby-rom-custom-fpga-retro-cpu/
